@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" href="cssformulaire.css"/>
+    <link rel="stylesheet" href="headerfooter.css"/>
+    <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
+    </head>
+
+    <body>
+     <header>
+        <div class="header">   
+            <div class="image"><a href="page1.html"><img src="logodomhomepetit.png" ></a></div>
+        <div>
+            <a href="" class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
+            <a href="contact.html" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
+            <a href="login.html" class="link"><i class="fa fa-user" aria-hidden="true"></i> Espace Personnel</a>
+        </div>
+        </div>
+    </header>
+    <div class="section">
+        <p id = "titre"> Formulaire d'inscription à DomHome</p> <br><br>
+            <form method = "post" action="formulaire.php"   id = "Formulaire">
+                <label>
+                    Nom 
+                </label>
+
+                <input type="text" name="Nom" placeholder="Ex : DomeHome" required>
+                <br> <br>
+
+                <label>
+                    Prénom 
+                </label>
+                <input type="text" name="Prénom" placeholder="Ex : Domisep" required>
+                <br> <br>
+
+                <label>
+                    Sexe 
+                </label>
+                Femme <input type="radio" name="Sexe" required>
+                Homme <input type="radio" name="Sexe" required>
+                <br> <br>
+
+                <label>
+                    Adresse mail 
+                </label>
+                <input type="text" name="Adresse mail" placeholder="Ex : domehome@gmail.com" required>
+                <br> <br>
+
+                <label>
+                    Identifiant
+                </label>
+                <input type="text" name="Identifiant" placeholder="EX : DomeHome2017 " required>
+                <br> <br>
+
+                <label>
+                    Mot de passe
+                </label>
+                <input type="password" name="Mot de passe" required>
+                <br> <br>
+
+                
+                <label>
+                    Conformation Mot de passe
+                </label>
+                <input type="password" name="Confirmation Mot de passe" required>
+                <br> <br> <br>
+                    <center>
+                <input type="checkbox" name="Conditions" required>
+                J'ai lu et accepté les conditions d'utilisations
+                <br> <br>
+                <input type="submit" name="case conditions" value="S'inscrire" >
+                    </center>
+            </form>
+    </div>
+    </body>
+    <footer>
+        <div class="left">© HomeTech2017 </div>
+            <div>Localisation : 28 rue Notre-Dame des Champs, 75006, PARIS </div>
+            <div><a href="contact.html" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></div>
+    </footer>
+</html>

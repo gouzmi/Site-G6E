@@ -1,0 +1,10 @@
+section    
+{
+    width: 350px ;
+    height: 320px ;
+    background-color: white;
+    padding: 15px; /* Marge intérieure de 12px */
+    margin: auto; 
+    border:1px solid black; 
+    border-radius: 10px;
+}
