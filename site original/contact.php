@@ -16,7 +16,7 @@
         <article>
             <div>
                 <ul class="contactleft">
-                    <li>Lundiiiii: 09:00-12:00,14:00-17:00</li>
+                    <li>Lundi: 09:00-12:00,14:00-17:00</li>
                     <li>Mardi: 09:00-12:00,14:00-17:00</li>
                     <li>Mercredi: 09:00-12:00,14:00-17:00</li>
                     <li>Jeudi: 09:00-12:00,14:00-17:00</li>
