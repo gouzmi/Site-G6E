@@ -9,16 +9,7 @@
     </head>
 
 
-    <header>
-        <div class="header">
-            <div class="image"><a href="accueil.html"><img src="logodomhomepetit.png" ></a></div>
-        <div>
-            <a href="" class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
-            <a href="contact.html" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
-            <a href="login.html" class="link"><i class="fa fa-user" aria-hidden="true"></i> Espace Personnel</a>
-        </div>
-        </div>
-    </header>
+    <?php include("header.php") ?>
     <body>
 
         <h1 class="titre">L'Entreprise</h1>
@@ -46,13 +37,9 @@
             </div>
         </article>
 
-    
+
     </body>
-    <footer>
-        <ul>
-            <li>© HomeTech2017 </li>
-            <li>Localisation : 28 rue Notre-Dame des Champs, 75006, PARIS </li>
-            <li><a href="contact.html" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
-        </ul>
-    </footer>
+
+    <?php include("footer.php") ?>
+
 </html>

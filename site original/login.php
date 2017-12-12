@@ -9,16 +9,7 @@
         </head>
 
 
-        <header>
-            <div class="header">
-                <div class="image"><a href="page1.html"><img src="logodomhomepetit.png" ></a></div>
-                <div>
-                <a href="" class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
-                <a href="contact.html" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
-                <a href="login.html" class="link"><i class="fa fa-user" aria-hidden="true"></i> Espace Personnel</a>
-                </div>
-            </div>
-        </header>
+    <?php include("header.php") ?>
 		<body>
 		  <div class="page">
         <section>
@@ -37,17 +28,11 @@
             <input type="submit" value="Domisep"></center>
 
     		<br><br><br>
-            <div id="inscription"><a href="formulaire.html"> Inscription</a></div>
-            <div id="oubli"><a href="mdp_oublie.html?email=#mail"> Mot de passe oublié ?</a></p></div>
+            <div id="inscription"><a href="formulaire.php"> Inscription</a></div>
+            <div id="oubli"><a href="mdp_oublie.php"> Mot de passe oublié ?</a></p></div>
             <!--Lien vers la page de récupération mdp + envois adresse mail à la page suivante-->
     	   </section>
 			</div>
     </body>
-		<footer>
-        <ul>
-            <li>© HomeTech2017 </li>
-            <li>Localisation : 28 rue Notre-Dame des Champs, 75006, PARIS </li>
-            <li><a href="contact.html" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li>
-        </ul>
-    </footer>
+    <?php include("footer.php") ?>
 </html>
