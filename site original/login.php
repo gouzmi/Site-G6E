@@ -14,7 +14,7 @@
 		  <div class="page">
         <section>
 	       <p id = "titre"> Connexion </p> <br><br>
-            <form method="post" action="Login.php"  id ="Login"><!-- début du formulaire-->
+            <form method="post" action="accueilConnecté(Par pièce).php"  id ="Login"><!-- début du formulaire-->
 
 			<label for="email">Adresse email :
 			<input type="email" name="email"  id="mail" placeholder="Ex : super.client@gmail.com" required></label>
@@ -24,7 +24,7 @@
     	    </form>
     		<br><br><br>
 
-    		<center><input type="submit" value="Accéder"><a href= "Acceuil connecté(Par pièce).php">
+    		<center><input type="submit" value="Accéder">
             <input type="submit" value="Domisep"></center>
 
     		<br><br><br>
