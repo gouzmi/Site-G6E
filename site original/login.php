@@ -24,7 +24,7 @@
     	    </form>
     		<br><br><br>
 
-    		<center><input type="submit" value="Accéder" href= "Acceuil connecté(Par pièce).php">
+    		<center><input type="submit" value="Accéder"><a href= "Acceuil connecté(Par pièce).php">
             <input type="submit" value="Domisep"></center>
 
     		<br><br><br>
