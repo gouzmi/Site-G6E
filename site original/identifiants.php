@@ -1,7 +1,8 @@
+//Connexion à la BD, doit être include avant les requêtes
 <?php
 try
 {
-$db = new PDO('mysql:host=localhost;dbname=mydb', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=mydb', 'root', '');
 }
 catch (Exception $e)
 {
