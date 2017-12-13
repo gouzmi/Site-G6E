@@ -4,7 +4,7 @@
     <div>
         <a href="" class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
         <a href="contact.php" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
-        <a href="accueilConnecté(Par pièce).php" class="link"><i class="fa fa-user" aria-hidden="true"></i> Espace Personnel</a>
+        <a href="login.php" class="link"><i class="fa fa-user" aria-hidden="true"></i> Espace Personnel</a>
     </div>
     </div>
 </header>
