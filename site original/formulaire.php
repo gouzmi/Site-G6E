@@ -4,9 +4,9 @@
 
     if(isset($_POST['caseconditions']))  // il faudra hacher le mdp et htmlspecialchars les autres//
     {
-/*
+
       if ($_POST['mdp'] == $_POST['mdp2'])
-      { */
+      {
         $insert = $bdd->prepare("INSERT INTO utilisateur(Nom, Prénom, mail, motdepasse) VALUES(?, ?, ?, ?)");
         $insert ->execute(array($_POST['Nom'], $_POST['Prénom'], $_POST['mail'], $_POST['mdp']));
         $erreur= "Votre compte a bien été crée";
@@ -14,7 +14,7 @@
       else {
         $erreur= "Les mots de passes sont différents";
       }
-    /*}*/
+    }
 
 ?>
 <html>
