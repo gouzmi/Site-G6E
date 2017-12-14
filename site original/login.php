@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
+session_start();
 
+	 $bdd = new PDO('mysql:host=localhost;dbname=test2;charset=utf8', 'root', '');
 
 		if(isset($_POST['formconnexion']))
 		{
@@ -18,7 +20,7 @@
 					$_SESSION['nom'] = $userinfo['nom'];
 					$_SESSION['prenom'] = $userinfo['prenom'];
 					$_SESSION['mail'] = $userinfo['mail'];
-					header("Location: page1.php?id=".$_SESSION['id']);
+					header("Location: accueilConnectePiece.php?id=".$_SESSION['id']);
 				}
 				else {
 					$erreur = "Mauvais mail ou mauvais mot de passe";
@@ -69,7 +71,7 @@
     		<br><br><br>
             <div id="inscription"><a href="formulaire.php"> Inscription</a></div>
             <div id="oubli"><a href="mdp_oublie.php"> Mot de passe oublié ?</a></div>
-						<div><a href="accueilConnectePiece.php">TEST </a></div>
+						<div><a href="accueilConnecté(Par pièce).php">TEST </a></div>
             <!--Lien vers la page de récupération mdp + envois adresse mail à la page suivante-->
     	   </section>
 			</div>

@@ -1,7 +1,13 @@
 <?php
-session_start();
 
-		$bdd = new PDO('mysql:host=localhost;dbname=test2;charset=utf8', 'root', '');
+
+    if (isset($_SESSION['id']) AND $_SESSION['id'] > 1)
+     {
+      $espace = " Gérer Sa Maison ";
+    }
+    else {
+      $espace = "Espace Personnel";
+    }
 ?>
 
 <header>
@@ -10,7 +16,14 @@ session_start();
     <div>
         <a href="" class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
         <a href="contact.php" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
-        <a href="login.php" class="link"><i class="fa fa-user" aria-hidden="true"></i> Espace Personnel</a>
+        <?php if (isset($_SESSION['id']) AND $_SESSION['id'] > 1) { ?>
+          <a href="accueilConnectePiece.php" class="link"><i class="fa fa-user" aria-hidden="true"></i>  <?php echo $espace; ?></a>
+        <?php }
+        else { ?>
+          <a href="login.php" class="link"><i class="fa fa-user" aria-hidden="true"></i>  <?php echo $espace; ?></a>
+        <?php }
+        ?>
+
     </div>
     </div>
 </header>

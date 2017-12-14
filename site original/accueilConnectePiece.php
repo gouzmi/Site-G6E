@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
     <head>
     <meta charset="UTF-8">
@@ -11,7 +12,7 @@
 
     <?php include("header.php") ?>
 
-    <a id = "top"></a>
+    <a id = "top" href="deconnexion.php" >Se déconnecter</a>
     <body>
 
     	<!-- Menu pièce-->
