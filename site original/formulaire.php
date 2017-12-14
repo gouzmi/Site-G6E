@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <?php
-    $bdd = new PDO('mysql:host=localhost;dbname=test2', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=test2;charset=utf8', 'root', '');
 
     if(isset($_POST['caseconditions']))  // il faudra hacher le mdp et htmlspecialchars les autres//
     {
 
       if ($_POST['mdp'] == $_POST['mdp2'])
       {
-        $insert = $bdd->prepare("INSERT INTO utilisateur(Nom, Prénom, mail, motdepasse) VALUES(?, ?, ?, ?)");
-        $insert ->execute(array($_POST['Nom'], $_POST['Prénom'], $_POST['mail'], $_POST['mdp']));
+        $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, mail, mdp) VALUES(?, ?, ?, ?)");
+        $insert->execute(array($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'])) ;
         $erreur= "Votre compte a bien été crée";
       }
       else {
@@ -34,16 +34,16 @@
         <p id = "titre"> Formulaire d'inscription à DomHome</p> <br><br>
             <form method = "post" action=""   id = "Formulaire">
                 <label>
-                    Nom
+                    nom
                 </label>
 
-                <input type="text" name="Nom" placeholder="Ex : DomeHome" required>
+                <input type="text" name="nom" placeholder="Ex : DomeHome" required>
                 <br> <br>
 
                 <label>
-                    Prénom
+                    prenom
                 </label>
-                <input type="text" name="Prénom" placeholder="Ex : Domisep" required>
+                <input type="text" name="prenom" placeholder="Ex : Domisep" required>
                 <br> <br>
 
                 <!-- <label>
