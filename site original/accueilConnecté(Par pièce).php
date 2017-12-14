@@ -3,8 +3,8 @@
     <head>
     <meta charset="UTF-8">
     <title>Acceuil Connecté par pièce</title>
-    <link rel="stylesheet" href="cssformulaire.css"/>
-    <link rel="stylesheet" href="headerfooter.css"/>
+    <link rel="stylesheet" href="cssformulairee.css"/>
+    <link rel="stylesheet" href="headerfooterr.css"/>
     <link rel="stylesheet" href="accueilConnecté.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
@@ -47,5 +47,5 @@
     </body>
 
         <?php include("footer.php") ?>
-        
+
 </html>

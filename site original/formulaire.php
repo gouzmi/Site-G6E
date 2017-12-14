@@ -21,8 +21,8 @@
     <head>
     <meta charset="UTF-8">
     <title>Formulaire d'inscription</title>
-    <link rel="stylesheet" href="cssformulaire.css"/>
-    <link rel="stylesheet" href="headerfooter.css"/>
+    <link rel="stylesheet" href="cssformulairee.css"/>
+    <link rel="stylesheet" href="headerfooterr.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 

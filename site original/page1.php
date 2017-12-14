@@ -3,8 +3,8 @@
     <head>
     <meta charset="UTF-8">
     <title>Page d'accueil</title>
-    <link rel="stylesheet" href="cssp1.css"/>
-    <link rel="stylesheet" href="headerfooter.css"/>
+    <link rel="stylesheet" href="cssp11.css"/>
+    <link rel="stylesheet" href="headerfooterr.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 
