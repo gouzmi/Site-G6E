@@ -30,12 +30,6 @@
 
  		<div class="right">
             <script src="JS1.js"></script>
-        <!--Salle de bain-->
-        <iframe src="SalleDeBain.html">
-
-        </iframe>
-        <!--Salle de séjour-->
-        <iframe src="SalleDeSejour.html"></iframe>
 
         </div>
 
