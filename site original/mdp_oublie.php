@@ -16,12 +16,12 @@
 	       <p id = "titre"> Récupération de votre mot de passe </p> <br><br>
             <form method="post" action="traitementmdp_oublie.php"  id ="mdp_oublie">
 
-								<label for="email">Quel est votre animal préféré ?</label>
-								<br>
-								<center>
+								<label for="email">Quel est votre animal préféré ? :</label>
+								<br><br>
+
 								<input type="animal" name="animal"  id="animal" placeholder="Ex : requin, serpent..." required>
-							  </center>
-								<br>
+
+								<br><br>
 								<center>
 									<input type="submit" value="Envoyer">
 								</center>
