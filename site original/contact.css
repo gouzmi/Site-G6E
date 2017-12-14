@@ -2,7 +2,6 @@
 
 html
 {
-    background-image: url(96f.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Lato';
@@ -11,7 +10,7 @@ html
 
 article
 {
-    /*border: solid #1BBAA5;*/
+    /*border: salutsolid #1BBAA5;*/
     padding:25px;
     margin:auto;
     width: 60%;
