@@ -9,7 +9,7 @@
       {
         $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, mail, mdp) VALUES(?, ?, ?, ?)");
         $insert->execute(array($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'])) ;
-        $erreur= "Votre compte a bien été crée";
+        $erreur= "Votre compte a bien été crée <a href=\"login.php\"> Se connecter</a> ";
       }
       else {
         $erreur= "Les mots de passes sont différents";
@@ -101,15 +101,16 @@
                 J'ai lu et accepté les conditions d'utilisations -->
                     <center>
                 <br> <br>
-                <input type="submit" name="caseconditions" value="S'inscrire" >
-                    </center>
-            </form>
-            <?php
-                if (isset($erreur)) {
-                  echo $erreur;
-                }
+                <input type="submit" name="caseconditions" value="S'inscrire" > <br><br>
 
-             ?>
+                      <?php
+                          if (isset($erreur)) {
+                            echo $erreur;
+                          }
+
+                       ?>
+                  </center><br>
+             </form>
     </div>
     </div>
     </body>

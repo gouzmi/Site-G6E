@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+		$bdd = new PDO('mysql:host=localhost;dbname=test2;charset=utf8', 'root', '');
+?>
+
 <header>
     <div class="header">
         <div class="image"><a href="page1.php"><img src="logodomhomepetit.png" ></a></div>
