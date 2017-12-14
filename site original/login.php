@@ -71,7 +71,7 @@ session_start();
     		<br><br><br>
             <div id="inscription"><a href="formulaire.php"> Inscription</a></div>
             <div id="oubli"><a href="mdp_oublie.php"> Mot de passe oublié ?</a></div>
-						<div><a href="accueilConnecté(Par pièce).php">TEST </a></div>
+						<div><a href="accueilConnectePiece.php">TEST </a></div>
             <!--Lien vers la page de récupération mdp + envois adresse mail à la page suivante-->
     	   </section>
 			</div>
