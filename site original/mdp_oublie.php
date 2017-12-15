@@ -14,20 +14,20 @@
 		<body>
 		  <div class="page">
         <section>
-	       <p id = "titre"> Récupération de votre mot de passe </p> <br><br>
+	       <p id="titre"> Récupération de votre mot de passe </p> <br><br>
             <form method="post" action="traitementmdp_oublie.php"  id ="mdp_oublie">
-
-								<label for="email">Quel est votre animal préféré ? </label>
+								<center>
+								<label for="email" id="question">Quel est votre animal préféré ? </label>
 								<br><br>
 
 								<input type="animal" name="animal"  id="animal" placeholder="Ex : requin, serpent..." required>
 
-								<br><br>
-								<center>
-									<input type="submit" value="Envoyer" id="envoyer">
+								<br><br><br>
+								
+								<input type="submit" value="Envoyer" id="envoyer">
 								</center>
     	    	</form>
-    		<br><br>
+    		<br>
             <div id="retour"><a href="login.php"> Retour</a></div>
     	   </section>
 			</div>
