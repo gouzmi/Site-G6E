@@ -21,7 +21,7 @@
 <html>
     <head>
     <meta charset="UTF-8">
-    <title>Formulaire d'inscription</title>
+    <title>Formulaire d'inscription</title> <!-- salut -->
     <link rel="stylesheet" href="cssformulairee.css"/>
     <link rel="stylesheet" href="headerfooterr.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
