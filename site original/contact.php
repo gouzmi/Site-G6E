@@ -12,7 +12,6 @@
     <?php include("header.php") ?>
 
     <body>
-    <div class="page">
     <h1 class="titre">Contact</h1>
         <article>
             <div>
@@ -32,8 +31,11 @@
                 </ul>
         </article>
     </div>
-    </body>
 
+    </body>
     <?php include("footer.php") ?>
+
+
+
 
 </html>

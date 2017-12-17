@@ -12,8 +12,7 @@
 
     <?php include("header.php") ?>
     <body>
-
-        <h1 class="titre">L'Entreprise</h1>
+      <h1 class="titre">L'Entreprise</h1>
         <article>
             <div class="Entreprise">
                 <p>DomHome est un nouveau processus domotique innovant.</p>
@@ -40,7 +39,7 @@
 
 
     </body>
+<?php include("footer.php") ?>
 
-    <?php include("footer.php") ?>
 
 </html>
