@@ -8,31 +8,34 @@
     <link rel="stylesheet" href="headerfooterr.css"/>
     <link rel="stylesheet" href="accueilConnecté.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
+    <script src="javaScript/accueilConnectePiece.js"></script>
     </head>
 
     <?php include("header.php") ?>
 
     <a id = "top" href="deconnexion.php" >Se déconnecter</a>
+
     <body>
-
-    	<!-- Menu pièce-->
-    	<div class="corps">
+    <!-- Menu pièce-->
+    <div class="corps">
         <div class="left">
-    	   <ul>
-       		<li class="li section"><a href="#Salle de bain" id="SalleDeBain"> Salle de bain</a></li>
-    		<li class="li section"><a href="#Salle de séjour" id="SalleDeSejour">Salle de séjour</a></li>
-    		<li class="li section"><a href="#Salon" id="Salon">Salon</a></li>
-    		<li class="li section"><a href="#Salle à manger" id="SalleManger">Salle à manger</a></li>
-    		<li class="li section"><a href="#Chambre" id="Chambre">Chambre</a></li>
-            <li class="li section"><a href="#Terrasse" id="Terrasse">Terrasse</a></li>
-            <li class="li section"><a href="#Cuisine" id="Cuisine">Cuisine</a></li>
-            <li class="li section"><a href="#Bureau" id="Bureau">Bureau</a></li>
-    		<li class="li section"><a href="#Garage" id="Garage">Garage</a></li>
-    	   </ul>
-       </div>
- 		   <div class="right">
-            <script src="JS1.js"></script>
-
+            <ul>
+       		    <button class="section"><a class="li" id="SalleDeBain" onclick="statut(this.id)"> Salle de bain</a></button>
+    		    <button class="section"><a class="li" id="SalleDeSejour" onclick="statut(this.id)">Salle de séjour</a></button>
+    		    <button class="section"><a class="li" id="Salon" onclick="statut(this.id)">Salon</a></button>
+    		    <button class="section"><a class="li" id="SalleManger" onclick="statut(this.id)">Salle à manger</a></button>
+    		    <button class="section"><a class="li" id="Chambre" onclick="statut(this.id)">Chambre</a></button>
+                <button class="section"><a class="li" id="Terrasse" onclick="statut(this.id)">Terrasse</a></button>
+                <button class="section"><a class="li" id="Cuisine" onclick="statut(this.id)">Cuisine</a></button>
+                <button class="section"><a class="li" id="Bureau" onclick="statut(this.id)">Bureau</a></button>
+    		    <button class="section"><a class="li" id="Garage" onclick="statut(this.id)">Garage</a></button>
+    	    </ul>
+        </div>
+        <div class="right">
+            <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
+            <button class="div1" href="conseil.php">Votre conseille</button>
+            <button class="div2" href="notification.php">Notifications</button>
+            <p id="pageStatut"></p>
         </div>
 
  	    </div>

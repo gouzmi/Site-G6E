@@ -1,3 +1,7 @@
+.top
+{
+	position: relative;
+}
 .corps
 {
 	display: flex;
@@ -10,27 +14,20 @@
 }
 .left
 {
-
-	width: 28%;
-	background-color: initial;
-	height: auto;
+	width: 30%;height: auto;
 	margin-top: 15px;
 }
 .right
 {
-
-	width: 63%;
-	height: 700px;
+	width: 65%; height: auto;
 	background-color: initial;
 	border:1px solid;
-	margin-top: 20px;
+	margin-top: 40px;
 
 }
 .li
 {
-
-	width: 80%;
-	height: 15%;
+	width: 80%; height: 15%;
 	text-align: center;
 	line-height: 60px;
 	font-size: 22px;
@@ -39,10 +36,24 @@
 }
 .section
 {
-
-	width: 70%;
+	width: 60%;height: 6%;
 	background-color: white;
-	height: 8%;
 	border: 2px solid;
 	border-color: black;
+    position: relative; left: 20%;
+}
+.div1
+{
+	width: 200px;height: 50px;
+	position: relative;
+	font-size: 22px;font-weight: 500;font-family: 'Roboto';
+	margin: 45px 260px 40px 70px;
+
+}
+.div2
+{
+	width: 200px;height: 50px;
+	postion: relative;
+	font-size: 22px;font-weight: 500;font-family: 'Roboto';
+	margin: 45px 0px 40px 0px;
 }
