@@ -16,8 +16,9 @@
     <body>
 
     	<!-- Menu pièce-->
-    	<div class="div">
-    	<ul class="left">
+    	<div class="corps">
+        <div class="left">
+    	   <ul>
        		<li class="li section"><a href="#Salle de bain" id="SalleDeBain"> Salle de bain</a></li>
     		<li class="li section"><a href="#Salle de séjour" id="SalleDeSejour">Salle de séjour</a></li>
     		<li class="li section"><a href="#Salon" id="Salon">Salon</a></li>
@@ -27,18 +28,14 @@
             <li class="li section"><a href="#Cuisine" id="Cuisine">Cuisine</a></li>
             <li class="li section"><a href="#Bureau" id="Bureau">Bureau</a></li>
     		<li class="li section"><a href="#Garage" id="Garage">Garage</a></li>
-    	</ul>
-
- 		<div class="right">
+    	   </ul>
+       </div>
+ 		   <div class="right">
             <script src="JS1.js"></script>
 
         </div>
 
-
-
-      <a href="#top"></a>
-
- 	</div>
+ 	    </div>
     </body>
 
         <?php include("footer.php") ?>

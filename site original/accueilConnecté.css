@@ -1,15 +1,16 @@
-.div
+.corps
 {
-	float: center;
+	display: flex;
 	margin: 0 auto;
 	width: auto; height: auto;
 	background-color: initial;
 	border-color: yellow;
 	border:3px;
+	
 }
 .left
 {
-	float: left;
+
 	width: 28%;
 	background-color: initial;
 	height: auto;
@@ -17,7 +18,7 @@
 }
 .right
 {
-	float: right;
+
 	width: 63%;
 	height: 700px;
 	background-color: initial;
@@ -27,7 +28,7 @@
 }
 .li
 {
-	float: center;
+
 	width: 80%;
 	height: 15%;
 	text-align: center;
@@ -38,7 +39,7 @@
 }
 .section
 {
-	float: right;
+
 	width: 70%;
 	background-color: white;
 	height: 8%;
