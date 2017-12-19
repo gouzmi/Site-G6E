@@ -50,14 +50,14 @@ session_start();
 	       <p id = "titre"> Connexion </p> <br><br>
             <form method="post" action=""  id ="Login"><!-- début du formulaire-->
 
-								<label for="email">Adresse email :
-								<input type="email" name="mailconnect"  id="mail" placeholder="Ex : super.client@gmail.com" required></label>
+								<label for="email">Adresse email :</label>
+								<input type="email" name="mailconnect"  id="mail" placeholder="Ex : super.client@gmail.com" required>
 								<br> <br>
-								<label for="password">Mot de passe :
-					    	<input type="password" name="mdpconnect" id="password"  ></label>
+								<label for="password">Mot de passe :</label>
+					    	<input type="password" name="mdpconnect" id="password"  >
 								<br><br><br>
 								<center>
-									<input type="submit" value="Accéder" name="formconnexion">
+									<input type="submit" value="Accéder" id="acceder" name="formconnexion" >
 										<!--<input type="submit" value="Domisep">-->
 								</center>
 
