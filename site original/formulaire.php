@@ -35,16 +35,16 @@
         <p id = "titre"> Formulaire d'inscription à DomHome</p> <br><br>
             <form method = "post" action=""   id = "Formulaire">
                 <label>
-                    nom
+                    Nom
                 </label>
 
-                <input type="text" name="nom" placeholder="Ex : DomeHome" required>
+                <input type="text" name="nom" placeholder="Ex : DomeHome" required i="nom">
                 <br> <br>
 
                 <label>
-                    prenom
+                    Prénom
                 </label>
-                <input type="text" name="prenom" placeholder="Ex : Domisep" required>
+                <input type="text" name="prenom" placeholder="Ex : Domisep" required id="prenom">
                 <br> <br>
 
                 <!-- <label>
@@ -57,7 +57,7 @@
                 <label>
                     Adresse mail
                 </label>
-                <input type="email" name="mail" placeholder="Ex : domehome@gmail.com" required>
+                <input type="email" name="mail" placeholder="Ex : domehome@gmail.com" required id="email">
                 <br> <br>
 
                 <!-- <label>
@@ -69,14 +69,14 @@
                 <label>
                     Mot de passe
                 </label>
-                <input type="password" name="mdp" required>
+                <input type="password" name="mdp" required id="passe">
                 <br> <br>
 
 
                 <label>
                     Confirmation Mot de passe
                 </label>
-                <input type="password" name="mdp2" required>
+                <input type="password" name="mdp2" required id="pass">
                 <br> <br>
 
                 <!-- <label for="question"> Question personnelle en cas d'oubli de mot de passe
@@ -102,7 +102,7 @@
                 J'ai lu et accepté les conditions d'utilisations -->
                     <center>
                 <br> <br>
-                <input type="submit" name="caseconditions" value="S'inscrire" > <br><br>
+                <input type="submit" name="caseconditions" value="S'inscrire" id="inscrire"> <br><br>
 
                       <?php
                           if (isset($erreur)) {
