@@ -9,9 +9,7 @@
     </head>
      <body>
         <div>
-            <a href="page1.php">
-                  <img class="image" src="logodomhome.png" title="accéder au site">
-                  <p>> Accéder au site <</p>
+            <a href="page1.php"></a>
         </div>
 
     </body>
