@@ -1,3 +1,2 @@
 <?php
-  require('indexView.php');
-?>
+  require('../Views/indexView.php');

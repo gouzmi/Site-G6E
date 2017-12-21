@@ -8,7 +8,7 @@ html, body
 }
 
 body{
-	background-image: url(93.jpg);
+	background-image: url(../Images/93.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0;
@@ -16,7 +16,7 @@ body{
 }
 
 a{
-background-image: url(logodomhome.png);
+background-image: url(../Images/logodomhome.png);
 background-position: 50% 50%;
 background-repeat: no-repeat;
 background-origin: border-box ;
@@ -50,10 +50,4 @@ div
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-}
-
-.z{
-	height: 100px;
-	width: 100px;
-	background-color: yellow;
 }
