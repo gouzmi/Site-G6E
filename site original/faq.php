@@ -13,6 +13,8 @@
 
     <?php include("header.php"); ?>
     <body>
+      <div class="page">
+        <section>
 
 
 <?php
@@ -32,14 +34,15 @@ while ($id_faq = $req_id_faq ->fetch())
 {
 
 ?>
-
+<question>
 	<?php
 	$req_question_faq = $bdd ->prepare('SELECT question_faq FROM faq where id_faq=?');
 	$req_question_faq->execute(array($id_faq['id_faq']));
 	while($question_faq = $req_question_faq ->fetch())
 
-	{
-		echo $question_faq['question_faq'] . '<br />';
+
+  {
+    echo $question_faq['question_faq'] . '<br />';
 		$req_reponse_faq = $bdd->prepare('SELECT reponse_faq FROM faq where question_faq=?');
 		$req_reponse_faq->execute(array($question_faq['question_faq']));
 		while($reponse_faq = $req_reponse_faq->fetch())
@@ -63,6 +66,9 @@ while ($id_faq = $req_id_faq ->fetch())
 $req_id_faq->closeCursor();
 
 ?>
+</section>
+</div>
+</body>
 
 
 </body>

@@ -3,16 +3,6 @@ html
     background-image: url(96f.jpg);
 }
 
-#oubli
-{
-    margin-left: 55%;
-}
-
-#inscription
-{
-    margin-left: 75%;
-}
-
 
 section
 
@@ -29,8 +19,9 @@ section
 
 }
 
-label
+question
 {
+    color:red;
     float: left;
     width: 300px ;
     margin-left: 30px;
