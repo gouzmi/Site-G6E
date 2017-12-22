@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="mdp_oubliee.css"/>
+		<link rel="stylesheet" href="../Css/mdp_oubliee.css"/>
 		<title> Mot de passe perdu</title>
-    	<link rel="stylesheet" href="headerfooterr.css"/>
+    	<link rel="stylesheet" href="../Css/headerfooterr.css"/>
     	<script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
         </head>
 
