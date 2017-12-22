@@ -12,7 +12,7 @@
 
 
     <?php include("header.php"); ?>
-    <body>  <!--sanhy-->
+    <body>
 
 
 <?php
