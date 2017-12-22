@@ -19,33 +19,33 @@
 
 try
 {
-		$bdd = new PDO('mysql:host=localhost; dbname=test;charset=utf8',  'root', '');
+		$bdd = new PDO('mysql:host=localhost; dbname=test2;charset=utf8',  'root', '');
 }
 catch(Exeption $e)
 {
 		die('Erreur: '.$e->getMessage());
 }
 
-$req_id = $bdd->query('SELECT id FROM faq');
-while ($id = $req_id ->fetch())
+$req_id_faq = $bdd->query('SELECT id_faq FROM faq');
+while ($id_faq = $req_id_faq ->fetch())
 
 {
 
 ?>
 
 	<?php
-	$req_question = $bdd ->prepare('SELECT question FROM faq where id=?');
-	$req_question->execute(array($id['id']));
-	while($question = $req_question ->fetch())
+	$req_question_faq = $bdd ->prepare('SELECT question_faq FROM faq where id_faq=?');
+	$req_question_faq->execute(array($id_faq['id_faq']));
+	while($question_faq = $req_question_faq ->fetch())
 
 	{
-		echo $question['question'] . '<br />';
-		$req_reponse = $bdd->prepare('SELECT reponse FROM faq where question=?');
-		$req_reponse->execute(array($question['question']));
-		while($reponse = $req_reponse->fetch())
+		echo $question_faq['question_faq'] . '<br />';
+		$req_reponse_faq = $bdd->prepare('SELECT reponse_faq FROM faq where question_faq=?');
+		$req_reponse_faq->execute(array($question_faq['question_faq']));
+		while($reponse_faq = $req_reponse_faq->fetch())
 
 		{
-			echo $reponse['reponse'].   '<br  />';
+			echo $reponse_faq['reponse_faq'].   '<br  />';
 		}
 	?>
 
@@ -60,9 +60,8 @@ while ($id = $req_id ->fetch())
 }
 
 
-$req_id->closeCursor();
-$req_reponse->closeCursor();
-$req_question->closeCursor();
+$req_id_faq->closeCursor();
+
 ?>
 
 
