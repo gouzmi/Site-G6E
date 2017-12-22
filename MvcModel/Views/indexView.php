@@ -9,7 +9,7 @@
     </head>
      <body>
         <div>
-            <a href="../Controlers/page1.php"></a>
+            <a href="page1.php"></a>
         </div>
 
         </div>
