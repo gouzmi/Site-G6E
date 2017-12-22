@@ -1,0 +1,48 @@
+html
+{
+    background-image: url(96f.jpg);
+}
+
+#oubli
+{
+    margin-left: 55%;
+}
+
+#inscription
+{
+    margin-left: 75%;
+}
+
+
+section
+
+{
+    margin-top:3%;margin-bottom: 3%;
+    margin-left: auto;margin-right: auto;
+    width: 350px ;
+    height: 320px ;
+    background-color: white;
+    padding: 15px; /* Marge intérieure de 12px */
+    border:1px solid black;
+    border-radius: 10px;
+
+
+}
+
+label
+{
+    float: left;
+    width: 300px ;
+    margin-left: 30px;
+
+}
+
+#titre
+{
+    text-align: center ;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 700;
+
+}
