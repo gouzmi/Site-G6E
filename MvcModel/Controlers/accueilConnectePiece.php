@@ -1,7 +1,2 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Yuqing
- * Date: 22/12/2017
- * Time: 11:38
- */
+<?php session_start();
+  require('../Views/accueilConnectePieceView.php');
