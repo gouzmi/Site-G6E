@@ -43,7 +43,7 @@ while ($id_faq = $req_id_faq ->fetch())
 
 
   {
-    echo "<strong>".$question_faq['question_faq']."</strong>". '<br />';
+    echo  "<strong>".$question_faq['question_faq']."</strong>". '<br />';
 		$req_reponse_faq = $bdd->prepare('SELECT reponse_faq FROM faq where question_faq=?');
 		$req_reponse_faq->execute(array($question_faq['question_faq']));
 		while($reponse_faq = $req_reponse_faq->fetch())
