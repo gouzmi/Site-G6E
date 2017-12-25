@@ -12,6 +12,7 @@
 
     <?php include("header.php"); ?>
     <body>
+      <h1 class="titre">Foire aux questions</h1>
       <div class="page">
         <section>
 
@@ -31,13 +32,13 @@
         	$req_question_faq->execute(array($id_faq['id_faq']));
         	while($question_faq = $req_question_faq ->fetch())
               {
-                echo $question_faq['question_faq'] . '<br />';
+                echo "<strong>".$question_faq['question_faq']."</strong>" . '<br />';
             		$req_reponse_faq = $bdd->prepare('SELECT reponse_faq FROM faq where question_faq=?');
             		$req_reponse_faq->execute(array($question_faq['question_faq']));
             		while($reponse_faq = $req_reponse_faq->fetch())
 
                 		{
-                			echo $reponse_faq['reponse_faq'].   '<br  />';
+                			echo  "<p>". $reponse_faq['reponse_faq']. "</p>".   '<br  />';
                 		}
             	?>
 
