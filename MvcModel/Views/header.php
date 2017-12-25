@@ -1,5 +1,9 @@
-<?php
+<head>
+  <link rel="stylesheet" href="../Css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+</head>
 
+
+<?php
 
     if (isset($_SESSION['id']) AND $_SESSION['id'] > 1)
      {
