@@ -13,11 +13,10 @@
 
 <?php include("header.php") ?>
 
-<a id = "top" href="../Controlers/deconnexion.php" >Se déconnecter</a>
 
 <body>
 <!-- Menu pièce-->
-<div class="corps">s
+<div class="corps">
     <div class="left">
         <ul>
             <button class="section"><a class="li" id="SalleDeBain" onclick="statut(this.id)"> Salle de bain</a></button>
