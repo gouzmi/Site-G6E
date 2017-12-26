@@ -10,7 +10,7 @@
       $espace = "Gérer Sa Maison";
     }
     else {
-      $espace = "Espace Personnel";
+      $espace = "Se connecter";
     }
 ?>
 
@@ -27,7 +27,7 @@
         else { ?>
           <a href="" class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
           <a href="contact.php" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
-          <a href="login.php" class="link"><i class="fa fa-user" aria-hidden="true"></i>  <?php echo $espace; ?></a>
+          <a href="login.php" class="link"><i class="fa fa-sign-in" aria-hidden="true"></i>  <?php echo $espace; ?></a>
         <?php }
         ?>
 
