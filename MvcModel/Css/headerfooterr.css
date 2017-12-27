@@ -25,14 +25,14 @@ header
 {
     padding:10px;
     background-color: rgba(255,255,255 ,0.7);
-    
+
 }
 
 
 .link
 {
     list-style: none; /*enleve les points de la liste*/
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
     font-family: 'Roboto';
     font-weight: 700;

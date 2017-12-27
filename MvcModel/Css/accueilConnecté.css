@@ -64,8 +64,8 @@
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	left: -200px;
-	width: 275px;
+	left: -225px;
+	width: 300px;
 	height: 700px;
 	background-color: #37474F;
 	border-radius: 0px 0px 5px 0px;
@@ -73,7 +73,7 @@
 }
 
 .yes .sidebar{
-		transform: translateX(200px);
+		transform: translateX(225px);
 }
 .no .sidebar{
 		transform: translateX(0px);
@@ -81,16 +81,6 @@
 
 .li{
 	display: flex;
-}
-
-.list{
-
-	width: 35px;
-	height: 5px;
-	background-color: white;
-	margin: 6px 0;
-	border-radius: 2px;
-	height: 5px;
 }
 
 .section
@@ -105,18 +95,27 @@
 	font-size: 20px;
 	font-weight: 400;
 }
-/*.div1
-{
-	width: 200px;height: 50px;
-	position: relative;
-	font-size: 22px;font-weight: 500;font-family: 'Roboto';
-	margin: 45px 260px 40px 70px;
 
+.lien{
+	text-decoration: none;
+	color: white;
+	transition: 0.2s;
 }
-.div2
-{
-	width: 200px;height: 50px;
-	postion: relative;
-	font-size: 22px;font-weight: 500;font-family: 'Roboto';
-	margin: 45px 0px 40px 0px;
-}*/
+
+.rubrique{
+	height: 50px;
+	transition: 0.2s;
+	font-size: 25px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+.rubrique:hover{
+	background-color: white;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.rubrique:hover .lien{
+		color: #37474F;
+}

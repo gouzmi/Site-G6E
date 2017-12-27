@@ -26,6 +26,21 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
       </div>
+          <div class="rubrique">
+          <a href="" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
+          </div>
+          <div class="rubrique">
+          <a href="" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
+          </div>
+          <div class="rubrique">
+          <a href="" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
+          </div>
+          <div class="rubrique">
+          <a href="" class="lien"><i class="" aria-hidden="true"></i> Forum</a>
+          </div>
+          <div class="rubrique">
+          <a href="" class="lien"><i class="" aria-hidden="true"></i> Faq</a>
+          </div>
     </div>
 
     <div class="coeur" id="left">
