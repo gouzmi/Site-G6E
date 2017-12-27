@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Roboto:300,400,700');
 
 
-.corps
+#corps
 {
 	display: flex;
 	height: 700px;
 	background-color: initial;
 	margin-top: 0px;
 	margin-left: 90px;
+	transition: 0.3s;
 }
-.left
+#left
 {
 	flex:0.25;
 	display: flex;
@@ -18,7 +19,7 @@
 	margin-top: 20px;
 }
 
-.right
+#right
 {
 	flex: 0.7;
 	border:1px solid;
@@ -36,21 +37,7 @@
 		width: 100%;
 		padding-top: 3%; padding-bottom: 2%;
 }
-.button
-{
-	display: flex;
-	cursor: pointer;
-	flex-direction: column;
-	align-items: flex-end;
-	justify-content: center;
-	cursor: pointer;
-}
 
-/*button{
-
-	background-color: #37474F;
-	border: none
-}*/
 
 .bar1, .bar2, .bar3 {
     width: 35px;

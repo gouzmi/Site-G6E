@@ -17,7 +17,7 @@
 
 <body class="no" id="menu">
 <!-- Menu pièce-->
-<div class="corps">
+<div id="corps">
 
 
     <div class="sidebar">
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="left">
+    <div class="coeur" id="left">
             <div class="li">
                   <button class="section"><a id="SalleDeBain" onclick="statut(this.id)"> Salle de bain</a></button>
             </div>
@@ -58,7 +58,7 @@
             </div>
     </div>
 
-    <div class="right">
+    <div class="coeur" id="right">
         <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
         <p id="pageStatut"></p>
     </div>
