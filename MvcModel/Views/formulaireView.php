@@ -49,7 +49,7 @@
                 <label>
                     Mot de passe
                 </label>
-                <input type="password" name="mdp" required id="passe">
+                <input type="password" name="mdp" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
                 <br> <br>
 
 
