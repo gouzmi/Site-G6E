@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="../Css/font-awesome-4.7.0/css/font-awesome.min.css"/>
+  <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
 </head>
 
 

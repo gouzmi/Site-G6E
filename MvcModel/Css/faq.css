@@ -4,7 +4,10 @@ html
 {
     background-image: url(../Images/96f.jpg);
 }
-
+#corps
+{
+	flex-direction: column;
+}
 
 section
 

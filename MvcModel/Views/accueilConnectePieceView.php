@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Acceuil Connecté par pièce</title>
-    <link rel="stylesheet" href="../Css/cssformulairee.css"/>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <link rel="stylesheet" href="../Css/accueilConnecté.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
@@ -20,28 +19,7 @@
 <div id="corps">
 
 
-    <div class="sidebar">
-      <div class="container" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-      </div>
-          <div class="rubrique">
-          <a href="" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
-          </div>
-          <div class="rubrique">
-          <a href="" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
-          </div>
-          <div class="rubrique">
-          <a href="" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
-          </div>
-          <div class="rubrique">
-          <a href="" class="lien"><i class="" aria-hidden="true"></i> Forum</a>
-          </div>
-          <div class="rubrique">
-          <a href="" class="lien"><i class="" aria-hidden="true"></i> Faq</a>
-          </div>
-    </div>
+<?php include("../Views/slideView.php") ;?>
 
     <div class="coeur" id="left">
             <div class="li">
