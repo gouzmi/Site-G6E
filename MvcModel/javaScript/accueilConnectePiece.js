@@ -20,3 +20,14 @@ function statut(id){
     }
 
 }
+function myFunction(x) {
+    x.classList.toggle("change");
+    if (document.getElementById('menu').getAttribute('class') == "no" )
+    {
+      document.getElementById('menu').className = "yes";
+    }
+    else
+    {
+      document.getElementById('menu').className = "no";
+    }
+}
