@@ -4,6 +4,7 @@
     <head>
     <meta charset="UTF-8">
     <title>Page d'accueil</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
     <link rel="stylesheet" href="../Css/cssp11.css"/>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>

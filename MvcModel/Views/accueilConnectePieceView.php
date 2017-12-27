@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../Css/accueilConnecté.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     <script src="../javaScript/accueilConnectePiece.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
 </head>
 
 <?php include("header.php") ?>

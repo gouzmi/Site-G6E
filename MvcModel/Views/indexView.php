@@ -6,6 +6,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../Css/cssaccueill.css" />
         <title>DomHome</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
     </head>
      <body>
         <div>
