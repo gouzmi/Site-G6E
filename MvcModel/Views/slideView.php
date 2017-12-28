@@ -4,11 +4,21 @@
 </head>
 
 <div class="sidebar">
-  <div class="container" onclick="myFunction(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-  </div>
+
+      <div id="top">
+        <div id="image">
+          <img class="avatar" src="../Images/profil3.png" />
+          <div id="utilisateur">
+            <?php echo "<i class='nom'>".$_SESSION['nom']."</i>"."<em>".$_SESSION['prenom']."</em>"; ?>
+          </div>
+        </div>
+        <div class="container" onclick="myFunction(this)">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+        </div>
+      </div>
+
       <div class="rubrique">
       <a href="" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
       </div>
@@ -24,4 +34,5 @@
       <div class="rubrique">
       <a href="../Controlers/faq.php" class="lien"><i class="" aria-hidden="true"></i> Faq</a>
       </div>
+
 </div>

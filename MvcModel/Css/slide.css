@@ -1,7 +1,7 @@
 #corps
 {
 	display: flex;
-	height: 700px;
+	height: 900px;
 	background-color: initial;
 	margin-top: 0px;
 	margin-left: 90px;
@@ -13,12 +13,30 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-		justify-content: center;
+		width: 75px;
+		padding-top: 20px;
 
-		width: 100%;
-		padding-top: 3%; padding-bottom: 2%;
 }
 
+#image{
+	width: 225px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 30px;
+}
+
+.avatar{
+	width: 110px;
+	height: 110px;
+}
+
+#top{
+	display: flex;
+	padding-top: 1%;
+	padding-bottom: 0%;
+}
 
 .bar1, .bar2, .bar3 {
     width: 35px;
@@ -47,7 +65,7 @@
 	position: absolute;
 	left: -225px;
 	width: 300px;
-	height: 700px;
+	height: 900px;
 	background-color: #37474F;
 	border-radius: 0px 0px 5px 0px;
 	transition: transform 0.3s;
@@ -64,15 +82,31 @@
 	text-decoration: none;
 	color: white;
 	transition: 0.2s;
-	margin-left: 10px;
+	margin-left: 5%;
 }
 
+.nom{
+	text-transform: uppercase;
+	margin-left: 25px;
+}
+
+em{
+	margin-left: 0px;
+}
 .rubrique{
 	height: 50px;
 	transition: 0.2s;
+	font-family: 'Lato';
 	font-size: 25px;
 	padding-top: 1%;
 	padding-bottom: 1%;
+}
+
+#utilisateur{
+	height: 30px;
+	font-family: 'Lato';
+	font-size: 20px;
+	color: white;
 }
 
 .rubrique:hover{
