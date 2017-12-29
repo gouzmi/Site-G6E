@@ -1,6 +1,9 @@
 <?php session_start();
   if (isset($_SESSION['id'])) {
-    require('../Views/accueilConnectePieceView.php');
+
+    require('../Models/profilModels.php');
+
+    require('../Views/profilView.php');
   }
 
   else {

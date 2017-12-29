@@ -13,6 +13,7 @@
     <?php include("header.php") ?>
 
     <body>
+    <div class="page">
     <h1 class="titre">Contact</h1>
         <article>
             <div>
@@ -32,7 +33,7 @@
                 </ul>
         </article>
     </div>
-
+    </div>
     </body>
     <?php include("footer.php") ?>
 

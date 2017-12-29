@@ -20,7 +20,7 @@
       </div>
 
       <div class="rubrique">
-      <a href="" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
+      <a href="../Controlers/profil.php" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
       </div>
       <div class="rubrique">
       <a href="../Controlers/accueilConnectePiece.php" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
