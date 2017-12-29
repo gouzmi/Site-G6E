@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="../Css/contact.css"/>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
     </head>
 
     <?php include("header.php") ?>
 
     <body>
+    <div class="page">
     <h1 class="titre">Contact</h1>
         <article>
             <div>
@@ -31,7 +33,7 @@
                 </ul>
         </article>
     </div>
-
+    </div>
     </body>
     <?php include("footer.php") ?>
 

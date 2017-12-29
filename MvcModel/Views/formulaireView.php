@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../Css/cssformulairee.css"/>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
     </head>
 
     <?php include("header.php") ?>
@@ -49,7 +50,7 @@
                 <label>
                     Mot de passe
                 </label>
-                <input type="password" name="mdp" required id="passe">
+                <input type="password" name="mdp" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
                 <br> <br>
 
 
