@@ -33,7 +33,7 @@ label
 
 }
 
-#nom, #prenom, #email,#passes,#pass,
+#nom, #prenom, #email,#passes,#pass,#adresse,#cp,#ville,#tel
 {
 
     display: block;
