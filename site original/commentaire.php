@@ -12,7 +12,7 @@
     <?php include("header.php"); ?>
     <body>
         <h1>Commentaires des post</h1>
-        <p><a href="index2.php">Retour à la liste des post</a></p>
+        <h2><a href="index2.php" class="link"><i aria-hidden="true"></i>Retour à la liste des post</a></h2>
 
 <?php
 // Connexion à la base de données
@@ -56,8 +56,11 @@ $req->execute(array($_GET['billet']));
 while ($donnees = $req->fetch())
 {
 ?>
-<p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?></p>
-<p><?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
+
+<p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?>
+<br><br>
+<?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
+
 <?php
 } // Fin de la boucle des commentaires
 $req->closeCursor();

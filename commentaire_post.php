@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -9,7 +9,7 @@
         <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 
-    <?php include("header.php"); ?>
+
 
     <body>
 
@@ -39,5 +39,5 @@ if(!empty($_GET['billet']) AND !empty($_POST['auteur']) AND !empty($_POST['comme
 }
     ?>
     </body>
-    <?php include("footer.php"); ?>
+
 </html>
