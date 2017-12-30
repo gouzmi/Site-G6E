@@ -50,3 +50,10 @@ label
   border-radius: 15px;
   background-color:#5F9EA0;
 }
+
+#erreur
+{
+  font-Weight: Bold;
+  color: #DC143C;
+  font-style: italic;
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 14 déc. 2017 à 10:15
+-- Généré le :  sam. 30 déc. 2017 à 03:50
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -30,25 +30,24 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL,
-  `mdp` varchar(255) NOT NULL,
-  `mail` varchar(255) NOT NULL,
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) COLLATE utf8_bin NOT NULL,
+  `prenom` varchar(255) COLLATE utf8_bin NOT NULL,
+  `adresse_contact` varchar(255) COLLATE utf8_bin NOT NULL,
+  `cp_contact` varchar(255) COLLATE utf8_bin NOT NULL,
+  `ville_contact` varchar(255) COLLATE utf8_bin NOT NULL,
+  `telephone` varchar(255) COLLATE utf8_bin NOT NULL,
+  `mdp` varchar(255) COLLATE utf8_bin NOT NULL,
+  `mail` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `mdp`, `mail`) VALUES
-(1, 'Gambino', 'Grégoire', 'a', 'gregoire-gambino2@hotmail.fr'),
-(2, 'Gambino', 'Grégoire', 'aa', 'gregoire-gambino2@hotmail.fr'),
-(3, 'HUGO', 'VICTOR', 'a', 'guillaume.dupont.rm@gmail.com'),
-(4, 'gaga', 'gaga', 'zz', 'guillaume.dupont.rm@gmail.com'),
-(5, 'ma couille', 'ma couille', 'zz', 'guillaume.dupont.rm@gmail.com'),
-(6, 'énorme couille', 'énorme couille', 'aaa', 'enormecouille@gmail.com');
+INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `adresse_contact`, `cp_contact`, `ville_contact`, `telephone`, `mdp`, `mail`) VALUES
+(1, 'Eustache', 'DarlÃ¨ne', '6  Rue AmpÃ¨re', '95000', 'Goussainville', '06123456789', '$2y$10$J79FbrpkyzRtmlu65tp6s.Vxf8BTpytl9V..TTqOhlKiYC2Z/o3rW', 'darlene@gmail.com');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
