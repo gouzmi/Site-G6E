@@ -8,6 +8,7 @@ session_start();
 		{
 			$mailconnect = $_POST['mailconnect'];
 			$mdpconnect = $_POST['mdpconnect'];
+			$mdpconnect = password_hash($mdpconnect,PASSWORD_BCRYPT);
 			if (!empty($mailconnect) AND !empty($mdpconnect))
 			{
 				$requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ? AND mdp = ?");

@@ -1,40 +1,29 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
-<?php
-    $bdd = new PDO('mysql:host=localhost;dbname=test2;charset=utf8', 'root', '');
 
-    if(isset($_POST['caseconditions']))  // il faudra hacher le mdp et htmlspecialchars les autres//
-    {
-
-      if ($_POST['mdp'] == $_POST['mdp2'])
-      {
-        $mdp = $_POST['mdp'];
-        $mdp = password_hash($mdp,PASSWORD_BCRYPT);
-        $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, mail, mdp) VALUES(?, ?, ?, ?)");
-        $insert->execute(array($_POST['nom'], $_POST['prenom'], $_POST['mail'], $mdp)) ;
-        $erreur= "Votre compte a bien été crée <a href=\"login.php\"> Se connecter</a> ";
-      }
-      else {
-        $erreur= "Les mots de passes sont différents";
-      }
-    }
-
-?>
 <html>
-    <head>
+<head>
     <meta charset="UTF-8">
-    <title>Formulaire d'inscription</title>
-    <link rel="stylesheet" href="cssformulairee.css"/>
-    <link rel="stylesheet" href="headerfooterr.css"/>
+    <title>Acceuil Connecté par pièce</title>
+    <link rel="stylesheet" href="../Css/headerfooterr.css"/>
+    <link rel="stylesheet" href="../Css/profil.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
-    </head>
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
+</head>
 
-    <?php include("header.php") ?>
+<?php include("header.php") ?>
 
-    <body>
-    <div class="page">
+
+<body class="no" id="menu">
+
+<div id="corps">
+
+
+<?php include("../Views/slideView.php") ;?>
+
+    <h1 class="titre">Profil de <?php echo strtoupper($_SESSION['nom'])." ".ucfirst(strtolower($_SESSION['prenom'])); ?> </h1>
+
     <div class="section">
-        <p id = "titre"> Formulaire d'inscription à DomHome</p> <br><br>
+
             <form method = "post" action=""   id = "Formulaire">
                 <label>
                     Nom
@@ -71,7 +60,7 @@
                 <label>
                     Mot de passe
                 </label>
-                <input type="password" name="mdp" required id="passe">
+                <input type="password" name="mdp" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
                 <br> <br>
 
 
@@ -104,18 +93,16 @@
                 J'ai lu et accepté les conditions d'utilisations -->
                     <center>
                 <br> <br>
-                <input type="submit" name="caseconditions" value="S'inscrire" id="inscrire"> <br><br>
+                <input type="submit" name="caseconditions" value="Modifier son profil" id="inscrire"> <br><br>
 
-                      <?php
-                          if (isset($erreur)) {
-                            echo $erreur;
-                          }
 
-                       ?>
                   </center><br>
              </form>
     </div>
-    </div>
-    </body>
-    <?php include("footer.php") ?>
+</div>
+
+</body>
+
+<?php include("footer.php") ?>
+
 </html>
