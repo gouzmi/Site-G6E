@@ -23,24 +23,31 @@
 
     <div class="form-style-6">
           <h1>Profil de <?php echo ucfirst(strtolower($_SESSION['nom']))." ".ucfirst(strtolower($_SESSION['prenom'])); ?> </h1>
-          <form>
-          <input type="text" name="nom" placeholder="Your Name" />
-          <input type="text" name="prenom" placeholder="Your Name" />
-          <input type="text" name="adresse" placeholder="Adresse" />
-          <input type="text" name="cp" pattern="(^[0-9]{5}$)|(^2(A|B)[0-9]{3}$)"  placeholder="Code Postal">
-          <input type="text" name="ville" placeholder="ville">
-          <input type="text" name="tel" placeholder="0613544337">
-          <input type="email" name="mail" placeholder="Email Address" />
-          <input type="password" name="mdp" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
+          <center>
+            <?php  if (isset($erreur)) {
+              echo $erreur;} ?>
+          </center>
+          <form method="post" action="">
+          <input type="text" name="nom" placeholder="Your Name" value="<?php echo $user['nom']?>"/>
+          <input type="text" name="prenom" placeholder="Your Name" value="<?php echo $user['prenom']?>" />
+          <input type="text" name="adresse" placeholder="Adresse" value="<?php echo $user['adresse_contact']?>"/>
+          <input type="text" name="cp" pattern="(^[0-9]{5}$)|(^2(A|B)[0-9]{3}$)"  placeholder="Code Postal" value="<?php echo $user['cp_contact']?>">
+          <input type="text" name="ville" placeholder="ville" value="<?php echo $user['ville_contact']?>">
+          <input type="text" name="tel" placeholder="0613544337" value="<?php echo $user['telephone']?>">
+          <input type="email" name="mail" placeholder="Email Address" value="<?php echo $user['mail']?>">
+          <input type="password" name="mdp" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe" placeholder="Mot de passe" value="">
           <input type="password" name="mdp2" required id="pass" placeholder="Confirmation de mot de passe">
-          <input type="submit" value="Modifier son profil" />
+          <input type="submit" name="caseconditions" value="Modifier son profil" />
           </form>
     </div>
 
+
+
 </div>
+<?php include("footer.php") ?>
 
 </body>
 
-<?php include("footer.php") ?>
+
 
 </html>
