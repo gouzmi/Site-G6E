@@ -13,9 +13,11 @@
     <?php include("header.php") ?>
 		<body>
 		  <div class="page">
-        <section>
-	       <p id = "titre"> Connexion </p> <br><br>
-            <form method="post" action=""  id ="Login"><!-- début du formulaire-->
+
+
+            <form method="post" action=""  id ="Login" class="form-style-6"><!-- début du formulaire-->
+							<h1>Formumaire d'inscription</h1>
+
 
 								<label for="email">Adresse email :</label>
 								<input type="email" name="mailconnect"  id="mail" placeholder="Ex : super.client@gmail.com" required>
@@ -28,18 +30,18 @@
 										<!--<input type="submit" value="Domisep">-->
 								</center>
 
-    	    	</form>
+
 						<?php
                 if (isset($erreur)) {
                   echo $erreur;
                 }
 
              ?>
-    		<br><br><br>
-            <div id="inscription"><a href="formulaire.php"> Inscription</a></div>
-            <div id="oubli"><a href="mdp_oublie.php"> Mot de passe oublié ?</a></div>
+					 </br>
+            <div id="inscription"><a href="formulaire.php">> Inscription</a></br>
+            <a href="mdp_oublie.php">> Mot de passe oublié ?</a></div>
             <!--Lien vers la page de récupération mdp + envois adresse mail à la page suivante-->
-    	   </section>
+    	   	</form>
 			</div>
     </body>
     <?php include("footer.php") ?>

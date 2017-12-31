@@ -3,64 +3,82 @@ html
     background-image: url(../Images/96f.jpg);
 }
 
-#oubli
-{
-    margin-left: 55%;
-}
-
-#inscription
-{
-    margin-left: 75%;
+#inscription a{
+  text-decoration: none;
+  color: black;
+  margin-left: 2.5%;
 }
 
 
-section
 
-{
-    margin-top:4.3%;margin-bottom: 4.4%;
-    margin-left: auto;margin-right: auto;
-    width: 350px ;
-    height: 340px ;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px; /* Marge intérieure de 15px */
-    border:1px solid black;
+.form-style-6{
+    font: 95% Arial, Helvetica, sans-serif;
+    width: 30%;
+    max-height: 500px;
+    margin-top: 6%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px 30px 18px 30px;
+    background-color: rgba(255,255,255 ,0.9);
     border-radius: 10px;
-
-
+}
+.form-style-6 h1{
+    background: #43D1AF;
+    padding: 30px;
+    width: 100%;
+    font-size: 130%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px 0px 40px -30px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 label
 {
   /*  display: block;  La balise devient de type block. */
-  	width: 140px;
+  	width: 100%;
     margin-left: 20px;
     float: left;
+    margin-bottom: 10px;
+}
+.form-style-6 input
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 1%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 90% Arial, Helvetica, sans-serif;
+}
+.form-style-6 input:focus
+{
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
 }
 
-
-#mail, #password
-
-{
-    border-color: white;
-    width: 170px;
-    color: #2F4F4F;
-}
-
-
-#acceder
-{
-  height: 30px;
-  width: 250px;
-  border-radius: 15px;
-  background-color:#5F9EA0;
+.form-style-6 input[type="submit"],
+.form-style-6 input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 4%;
+    background: #43D1AF;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
+    font-size: 110%;
 
 }
-#titre
-{
-    text-align: center ;
-    text-transform: uppercase;
-    font-family: 'Roboto';
-    font-size: 18px;
-    font-weight: 700;
-
+.form-style-6 input[type="submit"]:hover,
+.form-style-6 input[type="button"]:hover{
+    background: #2EBC99;
 }
