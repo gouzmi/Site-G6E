@@ -37,5 +37,5 @@
       <div class="rubrique">
       <a href="../Controlers/faq.php" class="lien"><i class="" aria-hidden="true"></i> Faq</a>
       </div>
-      
+
 </div>
