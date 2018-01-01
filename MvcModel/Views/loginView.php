@@ -15,7 +15,7 @@
 		  <div class="page">
 
 
-            <form method="post" action=""  id ="Login" class="form-style-6"><!-- début du formulaire-->
+            <form method="post" action=""  id="Login" class="form-style-6"><!-- début du formulaire-->
 							<h1>Formumaire d'inscription</h1>
 
 

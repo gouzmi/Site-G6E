@@ -9,7 +9,7 @@
         <div id="image">
           <img class="avatar" src="../Images/profil3.png" />
           <div id="utilisateur">
-            <?php echo "<i class='nom'>".strtoupper($_SESSION['nom'])." ".ucfirst(strtolower($_SESSION['prenom']))."</i>"; ?>
+            <?php echo "<i class='nom'>".mb_strtoupper($_SESSION['nom'])." ".ucfirst(mb_strtolower($_SESSION['prenom']))."</i>"; ?>
           </div>
         </div>
         <div class="container" onclick="myFunction(this)">

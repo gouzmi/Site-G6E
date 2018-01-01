@@ -31,55 +31,55 @@
                     Nom
                 </label>
 
-                <input type="text" name="nom" placeholder="Ex : DomeHome" required id="nom">
+                <input value="Dupont" type="text" name="nom" placeholder="Ex : DomeHome" required id="nom">
                 <br> <br>
 
                 <label>
                     Prénom
                 </label>
-                <input type="text" name="prenom" placeholder="Ex : Domisep" required id="prenom">
+                <input type="text" value="André" name="prenom" placeholder="Ex : Domisep" required id="prenom">
                 <br> <br>
 
                 <label>
                     Adresse
                 </label>
-                <input type="text" name="adresse" required id="adresse">
+                <input type="text" value="Rue Ampère" name="adresse" required id="adresse">
                 <br> <br>
 
                 <label>
                     Code Postal
                 </label>
-                <input type="text" name="cp" pattern="(^[0-9]{5}$)|(^2(A|B)[0-9]{3}$)" required title="" id="cp">
+                <input type="text" value="95190" name="cp" pattern="(^[0-9]{5}$)|(^2(A|B)[0-9]{3}$)" required title="" id="cp">
                 <br> <br>
 
                 <label>
                     Ville
                 </label>
-                <input type="text" name="ville" required id="ville">
+                <input type="text" value="Compiègne" name="ville" required id="ville">
                 <br> <br>
 
                 <label>
                     Téléphone
                 </label>
-                <input type="tel" name="tel" required title="Veuillez entrer un numéro  Ex: 0123456789" id="tel">
+                <input type="tel" name="tel" value="0123456789" required title="Veuillez entrer un numéro  Ex: 0123456789" id="tel">
                 <br> <br>
 
                 <label>
                     Adresse mail
                 </label>
-                <input type="email" name="mail" placeholder="Ex : domehome@gmail.com" required title="Veuillez entrez l'adresse email utilisée lors de la commande" id="email">
+                <input type="email" name="mail" value="adresse@gmail.com" placeholder="Ex : domehome@gmail.com" required title="Veuillez entrez l'adresse email utilisée lors de la commande" id="email">
                 <br> <br>
 
                 <label>
                     Mot de passe
                 </label>
-                <input type="password" name="mdp" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
+                <input type="password" name="mdp" value="Eustache-12" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
                 <br> <br>
 
                 <label>
                     Confirmation Mot de passe
                 </label>
-                <input type="password" name="mdp2" required id="pass">
+                <input type="password" value="Eustache-12" name="mdp2" required id="pass">
                 <br> <br>
 
                     <center>
@@ -87,6 +87,8 @@
                 <input type="submit" name="caseconditions" value="S'inscrire" id="inscrire"> <br><br>
                   </center><br>
              </form>
+
+
     </div>
     </div>
     </body>

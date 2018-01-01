@@ -8,7 +8,11 @@ html
     background-image: url(../Images/96f.jpg);
 
 }
+.page
+{
+    margin-bottom: 68px;
 
+}
 article
 {
     /*border: salutsolid #1BBAA5;*/
