@@ -26,7 +26,7 @@
       <a href="../Controlers/accueilConnectePiece.php" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
       </div>
       <div class="rubrique">
-      <a href="" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
+      <a href="../Controlers/capteur.php" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
       </div>
       <div class="rubrique">
       <a href="" class="lien"><i class="" aria-hidden="true"></i> Editer sa Maison</a>
