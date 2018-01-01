@@ -61,7 +61,7 @@
                 <label>
                     Téléphone
                 </label>
-                <input type="tel" name="tel" required title="Veuillez entrer un numéro  Ex: 0123456789" id="tel">
+                <input type="tel" name="tel"required title="Veuillez entrer un numéro  Ex: 0123456789" id="tel">
                 <br> <br>
 
                 <label>
@@ -73,7 +73,7 @@
                 <label>
                     Mot de passe
                 </label>
-                <input type="password" name="mdp" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
+                <input type="password" name="mdp"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
                 <br> <br>
 
                 <label>
@@ -87,6 +87,8 @@
                 <input type="submit" name="caseconditions" value="S'inscrire" id="inscrire"> <br><br>
                   </center><br>
              </form>
+
+
     </div>
     </div>
     </body>
