@@ -19,10 +19,11 @@
     					$_SESSION['nom'] = $userinfo['nom'];
     					$_SESSION['prenom'] = $userinfo['prenom'];
     					$_SESSION['mail'] = $userinfo['mail'];
+              $_SESSION['admin'] = $userinfo['admin'];
 
               if($userinfo['admin'] == 1)
                 {
-            			header("Location: ");
+            			header("Location: admin.php");
                 }
               else
                 {
