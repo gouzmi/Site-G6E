@@ -19,7 +19,15 @@
     					$_SESSION['nom'] = $userinfo['nom'];
     					$_SESSION['prenom'] = $userinfo['prenom'];
     					$_SESSION['mail'] = $userinfo['mail'];
-    					header("Location: accueilConnectePiece.php?id=".$_SESSION['id']);
+
+              if($userinfo['admin'] == 1)
+                {
+            			header("Location: ");
+                }
+              else
+                {
+                  header("Location: accueilConnectePiece.php?id=".$_SESSION['id']);
+                }
             }
           else{
             $erreur = "Mauvais mot de passe";

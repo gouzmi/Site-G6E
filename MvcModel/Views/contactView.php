@@ -33,9 +33,10 @@
                 </ul>
         </article>
     </div>
+    <?php include("footer.php") ?>
     </div>
     </body>
-    <?php include("footer.php") ?>
+
 
 
 
