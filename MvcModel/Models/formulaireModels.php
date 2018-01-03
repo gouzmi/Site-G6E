@@ -78,12 +78,24 @@
                                 $erreur= "Veuillez passer commande sur notre site <a href=''>DomHomeCommande.fr</a> " ;
                               }
                               else{
-                              $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, adresse_contact, cp_contact, ville_contact, telephone, mail, mdp)
-                                                        VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-                              $insert->execute(array($nom, $prenom, $adresse, $cp, $ville, $tel, $mail, $mdp)) ;
+                                $adminverify = $verifemail->fetch();
+                                if ($adminverify['admin'] == 1)
+                                {
+                                  $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, adresse_contact, cp_contact, ville_contact, telephone, mail, mdp, admin)
+                                                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, 1)");
+                                  $insert->execute(array($nom, $prenom, $adresse, $cp, $ville, $tel, $mail, $mdp)) ;
 
-                              $erreur= "Votre compte a bien été créé ! <a href=\"login.php\"> Se connecter</a> ";}
-                          
+                                  $erreur= "Votre compte a bien été créé ! <a href=\"login.php\"> Se connecter</a> ";
+                                }
+                                else {
+                                  $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, adresse_contact, cp_contact, ville_contact, telephone, mail, mdp)
+                                                            VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+                                  $insert->execute(array($nom, $prenom, $adresse, $cp, $ville, $tel, $mail, $mdp)) ;
+
+                                  $erreur= "Votre compte a bien été créé ! <a href=\"login.php\"> Se connecter</a> ";
+                                }
+                              }
+
                           }
                       }
                   }

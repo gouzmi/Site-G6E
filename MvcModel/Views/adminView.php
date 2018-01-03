@@ -28,8 +28,13 @@
             <div class="form">
               <form method="post" action="" id="admin">
                 <label>email : </label><br />
-                <input type="email" name="mail" placeholder="admin@gmail.com" required/>
+                <input type="email" name="mailadmin" placeholder="admin@gmail.com" required/>
                 <input type="submit" value="Ajouter" name="ajoutadmin" />
+                <center>
+                  <?php if (isset($info)){
+                      echo $info1;
+                  } ?>
+                </center>
               </form>
             </div>
 
@@ -46,8 +51,13 @@
             <div class="form">
               <form method="post" action="" id="client">
                 <label>email : </label><br />
-                <input type="email" name="mail" placeholder="client@gmail.com" required/>
+                <input type="email" name="mailclient" placeholder="client@gmail.com" required/>
                 <input type="submit" value="Ajouter" name="ajoutclient" />
+                <center>
+                  <?php if (isset($info)){
+                      echo $info2;
+                  } ?>
+                </center>
               </form>
             </div>
 
