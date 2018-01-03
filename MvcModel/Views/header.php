@@ -12,7 +12,7 @@
           <a href="contact.php" class="link" id="autres"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
 
                 <?php if ($_SESSION['admin'] == 1)  { ?>
-                  <a href="accueilConnectePiece.php" class="link"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Espace admin</a>
+                  <a href="admin.php" class="link"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Espace admin</a>
                 <?php }
                       else { ?>
                         <a href="accueilConnectePiece.php" class="link"><i class="fa fa-home" aria-hidden="true"></i>  Gérer Sa Maison</a>

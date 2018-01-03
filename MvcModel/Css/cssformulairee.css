@@ -50,7 +50,6 @@ html
 {
     font: 95% Arial, Helvetica, sans-serif;
     width:45% ;
-    max-height: 900px;
     margin-top: 6%;
     margin-left: auto;
     margin-right: auto;
@@ -64,8 +63,7 @@ html
 
 .formulaire
 {
-    max-height: 490px;
-    overflow: scroll;
+
     width: 100%;
 }
 
