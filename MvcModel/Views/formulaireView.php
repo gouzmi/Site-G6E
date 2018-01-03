@@ -12,7 +12,7 @@
 
     <body>
     <div class="section">
-      <div class= "entete"> <p> INSCRIVEZ-VOUS !</p>
+      <div class= "entete"> <p id="titre"> Inscrivez-vous !</p>
 
         <p id="erreur">  <?php  $attention="Avant toute inscription il est nécessaire d'avoir passé commande sur notre site<br> <a href=''>DomHomeCommande.fr</a> ";
             if (isset($erreur)) {echo $erreur;}
