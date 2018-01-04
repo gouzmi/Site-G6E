@@ -74,11 +74,11 @@
               <div class="form">
                 <form method="post" action="" id="faq">
                   <label>question : </label><br />
-                  <textarea name="question" required></textarea><br />
+                  <textarea class="quesrep" name="question" required></textarea><br />
                   <label>réponse : </label><br />
-                  <textarea name="reponse" required></textarea><br />
+                  <textarea class="quesrep" name="reponse" required></textarea><br />
                   <label>thème : </label><br />
-                  <input type="text" name="theme" placeholder=""/>
+                  <input type="text" name="theme" placeholder="thème">
                   <input type="submit" value="Ajouter" name="ajoutfaq" />
                   <center>
                     <?php if (isset($info3)){
