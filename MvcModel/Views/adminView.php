@@ -31,7 +31,7 @@
                 <input type="email" name="mailadmin" placeholder="admin@gmail.com" required/>
                 <input type="submit" value="Ajouter" name="ajoutadmin" />
                 <center>
-                  <?php if (isset($info)){
+                  <?php if (isset($info1)){
                       echo $info1;
                   } ?>
                 </center>
@@ -54,7 +54,7 @@
                 <input type="email" name="mailclient" placeholder="client@gmail.com" required/>
                 <input type="submit" value="Ajouter" name="ajoutclient" />
                 <center>
-                  <?php if (isset($info)){
+                  <?php if (isset($info2)){
                       echo $info2;
                   } ?>
                 </center>
@@ -62,6 +62,33 @@
             </div>
 
           </div>
+
+          <h3>Ajout d'information dans la FAQ</h3>
+            <div id="cas">
+
+              <div>
+                <p>
+                  Pour ajouter des informations dans la table FAQ visible par les membres,</br> vous devez rentrez la question et la réponse correspondante.
+                </p>
+              </div>
+              <div class="form">
+                <form method="post" action="" id="faq">
+                  <label>question : </label><br />
+                  <textarea name="question" required></textarea><br />
+                  <label>réponse : </label><br />
+                  <textarea name="reponse" required></textarea><br />
+                  <label>thème : </label><br />
+                  <input type="text" name="theme" placeholder=""/>
+                  <input type="submit" value="Ajouter" name="ajoutfaq" />
+                  <center>
+                    <?php if (isset($info3)){
+                        echo $info3;
+                    } ?>
+                  </center>
+                </form>
+              </div>
+
+            </div>
       </article>
 
 

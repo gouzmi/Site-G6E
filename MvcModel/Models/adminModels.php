@@ -15,4 +15,11 @@
       $info2 = "Succès";
     }
 
+  if (isset($_POST['ajoutfaq']))
+    {
+      $ajoutfaq = $bdd->prepare("INSERT INTO `faq`(`question_faq`, `reponse_faq`, `theme_faq` ) VALUES (?,?,?)");
+      $ajoutfaq->execute(array($_POST['question'], $_POST['reponse'], $_POST['theme']));
+      $info3 = "Succès";
+    }
+
  ?>
