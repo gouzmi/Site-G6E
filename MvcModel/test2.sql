@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 22 déc. 2017 à 08:30
+-- Généré le :  jeu. 04 jan. 2018 à 13:21
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -34,9 +34,11 @@ CREATE TABLE IF NOT EXISTS `capteur` (
   `fonctionnement` tinyint(1) NOT NULL,
   `id_type_capteur` int(255) NOT NULL,
   `id_cemac` int(255) NOT NULL,
+  `id_pièce` int(255) NOT NULL,
   PRIMARY KEY (`id_capteur`),
   KEY `id_type_capteur` (`id_type_capteur`),
-  KEY `id_cemac` (`id_cemac`)
+  KEY `id_cemac` (`id_cemac`),
+  KEY `id_pièce` (`id_pièce`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -149,11 +151,22 @@ CREATE TABLE IF NOT EXISTS `piece` (
 DROP TABLE IF EXISTS `precommande`;
 CREATE TABLE IF NOT EXISTS `precommande` (
   `id_precommande` int(255) NOT NULL AUTO_INCREMENT,
-  `date_commande` date NOT NULL,
-  `id_capteur` int(255) NOT NULL,
+  `date_commande` date DEFAULT NULL,
+  `id_capteur` int(255) DEFAULT NULL,
   `email_commande` varchar(255) COLLATE utf8_bin NOT NULL,
+  `admin` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_precommande`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `precommande`
+--
+
+INSERT INTO `precommande` (`id_precommande`, `date_commande`, `id_capteur`, `email_commande`, `admin`) VALUES
+(1, NULL, NULL, 'guillaume.dupont.rm@gmail.com', 0),
+(11, NULL, NULL, 'salut@gmail.com', 1),
+(12, NULL, NULL, 'admin@gmail.com', 1),
+(13, NULL, NULL, 'client@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -207,21 +220,26 @@ CREATE TABLE IF NOT EXISTS `type_piece` (
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `prenom` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `mdp` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `mail` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `nom` varchar(255) COLLATE utf8_bin NOT NULL,
+  `prenom` varchar(255) COLLATE utf8_bin NOT NULL,
+  `adresse_contact` varchar(255) COLLATE utf8_bin NOT NULL,
+  `cp_contact` varchar(255) COLLATE utf8_bin NOT NULL,
+  `ville_contact` varchar(255) COLLATE utf8_bin NOT NULL,
+  `telephone` varchar(255) COLLATE utf8_bin NOT NULL,
+  `mdp` varchar(255) COLLATE utf8_bin NOT NULL,
+  `mail` varchar(255) COLLATE utf8_bin NOT NULL,
+  `admin` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `mdp`, `mail`) VALUES
-(1, 'DAr', 'dar', 'kiki', 'dare@gmail.fr'),
-(2, 'Eustache', 'Darlène', 'info', 'darlene.eustache@gmail.com'),
-(3, 'Sellami', 'Mohamed', 'lolo', 'sm@gmail.com');
+INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `adresse_contact`, `cp_contact`, `ville_contact`, `telephone`, `mdp`, `mail`, `admin`) VALUES
+(1, 'Eustache', 'DarlÃ¨ne', '6  Rue AmpÃ¨re', '95000', 'Goussainville', '06123456789', '$2y$10$J79FbrpkyzRtmlu65tp6s.Vxf8BTpytl9V..TTqOhlKiYC2Z/o3rW', 'darlene@gmail.com', 0),
+(20, 'Dupont', 'Guillaume', '4 avenue Victor Hugo', '94160', 'Saint-Mandé', '0613544337', '$2y$10$ZCNaYKAWxx83DrBh2Td7oe6NZMMhEKTSzWGGBXWrPhuDNm9As7KxS', 'guillaume.dupont.rm@gmail.com', 0),
+(22, 'admin', 'admin', '4 avenue Victor Hugo', '94160', 'Saint-Mandé', '0613544337', '$2y$10$1oe.VmKYhbowkJDaPFj3meX79.Ynwtz3vvqNFYsM9UNjLXFaaqybu', 'admin@gmail.com', 1);
 
 --
 -- Contraintes pour les tables déchargées
