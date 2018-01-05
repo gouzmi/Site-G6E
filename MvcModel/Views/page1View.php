@@ -3,25 +3,15 @@
     <head>
     <meta charset="UTF-8">
     <title>Page d'accueil</title>
-    <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     <script src="../javaScript/jquery-1.8.3.min.js"></script>
     <script src="../javaScript/jquery.fullPage.js"></script>
     <link rel="stylesheet" href="../Css/cssp11.css"/>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
-
-    <!--pour choisir la page par rapport au menu, sinon ça s'affichera dans une page-->
-    <script>
-        $(function () {
-            $(".page").fullpage({
-                anchors:['page1','page2','page3'],
-                menu:"#menu",
-                verticalCentered:false
-            })
-        })
-    </script>
     <?php include("header.php") ?>
     </head>
+
     <body>
+
     <div class="page">
     <!--page1-->
         <section class="section s1" id="page1">
@@ -30,7 +20,7 @@
             </div>
             <div class="p"><p>DomHome est un nouveau processus domotique innovant.</p>
                 <p>Il vous permettra de gérer votre maison à distance et de garantir votre sécurité.</p><br>
-                <P>faut deux lignes de phrases sera mieux!</P>
+
             </div>
             <!--petite image à droite-->
             <img src="../Images/page1.png">
@@ -45,8 +35,7 @@
                 <div class="duanluo"><p>La « maison connectée » est une expression pour désigner un habitat où plusieurs éléments sont contrôlés à distance, éventuellement de manière automatisée : le chauffage, la lumière, les alarmes, etc.</p>
                 <p>La domotique alliée à la maison connectée permet de faire diminuer jusqu'à 40 % vos factures d'énergie : réglage du chauffage dans chaque pièce à l'heure voulue, capteur de présence pour gérer la température adéquate, capteur de fenêtre ouverte, programmation des volets (pour faire entrer la chaleur du soleil en hiver ou l'éviter en été...).</p>
                 </div>
-            </div>
-        </div>
+        </div></div>
         <div class="left">
             <ul>
                 <li>
@@ -86,7 +75,7 @@
               </div>
                 <!--notre photos, j'importe le source dans cssp11.css
                 xxxxxxxxx sont des introductions de chacuns
-                &ldquo est "-->
+                &ldq-->
                 <div class="ca-wrapper">
                     <div class="ca-item ca-item-1" style="position:absolute; left: 0px;">
                         <div class="ca-item-main">
@@ -155,6 +144,16 @@
                 </div>
             </div>
         </div>
+        <!--pour choisir la page par rapport au menu, sinon ça s'affichera dans une page-->
+        <script>
+            $(function () {
+                $(".page").fullpage({
+                    anchors:['page1','page2','page3'],
+                    menu:"#menu",
+                    verticalCentered:false
+                })
+            })
+        </script>
         <script type="text/javascript" src="../javaScript/jquery.easing.1.3.js"></script>
         <!-- the jScrollPane script, pour la page de l'équipe-->
         <script type="text/javascript" src="../javaScript/jquery.mousewheel.js"></script>
@@ -162,6 +161,7 @@
         <script type="text/javascript">
             $('#ca-container').contentcarousel();
         </script>
+
 </section>
     </div>
 </body>

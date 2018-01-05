@@ -22,9 +22,9 @@
           <?php }
 
         else { ?>
-          <a href="" class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
-          <a href="contact.php" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
-          <a href="login.php" class="link"><i class="fa fa-sign-in" aria-hidden="true"></i>  Se connecter</a>
+          <a href="" href="javascript:void(0);"class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
+          <a href="contact.php" href="javascript:void(0);"class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
+          <a href="login.php" class="link" ><i class="fa fa-sign-in" aria-hidden="true"></i>  Se connecter</a>
         <?php }
         ?>
 

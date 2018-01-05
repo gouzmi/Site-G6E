@@ -12,23 +12,18 @@ html
 
 body{
 	min-height: 100%;
-    margin: 0px;
-   padding: 0px;
-   outline: 0px;
+  margin: 0px;
+  padding: 0px;
+  outline: 0px;
 
 }
-/* #autres{
-  color: rgba(0,0,0 ,0.7);
-} */
-
 header
 {
     padding:10px;
     background-color: rgba(255,255,255 ,0.7);
-
+    position: static;
+    top: 0;
 }
-
-
 .link
 {
     list-style: none; /*enleve les points de la liste*/
@@ -40,32 +35,29 @@ header
     text-decoration: none;
     color: black;
     margin: 0 25px;
-
+    position: static;
 }
-
-
 .link:hover
 {
     border-bottom:solid 2px black;
     padding-bottom: 7px;
     font-size: 16px;
-}
 
+}
 .header
 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: static;
+    top: 0;
 }
-
-
 .image
 {
     margin-left: 3%;
     transition: all 0.2s;
     border-radius: 10px;
 }
-
 i{
     margin-right: 10px;
 }
