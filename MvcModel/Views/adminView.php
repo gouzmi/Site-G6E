@@ -22,7 +22,7 @@
 
             <div>
               <p>
-                Pour ajouter un administrateur,</br> vous devez rentrez l'email que ce dernier utilisera à chaque connexion.
+                Pour ajouter un administrateur, vous devez rentrez l'email que ce dernier utilisera à chaque connexion.
               </p>
             </div>
             <div class="form">
@@ -45,7 +45,7 @@
 
             <div>
               <p>
-                Pour ajouter un client dans la table précommande afin qu'il puisse s'inscrire,</br> vous devez rentrez l'email que ce dernier utilisera à chaque connexion.
+                Pour ajouter un client dans la table précommande afin qu'il puisse s'inscrire, vous devez rentrez l'email que ce dernier utilisera à chaque connexion.
               </p>
             </div>
             <div class="form">
@@ -68,7 +68,7 @@
 
               <div>
                 <p>
-                  Pour ajouter des informations dans la table FAQ visible par les membres,</br> vous devez rentrez la question et la réponse correspondante.
+                  Pour ajouter des informations dans la table FAQ visible par les membres, vous devez rentrez la question et la réponse correspondante.
                 </p>
               </div>
               <div class="form">
