@@ -36,15 +36,9 @@ $donnees = $req->fetch();
         <?php echo htmlspecialchars($donnees['titre']); ?>
         <em>le <?php echo $donnees['date_creation']; ?></em>
     </h3>
-
-    <p>
-    <?php
-    echo nl2br(htmlspecialchars($donnees['contenu']));
-    ?>
-    </p>
 </div>
 
-<h2>Commentaires</h2>
+<h2><strong>Commentaires</strong></h2>
 
 <?php
 $req->closeCursor(); // Important : on libère le curseur pour la prochaine requête
@@ -57,9 +51,13 @@ while ($donnees = $req->fetch())
 {
 ?>
 
+
 <p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?>
 <br><br>
 <?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
+</div>
+
+
 
 <?php
 } // Fin de la boucle des commentaires
