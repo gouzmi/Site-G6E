@@ -7,9 +7,7 @@
     <script src="../javaScript/jquery-1.8.3.min.js"></script>
     <script src="../javaScript/jquery.fullPage.js"></script>
     <link rel="stylesheet" href="../Css/cssp11.css"/>
-    <link rel="stylesheet" type="text/css" href="../Css/styles.css" />
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
-    <link rel="stylesheet" href="../Css/jquery.jscrollpane.css">
 
     <!--pour choisir la page par rapport au menu, sinon ça s'affichera dans une page-->
     <script>
@@ -21,24 +19,8 @@
             })
         })
     </script>
+    <?php include("header.php") ?>
     </head>
-      <?php include("header.php") ?>
-        <!--<div class="header">
-            <div class="image"><a href="page1.php"><img src="../Images/logodomhomepetit.png" ></a></div>
-           <div class="inner">
-                <ul id="menu">
-                    <li class="active" data-menuanchor="page1"><a href="#page1">Domhome</a></li>
-                    <li data-menuanchor="page2"><a href="#page2">Nos produits</a></li>
-                    <li data-menuanchor="page3"><a href="#page3">Notre Equipe</a></li>
-                </ul>
-            </div>
-            <div class="inner2">
-                <a href="" class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
-                <a href="contact.php" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
-                <a href="accueilConnectePiece.php" class="link"><i class="fa fa-user" aria-hidden="true"></i>Espace Personnel</a>
-            </div>
-        </div>-->
-
     <body>
     <div class="page">
     <!--page1-->
@@ -50,7 +32,7 @@
                 <p>Il vous permettra de gérer votre maison à distance et de garantir votre sécurité.</p><br>
                 <P>faut deux lignes de phrases sera mieux!</P>
             </div>
-
+            <!--petite image à droite-->
             <img src="../Images/page1.png">
         </section>
 
@@ -63,7 +45,8 @@
                 <div class="duanluo"><p>La « maison connectée » est une expression pour désigner un habitat où plusieurs éléments sont contrôlés à distance, éventuellement de manière automatisée : le chauffage, la lumière, les alarmes, etc.</p>
                 <p>La domotique alliée à la maison connectée permet de faire diminuer jusqu'à 40 % vos factures d'énergie : réglage du chauffage dans chaque pièce à l'heure voulue, capteur de présence pour gérer la température adéquate, capteur de fenêtre ouverte, programmation des volets (pour faire entrer la chaleur du soleil en hiver ou l'éviter en été...).</p>
                 </div>
-        </div></div>
+            </div>
+        </div>
         <div class="left">
             <ul>
                 <li>
@@ -93,15 +76,17 @@
     <!--page3-->
     <section class="section s4">
         </br> </br>
-
         <div class="container">
             <h1>Notre équipe : Informatique 6 membres</h1></br>
             <div id="ca-container" class="ca-container">
+              <!--ce sont les deux flèches-->
               <div class="ca-nav">
                 <span class="ca-nav-prev">Previous</span>
                 <span class="ca-nav-next">Next</span>
               </div>
-
+                <!--notre photos, j'importe le source dans cssp11.css
+                xxxxxxxxx sont des introductions de chacuns
+                &ldquo est "-->
                 <div class="ca-wrapper">
                     <div class="ca-item ca-item-1" style="position:absolute; left: 0px;">
                         <div class="ca-item-main">
