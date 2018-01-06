@@ -54,6 +54,9 @@
     <div class="coeur" id="right">
         <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
         <p id="pageStatut"></p>
+        <table>
+        <tr><th>ID_capteur</th><th>Nom</th><th>Fonctionnement</th></tr>
+        </table>
     </div>
 
 </div>
