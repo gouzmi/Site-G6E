@@ -15,7 +15,7 @@
           $userinfo = $requser->fetch();
           if(password_verify($mdpconnect, $userinfo['mdp']) == true )
             {
-    					$_SESSION['id'] = $userinfo['id'];
+    					$_SESSION['id'] = $userinfo['id_utilisateur'];
     					$_SESSION['nom'] = $userinfo['nom'];
     					$_SESSION['prenom'] = $userinfo['prenom'];
     					$_SESSION['mail'] = $userinfo['mail'];
