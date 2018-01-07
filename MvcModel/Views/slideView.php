@@ -29,7 +29,7 @@
       <a href="../Controlers/capteur.php" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
       </div>
       <div class="rubrique">
-      <a href="" class="lien"><i class="" aria-hidden="true"></i> Editer sa Maison</a>
+      <a href="../Controlers/editerMaison.php" class="lien"><i class="" aria-hidden="true"></i> Editer sa Maison</a>
       </div>
       <div class="rubrique">
       <a href="" class="lien"><i class="" aria-hidden="true"></i> Forum</a>
