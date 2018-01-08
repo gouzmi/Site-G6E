@@ -46,7 +46,17 @@
         <button class="tablinks" onclick="openPiece(event, 'Tokyo')"><?php echo $piece[2]['nom_piece'] ;?></button>
       </div>
 
+<<<<<<< HEAD
       <div id="Tokyo" class="tabcontent">
+=======
+    <div class="coeur" id="right">
+        <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
+        <p id="pageStatut"></p>
+        <table>
+        <tr><th>ID_capteur</th><th>Nom</th><th>Fonctionnement</th></tr>
+        </table>
+    </div>
+>>>>>>> 97131c934efef5d4d0c73e86c71157c2529cd003
 
          <?php
           $capteur= $reqcapteur-> fetchall();

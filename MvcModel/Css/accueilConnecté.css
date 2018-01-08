@@ -4,7 +4,27 @@ html
 {
     background-image: url(../Images/96f.jpg);
 }
+<<<<<<< HEAD
 #boite
+=======
+
+#left
+{
+	flex:0.25;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+
+
+
+.li{
+	display: flex;
+}
+
+.section
+>>>>>>> 97131c934efef5d4d0c73e86c71157c2529cd003
 {
 	border: 1px solid;
 	border-radius: 10px;
