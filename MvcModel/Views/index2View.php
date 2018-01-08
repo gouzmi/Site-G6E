@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+
 <html>
     <head>
         <meta charset="utf-8" />
         <title>Mon blog</title>
-	<link rel="stylesheet" href="blog.css"  />
-  <link rel="stylesheet" href="headerfooterr.css"/>
+	<link rel="stylesheet" href="../Css/blog.css"  />
+  <link rel="stylesheet" href="../Css/headerfooterr.css"/>
   <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 

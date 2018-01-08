@@ -180,10 +180,10 @@ nav ul li ul li a {
 .boite{
   background-color: #009688;
   border-radius: 8px;
-  width: 280px;
-  height: 160px;
-  margin-left: 30px;
-  margin-right: 30px;
+  width: 20%;
+  height: 15%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .switch {
   position: relative;
