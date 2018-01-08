@@ -2,7 +2,7 @@
 
   include('connexiondb.php');
 
-  $requser = $bdd->prepare("SELECT * from utilisateur where id=? ");
+  $requser = $bdd->prepare("SELECT * from utilisateur where id_utilisateur  =? ");
   $requser->execute(array($_SESSION['id']));
   $user = $requser->fetch();
 
