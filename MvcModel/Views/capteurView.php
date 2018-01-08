@@ -34,12 +34,12 @@
             </a>
             <ul>
               <li>
-                <a href='#settings'>
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Alarme')" id="defaultOpen">
                   Alarme
                 </a>
               </li>
               <li>
-                <a href='#settings'>
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Portes &amp; Fenêtres')">
                   Portes &amp; Fenêtres
                 </a>
               </li>
@@ -75,7 +75,7 @@
             </a>
             <ul>
               <li>
-                <a href='#settings'>
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Eclairage')">
                   Eclairage
                 </a>
               </li>
@@ -105,7 +105,6 @@
         $(".sub-menu a").click(function () {
         $(this).parent(".sub-menu").children("ul").slideToggle("100");
         $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
-
         });
       </script>
 
@@ -113,10 +112,74 @@
 
     <div class="coeur" id="right">
         <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
-        <p id="pageStatut"></p>
+
+        <div id="Alarme" class="tabcontent">
+          <div class="boite">
+            <div>Nom_Capteur</div>
+            <div>Données</div>
+            <div>Pièce</div>
+            <button> Action</button>
+          </div>
+
+          <div class="boite">
+            <div>Nom_Capteur</div>
+            <div>Données</div>
+            <div>Pièce</div>
+            <button> Action</button>
+          </div>
+
+          <div class="boite">
+            <div>Nom_Capteur</div>
+            <div>Données</div>
+            <div>Pièce</div>
+            <button> Action</button>
+          </div>
+
+        </div>
+
+        <div id="Portes &amp; Fenêtres" class="tabcontent">
+          <div class="boite">
+            <div>Nom_Capteur</div>
+            <div>Données</div>
+            <div>Pièce</div>
+            <button> Action</button>
+          </div>
+        </div>
+
+        <div id="Eclairage" class="tabcontent">
+          <div class="boite">
+            <div>Nom_Capteur</div>
+            <div>Données</div>
+            <div>Pièce</div>
+            <button> Action</button>
+          </div>
+          <div class="boite">
+            <div>Nom_Capteur</div>
+            <div>Données</div>
+            <div>Pièce</div>
+            <button> Action</button>
+          </div>
+        </div>
     </div>
 
 </div>
+
+<script>
+function openCate(evt, cateName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cateName).style.display = "flex";
+  evt.currentTarget.className += " active";}
+
+document.getElementById("defaultOpen").click();
+</script>
 
 </body>
 

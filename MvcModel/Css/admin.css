@@ -54,6 +54,11 @@ article
 .form{
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.info{
+  width: 80%;
 }
 
 .quesrep{
@@ -61,5 +66,5 @@ article
 }
 p{
   text-align: justify;
-  width: 70%;
+  width: 60%;
 }
