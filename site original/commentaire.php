@@ -14,34 +14,34 @@
         <h1>Commentaires des post</h1>
         <h2><a href="index2.php" class="link"><i aria-hidden="true"></i>Retour à la liste des post</a></h2>
 
-<?php
-// Connexion à la base de données
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=test2;charset=utf8', 'root', '');
-}
-catch(Exception $e)
-{
+    <?php
+    // Connexion à la base de données
+      try
+      {
+	       $bdd = new PDO('mysql:host=localhost;dbname=test2;charset=utf8', 'root', '');
+       }
+      catch(Exception $e)
+      {
         die('Erreur : '.$e->getMessage());
-}
+      }
 
-// Récupération du billet
-$req = $bdd->prepare('SELECT id_billet, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets WHERE id = ?');
-$req->execute(array($_GET['billet']));
-$donnees = $req->fetch();
-?>
+    // Récupération du billet
+        $req = $bdd->prepare('SELECT id_billet, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets WHERE id = ?');
+        $req->execute(array($_GET['billet']));
+        $donnees = $req->fetch();
+      ?>
 
-<div class="news">
-    <h3>
-        <?php echo htmlspecialchars($donnees['titre']); ?>
-        <em>le <?php echo $donnees['date_creation']; ?></em>
-    </h3>
-</div>
+      <div class="news">
+        <h3>
+          <?php echo htmlspecialchars($donnees['titre']); ?>
+          <em>le <?php echo $donnees['date_creation']; ?></em>
+        </h3>
+      </div>
 
-<h2><strong>Commentaires</strong></h2>
+        <h2><strong>Commentaires</strong></h2>
 
-<?php
-$req->closeCursor(); // Important : on libère le curseur pour la prochaine requête
+        <?php
+          $req->closeCursor(); // Important : on libère le curseur pour la prochaine requête
 
 // Récupération des commentaires
 $req = $bdd->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM commentaires WHERE id_billet = ? ORDER BY date_commentaire');
