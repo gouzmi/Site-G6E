@@ -20,7 +20,7 @@
         <h3>Ajout d'un administrateur :</h3>
           <div id="cas">
 
-            <div>
+            <div class="info">
               <p>
                 Pour ajouter un administrateur, vous devez rentrez l'email que ce dernier utilisera à chaque connexion.
               </p>
@@ -43,7 +43,7 @@
         <h3>Ajout d'un client :</h3>
           <div id="cas">
 
-            <div>
+            <div class="info">
               <p>
                 Pour ajouter un client dans la table précommande afin qu'il puisse s'inscrire, vous devez rentrez l'email que ce dernier utilisera à chaque connexion.
               </p>
@@ -66,7 +66,7 @@
           <h3>Ajout d'information dans la FAQ</h3>
             <div id="cas">
 
-              <div>
+              <div class="info">
                 <p>
                   Pour ajouter des informations dans la table FAQ visible par les membres, vous devez rentrez la question et la réponse correspondante.
                 </p>

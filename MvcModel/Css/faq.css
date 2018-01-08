@@ -16,10 +16,11 @@ section
   padding:25px;
   margin: 25px;
   margin-left:5%;
-  width: 60%;
-  background-color: rgba(120, 120, 120, 0.75);
+  width: 50%;
+  background-color: #444;
   color: white;
   border-radius: 3px;
+  overflow: scroll;
 
 }
 
