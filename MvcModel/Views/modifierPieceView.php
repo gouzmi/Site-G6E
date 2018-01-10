@@ -22,8 +22,7 @@
        <br><br><br>
      </center>
      </form>
-     <div id="retour"><a href="editerMaison.php"> Retour à la dernière étape</a></div>
-     <div id="retour"><a href="login.php"> Retour</a></div>
+     <div id="retour"><a href="editerMaison.php"> Retour </a></div>
      <br>
    </section>
 </div>

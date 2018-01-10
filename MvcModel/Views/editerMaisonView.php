@@ -6,26 +6,32 @@
   <link rel="stylesheet" type="text/css" href="../Css/headerfooterr.css">
   <link rel="stylesheet" type="text/css" href="../Css/editerMaison.css">
 </head>
+
+
 <?php include ("header.php")?>
+
+
 <body class="no" id="menu">
+
+
   <div id="corps">
   <?php include("../Views/slideView.php") ;?>
   <div class="page">
-    <section>
-     <p id="titre">Editer votre maison ici </p> <br><br>
-     <form action="" method="post">
+
+
+     <form action="" method="post" class="form-style-6">
+       <h1>Editer votre maison ici !</h1>
        <center>
-       <label id="question">Vous voulez modifier des capteurs ou des pièce dans votre maison? </label>
-       <br><br>
-       <input type="radio" name="capteur" id="capteur"><label for="capteur" >Capteur</label>
-       <input type="radio" name="piece" id="piece"><label for="piece">Pièce</label>
-       <br><br><br>
+       <label >Que souhaitez-vous modifier ? </label>
+       <br><br><br><br>
+       <input type="radio" name="capteur" id="capteur"><label class="ca" for="capteur" >Capteur</label>
+       <input type="radio" name="piece" id="piece"><label class="ca" for="piece">Pièce</label>
+       <br><br><br><br><br>
        <input type="submit" value="Valider" id="Valider">
      </center>
      </form>
-     <div id="retour"><a href="login.php"> Retour</a></div>
-     <br>
-   </section>
+
+
 </div>
 </div>
 </body>
