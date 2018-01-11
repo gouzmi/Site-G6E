@@ -7,7 +7,7 @@
   if(isset($_POST['caseconditions']))  //Vérif formulaire rempli
     {
       //Nettoyage des données reçues
-/*
+
       //Def des filtres pour chaque valeur
       $filter_def = [
           'nom' => FILTER_SANITIZE_SPECIAL_CHARS,
@@ -29,9 +29,9 @@
       $tel = $resultat['tel'];
       $mail = $resultat['mail'];
       $mdp = $_POST['mdp'];
-      */
 
-      // sécurisation des Données
+
+/*      // sécurisation des Données
       $nom = securite_bdd($_POST['nom']);
       $prenom = securite_bdd($_POST['prenom']);
       $adresse = securite_bdd($_POST['adresse']);
@@ -41,7 +41,7 @@
       $mail = securite_bdd($_POST['mail']);
       $mdp = securite_bdd($_POST['mdp']);
 
-
+*/
       //Vérif du format de chaque donnée nettoyée
 
       if ((preg_match('#^[A-Za-zÀ-ÖØ-öø-ÿ-]+$#', $nom)) == false){ //verif nom contient que des lettres
