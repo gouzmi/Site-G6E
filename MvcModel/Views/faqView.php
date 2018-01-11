@@ -14,11 +14,11 @@
     <?php include("header.php"); ?>
 <body class="no" id="menu">
 
-    <div id="corps">
-      <?php include("../Views/slideView.php") ;?>
+    <div class="page">
+
 
         <h1 class="titre">Foire aux questions</h1>
-        <section>
+        <div id="section">
           <?php
 
           include("../Models/connexiondb.php");
@@ -52,7 +52,7 @@
               }
           $req_id_faq->closeCursor();
           ?>
-        </section>
+        </div>
       </div>
 </body>
 

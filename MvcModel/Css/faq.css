@@ -4,15 +4,10 @@ html
 {
     background-image: url(../Images/96f.jpg);
 }
-#corps
-{
-	flex-direction: column;
 }
 
-section
-
+#section
 {
-
   padding:25px;
   margin: 25px;
   margin-left:5%;
@@ -21,7 +16,6 @@ section
   color: white;
   border-radius: 3px;
   overflow: scroll;
-
 }
 
 
