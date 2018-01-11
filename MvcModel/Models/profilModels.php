@@ -1,6 +1,7 @@
 <?php
 
   include('connexiondb.php');
+  include('securite.php');
 
   $requser = $bdd->prepare("SELECT * from utilisateur where id=? ");
   $requser->execute(array($_SESSION['id']));
@@ -31,6 +32,16 @@
       $tel = $resultat['tel'];
       $mail = $resultat['mail'];
       $mdp = $_POST['mdp'];
+
+      // sécurisation des Données
+      $nom = securite_bdd($_POST['nom']);
+      $prenom = securite_bdd($_POST['prenom']);
+      $adresse = securite_bdd($_POST['adresse']);
+      $cp = securite_bdd($_POST['cp']);
+      $ville = securite_bdd($_POST['ville']);
+      $tel = securite_bdd($_POST['tel']);
+      $mail = securite_bdd($_POST['mail']);
+      $mdp = securite_bdd($_POST['mdp']);
 
 
       //Vérif du format de chaque donnée nettoyée
