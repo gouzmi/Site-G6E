@@ -1,0 +1,27 @@
+html
+{
+    background-image: url(../Images/96f.jpg);
+}
+section{
+    margin-top:3%;margin-bottom: 3%;
+    margin-left: auto;margin-right: auto;
+    width: 500px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border:0.5px solid black;
+    border-radius: 10px;
+}
+#titre{
+    text-align: center ;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 700;
+}
+#question{ width: 250px ;}
+#valider{
+    height: 30px;
+    width: 250px;
+    border-radius: 15px;
+    background-color:#5F9EA0;
+}

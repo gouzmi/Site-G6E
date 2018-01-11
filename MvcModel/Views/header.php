@@ -8,7 +8,7 @@
         <div class="image"><a href="page1.php"><img src="../Images/logodomhomepetit.png" ></a></div>
     <div>
         <?php if (isset($_SESSION['id']) AND $_SESSION['id'] > 1) { ?>
-          <a href="" class="link" id="autres"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
+          <a href="../Controlers/Produits.php" class="link" id="autres"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
           <a href="contact.php" class="link" id="autres"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
 
                 <?php if ($_SESSION['admin'] == 1)  { ?>

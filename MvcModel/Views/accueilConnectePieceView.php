@@ -15,42 +15,40 @@
 
 
 <body class="no" id="menu">
-<!-- Menu pièce-->
-<div id="corps">
+  <div id="corps">
+    <?php include("../Views/slideView.php") ;
+    $sqlpiece ='SELECT piece.id_piece, piece.nom_piece
+                   FROM piece INNER JOIN logement
+                   ON piece.id_logement = logement.id_logement
+                   WHERE logement.id_utilisateur = '.$_SESSION['id'].'' ;
 
+    $reqpiece = $bdd ->query($sqlpiece);
+    $nbpiece = $reqpiece->rowCount();
+    $piece = $reqpiece->fetchall();
+    $idpiece = $piece[1]['id_piece'];
 
-<?php include("../Views/slideView.php") ;?>
+    $sqlcapteur='SELECT capteur.id_capteur, capteur.id_type_capteur,
+                        historique_capteur.valeur_capteur,
+                        historique_capteur.date_donnee,
+                        historique_capteur.heure_donnee
+                 FROM historique_capteur INNER JOIN capteur
+                 ON  historique_capteur.id_capteur = capteur.id_capteur
+                 WHERE capteur.id_piece = '.$idpiece.'
+                 ORDER BY capteur.id_type_capteur ';
+    $reqcapteur = $bdd ->query($sqlcapteur);
+    $nbcapteur = $reqcapteur->rowCount();
 
-    <div class="coeur" id="left">
-            <div class="li">
-                  <button class="section"><a id="SalleDeBain" onclick="statut(this.id)"> Salle de bain</a></button>
-            </div>
-            <div class="li">
-                  <button class="section"><a id="SalleDeSejour" onclick="statut(this.id)">Salle de séjour</a></button>
-            </div>
-            <div class="li">
-                  <button class="section"><a id="Salon" onclick="statut(this.id)">Salon</a></button>
-            </div>
-            <div class="li">
-                  <button class="section"><a id="SalleManger" onclick="statut(this.id)">Salle à manger</a></button>
-            </div>
-            <div class="li">
-                  <button class="section"><a id="Chambre" onclick="statut(this.id)">Chambre</a></button>
-            </div>
-            <div class="li">
-                  <button class="section"><a id="Terrasse" onclick="statut(this.id)">Terrasse</a></button>
-            </div>
-            <div class="li">
-                  <button class="section"><a id="Cuisine" onclick="statut(this.id)">Cuisine</a></button>
-            </div>
-            <div class="li">
-                  <button class="section"><a id="Bureau" onclick="statut(this.id)">Bureau</a></button>
-            </div>
-            <div class="li">
-                  <button class="section"><a id="Garage" onclick="statut(this.id)">Garage</a></button>
-            </div>
-    </div>
+    if (($nbpiece != 0 && $nbcapteur != 0))
+    {?>
+      <div class="tab">
+        <button class="tablinks" onclick="openPiece(event, 'London')"><?php echo $piece[0]['nom_piece'] ;?></button>
+        <button class="tablinks" onclick="openPiece(event, 'Paris')"><?php echo $piece[1]['nom_piece'] ;?></button>
+        <button class="tablinks" onclick="openPiece(event, 'Tokyo')"><?php echo $piece[2]['nom_piece'] ;?></button>
+      </div>
 
+<<<<<<< HEAD
+      <div id="Tokyo" class="tabcontent">
+=======
     <div class="coeur" id="right">
         <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
         <p id="pageStatut"></p>
@@ -58,11 +56,37 @@
         <tr><th>ID_capteur</th><th>Nom</th><th>Fonctionnement</th></tr>
         </table>
     </div>
+>>>>>>> 97131c934efef5d4d0c73e86c71157c2529cd003
 
-</div>
+         <?php
+          $capteur= $reqcapteur-> fetchall();
+          //affichage box capteur
 
+          $i=0;
+          while($i < $nbcapteur) {
+              $idtypecapteur = $capteur[$i]['id_type_capteur'];
+              $valeur=$capteur[$i]['valeur_capteur'];
+              $reference= $capteur[$i]['id_capteur'];
+              $logo = logo_capteur($capteur[$i]['id_type_capteur']);
+              $titre = titre_capteur($capteur[$i]['id_type_capteur']);
+              $info = valeur_capteur($capteur[$i]['id_type_capteur'],$capteur[$i]['id_type_capteur']);
+              ?>
+              <section id="boite">
+                <br>
+                <h3><?php echo $titre; ?> </h3>
+                <div id="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
+                <div id="bouton"> BOUTON</div>
+                <div id="info"> <?php echo $info; ?></div>
+                <div id="historique"> <a href="" class="link">Historique </a></div>
+              </section id="boite">
+              <br>
+              <?php
+               $i++;
+            } ?>
+        </div>
+      <div id="London" class="tabcontent">blablabla</div>
+  <?php } ?>
+ </div>
 </body>
-
-<?php include("footer.php") ?>
-
+<?php include("footer.php"); ?>
 </html>

@@ -1,7 +1,7 @@
 <?php session_start();
   if (isset($_SESSION['id'])) {
-    require('../Views/editerMaisonView.php');
-    require('../Models/editerMaisonModel.php');
+    require('../Views/ajouterCapteurView.php');
+    require('../Models/ajouterCapteurModel.php');
   }
 
   else {
