@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 02 jan. 2018 à 23:53
+-- Généré le :  jeu. 11 jan. 2018 à 10:08
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -31,19 +31,22 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `precommande`;
 CREATE TABLE IF NOT EXISTS `precommande` (
   `id_precommande` int(255) NOT NULL AUTO_INCREMENT,
-  `date_commande` date DEFAULT NULL,
-  `id_capteur` int(255) DEFAULT NULL,
+  `date_commande` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_capteur` int(255) NOT NULL DEFAULT '0',
   `email_commande` varchar(255) COLLATE utf8_bin NOT NULL,
-  `admin` int(10) NOT NULL DEFAULT '0',
+  `admin` int(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_precommande`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `precommande`
 --
 
 INSERT INTO `precommande` (`id_precommande`, `date_commande`, `id_capteur`, `email_commande`, `admin`) VALUES
-(1, NULL, NULL, 'guillaume.dupont.rm@gmail.com', 0);
+(1, '2017-12-30 00:00:00', 2, 'test@gmail.com', 0),
+(2, '2018-01-01 00:00:00', 2, 'adresse@gmail.com', 0),
+(3, '2018-01-03 00:00:00', 5, 'admin@gmail.com', 1),
+(8, '2018-01-11 10:57:56', 0, 'test@gmail.com', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
