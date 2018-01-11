@@ -1,6 +1,7 @@
 <?php
 
   include('connexiondb.php');
+  include('securite.php');
 
 
   if(isset($_POST['caseconditions']))  //Vérif formulaire rempli
@@ -28,7 +29,6 @@
       $tel = $resultat['tel'];
       $mail = $resultat['mail'];
       $mdp = $_POST['mdp'];
-
 
       //Vérif du format de chaque donnée nettoyée
 
