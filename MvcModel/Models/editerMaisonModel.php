@@ -5,9 +5,6 @@ if (isset($_POST['capteur']))
 }else if (isset($_POST['piece']))
 {
   header("Location: modifierPiece.php");
-}else
-{
-  echo "Veuillez faire votre choix.";
 }
 
 ?>
