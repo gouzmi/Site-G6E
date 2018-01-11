@@ -20,6 +20,7 @@
        <input type="radio" name="ajouter" value="ajouter" id="ajouter"><label for="ajouter" >Ajouter une autre piece</label>
        <input type="radio" name="supprimer" value="supprimer" id="supprimer"><label for="supprimer">Supprimer une piece</label>
        <br><br><br>
+       <input type="submit" value="Valider" id="Valider">
      </center>
      </form>
      <div id="retour"><a href="editerMaison.php"> Retour à la dernière étape</a></div>
