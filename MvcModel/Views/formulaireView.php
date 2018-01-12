@@ -9,8 +9,10 @@
     </head>
 
     <?php include("header.php") ?>
+    <script src="verificationFormulaire.js" type="text/javascript"></script>
 
     <body>
+        <script src="verificationFormulaire.js" type="text/javascript"></script>
     <div class="section">
       <div class= "entete"> <p id="titre"> Inscrivez-vous !</p>
 
@@ -20,9 +22,9 @@
          ?>
        </p></div>
 
-        <form method = "post" action=""   id= "Formulaire">
+        <form method = "post" action=""   id= "Formulaire" name="Formulaire" onsubmit="return validerForm()">
 
-        <input type="text" name="nom"  placeholder="Nom" required id="nom">
+        <input type="text" name="nom"  placeholder="Nom" <required id="nom">
         <input type="text" name="prenom" placeholder="Prenom" required id="prenom">
         <input type="text" name="adresse" placeholder="Adresse"  required id="adresse">
         <input type="text" name="cp"  placeholder="Code Postal" required title="" id="cp">

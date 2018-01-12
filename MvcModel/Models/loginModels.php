@@ -1,7 +1,6 @@
 <?php
   include('connexiondb.php');
-  include('securite.php');
-
+  
   if(isset($_POST['formconnexion']))
 		{
 			$mailconnect = ($_POST['mailconnect']);
