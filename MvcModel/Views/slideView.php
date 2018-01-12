@@ -5,11 +5,16 @@
 
 <div class="sidebar">
 
+  <?php
+  include('../Models/slideModels.php');
+
+  ?>
+
       <div id="top">
         <div id="image">
           <img class="avatar" src="../Images/profil3.png" />
           <div id="utilisateur">
-            <?php echo "<i class='nom'>".mb_strtoupper($_SESSION['nom'])." ".ucfirst(mb_strtolower($_SESSION['prenom']))."</i>"; ?>
+            <?php echo "<i class='nom'>".mb_strtoupper($user['nom'])." ".ucfirst(mb_strtolower($user['prenom']))."</i>"; ?>
           </div>
         </div>
         <div class="container" onclick="myFunction(this)">
@@ -20,22 +25,19 @@
       </div>
 
       <div class="rubrique">
-      <a href="../Controlers/profil.php" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
+      <a href="<?php echo "../Controlers/profil.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
       </div>
       <div class="rubrique">
-      <a href="../Controlers/accueilConnectePiece.php" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
+      <a href="<?php echo "../Controlers/accueilConnectePiece.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
       </div>
       <div class="rubrique">
-      <a href="../Controlers/capteur.php" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
+      <a href="<?php echo "../Controlers/capteur.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
       </div>
       <div class="rubrique">
-      <a href="../Controlers/editerMaison.php" class="lien"><i class="" aria-hidden="true"></i> Editer sa Maison</a>
+      <a href="<?php echo "../Controlers/editerMaison.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Editer sa Maison</a>
       </div>
       <div class="rubrique">
       <a href="" class="lien"><i class="" aria-hidden="true"></i> Forum</a>
-      </div>
-      <div class="rubrique">
-      <a href="../Controlers/faq.php" class="lien"><i class="" aria-hidden="true"></i> Faq</a>
       </div>
 
 </div>

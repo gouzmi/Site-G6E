@@ -33,7 +33,9 @@ label
   	width: 100%;
     margin-bottom: 10px;
 }
-
+.labell{
+  text-align: left;
+}
 .ca{
   margin-left: 10px;
   margin-right: 20px;

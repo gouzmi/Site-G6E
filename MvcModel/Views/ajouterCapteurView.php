@@ -23,28 +23,65 @@
       <h1>Insérez-vous</h1>
 
       <center>
-        <label for="Nom">Nom du capteur :</label>
-        <input type="text" name=""  id="" class="text" placeholder="" required>
-        <br><br>
-        <label for="Type">Type du capteur :</label>
-        <select name="Type">
-						<option value="Alarme">Alarme</option>
-						<option value="Mouvement">Mouvement</option>
-						<option value="Caméra">Caméra</option>
-            <option value="Eclairage">Eclairage</option>
-            <option value="Consommation">Consommation</option>
+        <label for="nom" class="labell">Nom du capteur :</label>
+        <input type="text" name="nom" class="text" required>
+        <br/><br/>
+
+        <label class="labell">Type du capteur :</label>
+        <select name="varieteC">
+          <?php
+            include('../Models/connexiondb.php');
+
+            $variete1 = $bdd->query('SELECT * FROM type_capteur');
+            $variete2 = $bdd->query('SELECT * FROM type_piece');
+
+
+            if (isset($_POST['Enregistrer']))
+              {
+                $ajoutCpt = $bdd->prepare("INSERT INTO type_capteur(variete_capteur) VALUES (?)");
+                $ajoutCpt->execute(array($_POST['varieteC']));
+                $ajoutCpt = $bdd->prepare("INSERT INTO capteur(nom) VALUES (?)");
+                $ajoutCpt->execute(array($_POST['nom']));
+                $ajoutCpt = $bdd->prepare("INSERT INTO type_piece(variete_piece) VALUES (?)");
+                $ajoutCpt->execute(array($_POST['varieteP']));
+                $info = "Succès";
+              }
+
+          ?>
+            <?php
+                while ($donnees1 = $variete1->fetch())
+                {
+                  ?>
+                        <option value="<?php $donnees1['variete_capteur']; ?>"><?php echo $donnees1['variete_capteur']; ?></option>
+            <?php
+                }?>
+
 				</select>
         <br><br>
-        <label for="">La pièce associée :</label>
-        <input type="text" name=""  id="" class="text" placeholder="" required>
+        <label class="labell">La pièce associée :</label>
+        <select name="varieteP">
+          <?php
+              while ($donnees2 = $variete2->fetch())
+              {
+              ?>
+                        <option value="<?php $donnees2['variete_piece']; ?>"><?php echo $donnees2['variete_piece']; ?></option>
+              <?php
+              }
+          ?>
+				</select>
         <br><br>
-        <label for="">Le Cemac associé :</label>
-        <input type="text" name=""  id="" class="text" placeholder="" required>
+        <label for="cemacAssc" class="labell">Le Cemac associé :</label>
+        <input type="text" name="cemacAssc"  id="" class="text" required>
         <br><br><br><br>
 
-        <input type="submit" value="Enregistrer" id="Enregistrer">
+        <input type="submit" value="Enregistrer" name="Enregistrer">
+
+        <?php if (isset($info)){
+            echo $info;
+        } ?>
       </center>
     </form>
+
     <br>
 </div>
   </div>

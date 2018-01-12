@@ -1,9 +1,9 @@
 <?php session_start();
 
 if (isset($_SESSION['id'])) {
-    require('../Models/commentaireModels.php');
+    require('../Models/index2_postModels.php');
 
-    require('../Views/commentaireView.php');
+    require('../Views/index2_postView.php');
 }
 
 else {
