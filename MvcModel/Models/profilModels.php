@@ -2,9 +2,7 @@
 
   include('connexiondb.php');
 
-  $requser = $bdd->prepare("SELECT * from utilisateur where id_utilisateur  =? ");
-  $requser->execute(array($_SESSION['id']));
-  $user = $requser->fetch();
+
 
   if(isset($_POST['caseconditions']))  //Vérif formulaire rempli
     {

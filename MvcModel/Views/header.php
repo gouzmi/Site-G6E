@@ -14,6 +14,9 @@
                 <?php if ($_SESSION['admin'] == 1)  { ?>
                   <a href="admin.php" class="link"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Espace admin</a>
                 <?php }
+                  elseif ($_SESSION['admin'] == 2) { ?>
+                    <a href="admin2.php" class="link"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Espace SAV</a>
+                <?php  }
                       else { ?>
                         <a href="accueilConnectePiece.php" class="link"><i class="fa fa-home" aria-hidden="true"></i>  Gérer Sa Maison</a>
                       <?php } ?>
