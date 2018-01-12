@@ -1,7 +1,8 @@
 <?php session_start();
   if (isset($_SESSION['id'])) {
-    require('../Views/ajouterCapteurView.php');
+    
     require('../Models/ajouterCapteurModel.php');
+    require('../Views/ajouterCapteurView.php');
   }
 
   else {
