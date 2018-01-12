@@ -2,26 +2,81 @@ html
 {
     background-image: url(../Images/96f.jpg);
 }
-section{
-    margin-top:3%;margin-bottom: 3%;
-    margin-left: auto;margin-right: auto;
-    width: 500px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border:0.5px solid black;
+
+
+.form-style-6{
+    font: 95% Arial, Helvetica, sans-serif;
+    width: 35%;
+    max-height: 500px;
+    margin-top: 6%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px 30px 18px 30px;
+    background-color: rgba(255,255,255 ,0.9);
     border-radius: 10px;
 }
-#titre{
-    text-align: center ;
-    text-transform: uppercase;
-    font-family: 'Roboto';
-    font-size: 18px;
-    font-weight: 700;
+.form-style-6 h1{
+    background: #7E57C2;
+    padding: 30px;
+    width: 100%;
+    font-size: 130%;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    margin: -16px 0px 40px -30px;
+    border-radius: 10px 10px 0px 0px;
 }
-#question{ width: 250px ;}
-#valider{
-    height: 30px;
-    width: 250px;
-    border-radius: 15px;
-    background-color:#5F9EA0;
+
+label
+{
+  /* display: block;  La balise devient de type block.*/
+  	width: 100%;
+    margin-bottom: 10px;
+}
+.labell{
+  text-align: left;
+}
+.ca{
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.form-style-6 input
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    outline: none;
+    -webkit-box-sizing: border-box;
+
+    background: #fff;
+    margin-bottom: 1%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 90% Arial, Helvetica, sans-serif;
+}
+.form-style-6 input:focus
+{
+    box-shadow: 0 0 5px #7E57C2;
+    padding: 3%;
+    border: 1px solid #7E57C2;
+}
+
+.form-style-6 input[type="submit"],
+.form-style-6 input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 4%;
+    background: #7E57C2;
+    border-bottom: 2px solid #7E57C2;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
+    font-size: 110%;
+
+}
+.form-style-6 input[type="submit"]:hover,
+.form-style-6 input[type="button"]:hover{
+    background: #9575CD;
 }

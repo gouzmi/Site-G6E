@@ -3,8 +3,8 @@
 
   if(isset($_POST['formconnexion']))
 		{
-			$mailconnect = $_POST['mailconnect'];
-			$mdpconnect = $_POST['mdpconnect'];
+			$mailconnect = ($_POST['mailconnect']);
+			$mdpconnect = ($_POST['mdpconnect']);
 			if (!empty($mailconnect) AND !empty($mdpconnect))
 			{
 				$requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ?");

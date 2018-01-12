@@ -25,12 +25,12 @@
         <input type="text" name="nom"  placeholder="Nom" required id="nom">
         <input type="text" name="prenom" placeholder="Prenom" required id="prenom">
         <input type="text" name="adresse" placeholder="Adresse"  required id="adresse">
-        <input type="text" name="cp" pattern="(^[0-9]{5}$)|(^2(A|B)[0-9]{3}$)" placeholder="Code Postal" required title="" id="cp">
+        <input type="text" name="cp"  placeholder="Code Postal" required title="" id="cp">
         <input type="text" name="ville" placeholder="Ville"required id="ville">
-        <input type="tel" name="tel"required title="Veuillez entrer un numéro  Ex: 0123456789" placeholder="Numéro de téléphone" id="tel">
-        <input type="email" name="mail" placeholder="Adresse email" required title="Veuillez entrez l'adresse email utilisée lors de la commande" id="email">
-        <input type="password" name="mdp"  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" placeholder="Mot de passe" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
-        <input type="password" name="mdp2" placeholder="Confirmation Mot de passe"required id="pass">
+        <input type="text" name="tel"required title="Veuillez entrer un numéro  Ex: 0123456789" placeholder="Numéro de téléphone" id="tel">
+        <input type="text" name="mail" placeholder="Adresse email" required title="Veuillez entrez l'adresse email utilisée lors de la commande" id="email">
+        <input type="text" name="mdp"  placeholder="Mot de passe" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
+        <input type="text" name="mdp2" placeholder="Confirmation Mot de passe"required id="pass">
         <input type="submit" name="caseconditions" value="S'inscrire" id="inscrire">
 
         </form>

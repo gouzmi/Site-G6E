@@ -33,6 +33,7 @@
       $mdp = $_POST['mdp'];
 
 
+
       //Vérif du format de chaque donnée nettoyée
 
       if ((preg_match('#^[A-Za-zÀ-ÖØ-öø-ÿ-]+$#', $nom)) == false){ //verif nom contient que des lettres

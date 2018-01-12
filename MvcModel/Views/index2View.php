@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+
 <html>
     <head>
         <meta charset="utf-8" />
         <title>Mon blog</title>
-	<link rel="stylesheet" href="blog.css"  />
-  <link rel="stylesheet" href="headerfooterr.css"/>
+	<link rel="stylesheet" href="../Css/blog.css"  />
+  <link rel="stylesheet" href="../Css/headerfooterr.css"/>
   <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 
@@ -15,19 +15,7 @@
         <h4>Derniers posts du forum :</h4>
 
 <?php
-// Connexion à la base de données
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=test2;charset=utf8', 'root', '');
-}
-catch(Exception $e)
-{
-        die('Erreur : '.$e->getMessage());
-}
-
 // On récupère les 5 derniers billets
-$req = $bdd->query('SELECT id_billet, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0, 5');
-
 while ($donnees = $req->fetch())
 {
 ?>
@@ -43,7 +31,7 @@ while ($donnees = $req->fetch())
     echo nl2br(htmlspecialchars($donnees['contenu']));
     ?>
     <br />
-    <em><a href="commentaire.php?billet=<?php echo $donnees['id_billet']; ?>">Commentaires</a></em>
+    <em><a href="commentaire.php?billet=<?php echo $donnees['id_billet']; ?>"><br>Commentaires</a></em>
     </p>
 </div>
 
@@ -63,7 +51,7 @@ $req->closeCursor();
 
 
 <?php
-
+// Fin de la boucle des billets
 $req->closeCursor();
 ?>
 </body>

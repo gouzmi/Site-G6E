@@ -22,7 +22,7 @@
 
 
     <div class="form-style-6">
-          <h1>Profil de <?php echo ucfirst(mb_strtolower($_SESSION['nom']))." ".ucfirst(mb_strtolower($_SESSION['prenom'])); ?> </h1>
+          <h1>Profil de <?php echo ucfirst(mb_strtolower($user['nom']))." ".ucfirst(mb_strtolower($_SESSION['prenom'])); ?> </h1>
           <center>
             <?php  if (isset($erreur)) {
               echo $erreur;} ?>

@@ -29,7 +29,6 @@
       $mail = $resultat['mail'];
       $mdp = $_POST['mdp'];
 
-
       //Vérif du format de chaque donnée nettoyée
 
       if ((preg_match('#^[A-Za-zÀ-ÖØ-öø-ÿ-]+$#', $nom)) == false){ //verif nom contient que des lettres
@@ -49,7 +48,7 @@
                   $erreur= "Veuillez entrer un code postal valide" ;
                 }
               else{//verif ville contient que des lettres
-                if ((preg_match('#^[\p{L}-\p{N}À-ÖØ-öø-ÿ\s]+$#', $ville)) == false){
+                if ((preg_match('#^[\p{L}-À-ÖØ-öø-ÿ\s]+$#', $ville)) == false){
                     $erreur= "La ville ne doit contenir que des lettres" ;
                   }
                 else {//vérifie le format du numéro de telephone OXXXXXXXXX

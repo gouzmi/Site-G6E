@@ -63,6 +63,47 @@
 
           </div>
 
+          <h3>Suppression d'un client :</h3>
+            <div id="cas">
+
+              <div class="info">
+                <p>
+                  Pour supprimer un client dans la table utilisateur, vous devez rentrez l'email de ce dernier.
+                </p>
+              </div>
+              <div class="form">
+                <form method="post" action="" id="supprimer">
+                  <label>email : </label><br />
+
+                  <select>
+                  <?php
+                      while ($donnees = $suppression->fetch())
+                      {
+                      ?>
+                                <option value="<?php $donnees['mail']; ?>"><?php echo $donnees['mail']; ?></option>
+                      <?php
+                      }
+                  ?>
+                  </select>
+
+                  <input type="submit" value="Supprimer" name="suppclient1" />
+                  <center>
+                    <?php if (isset($info4)){
+                        echo $info4;
+                    } ?>
+                  </center>
+                </form>
+
+                <form method="post" action="" id="supprimer">
+                  <label>email : </label><br />
+                  <input type="email" name="suppmailclient2" placeholder="client@gmail.com" required/>
+                  <input type="submit" value="Supprimer" name="suppclient2" />
+
+                </form>
+
+              </div>
+            </div>
+
           <h3>Ajout d'information dans la FAQ</h3>
             <div id="cas">
 
@@ -92,7 +133,7 @@
       </article>
 
 
-    </div>
+
     <?php include("footer.php") ?>
     </body>
 

@@ -128,14 +128,20 @@
             <div>Nom_Capteur</div>
             <div>Données</div>
             <div>Pièce</div>
-            <button> Action</button>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
           </div>
 
           <div class="boite">
             <div>Nom_Capteur</div>
             <div>Données</div>
             <div>Pièce</div>
-            <button> Action</button>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
           </div>
 
         </div>
@@ -145,7 +151,10 @@
             <div>Nom_Capteur</div>
             <div>Données</div>
             <div>Pièce</div>
-            <button> Action</button>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
           </div>
         </div>
 
@@ -154,13 +163,19 @@
             <div>Nom_Capteur</div>
             <div>Données</div>
             <div>Pièce</div>
-            <button> Action</button>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
           </div>
           <div class="boite">
             <div>Nom_Capteur</div>
             <div>Données</div>
             <div>Pièce</div>
-            <button> Action</button>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
           </div>
         </div>
     </div>
