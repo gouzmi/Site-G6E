@@ -31,11 +31,28 @@ while ($donnees = $req->fetch())
     echo nl2br(htmlspecialchars($donnees['contenu']));
     ?>
     <br />
-    <em><a href="commentaire.php?billet=<?php echo $donnees['id_billet']; ?>">Commentaires</a></em>
+    <em><a href="commentaire.php?billet=<?php echo $donnees['id_billet']; ?>"><br>Commentaires</a></em>
     </p>
 </div>
+
+      <?php
+          } // Fin de la boucle des commentaires
+            $req->closeCursor();
+      ?>
+
+<form method = "post" action = "index2_post.php?billet=">
+                <p>
+                    <label for = "auteur"><strong>Votre pseudo :</strong></label>
+                    <input type = "text" name = "auteur" id = "auteur"/><br/>
+                    <label for = "contenu"><strong>Commentaire :</strong></label><br/>
+                    <textarea type ="text" name = "commentaire" id = "commentaire" rows ="8" cols="45">Votre post...</textarea><br/>
+                    <input type = "submit" value = "Poster Votre sujet"/>
+                </p>
+            </form>
+
+
 <?php
-} // Fin de la boucle des billets
+// Fin de la boucle des billets
 $req->closeCursor();
 ?>
 </body>

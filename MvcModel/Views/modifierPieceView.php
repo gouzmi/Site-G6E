@@ -6,27 +6,35 @@
   <link rel="stylesheet" type="text/css" href="../Css/headerfooterr.css">
   <link rel="stylesheet" type="text/css" href="../Css/editerMaison.css">
 </head>
+
+
 <?php include ("header.php")?>
+
+
 <body class="no" id="menu">
+
+
   <div id="corps">
   <?php include("../Views/slideView.php") ;?>
   <div class="page">
-    <section>
-     <p id="titre">Modifier vos pièces </p> <br><br>
-     <form action="" method="post">
+
+
+     <form action="" method="post" class="form-style-6">
+       <h1>Modifier votre pièce ici !</h1>
        <center>
-       <label id="question">Vous voulez ajouter une autre piece ou supprimer une piece? </label>
-       <br><br>
-       <input type="radio" name="ajouter" value="ajouter" id="ajouter"><label for="ajouter" >Ajouter une autre piece</label>
-       <input type="radio" name="supprimer" value="supprimer" id="supprimer"><label for="supprimer">Supprimer une piece</label>
-       <br><br><br>
+       <label>Vous voulez ajouter une autre pièce ou supprimer une pièce? </label>
+       <br><br><br><br>
+       <input type="radio" name="ajouter" value="ajouter" id="ajouter"><label class="ca" for="ajouter" >Ajouter une autre pièce</label>
+       <input type="radio" name="supprimer" value="supprimer" id="supprimer"><label class="ca" for="supprimer">Supprimer une pièce</label>
+       <br><br><br><br>
        <input type="submit" value="Valider" id="Valider">
      </center>
-     </form>
+
      <div id="retour"><a href="editerMaison.php"> Retour </a></div>
+   </form>
      <br>
-   </section>
 </div>
+
 </div>
 </body>
 <?php include("footer.php") ?>

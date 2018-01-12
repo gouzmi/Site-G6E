@@ -1,4 +1,4 @@
-<head>
+ <head>
   <link rel="stylesheet" href="../Css/font-awesome-4.7.0/css/font-awesome.min.css"/>
 </head>
 
@@ -8,12 +8,15 @@
         <div class="image"><a href="page1.php"><img src="../Images/logodomhomepetit.png" ></a></div>
     <div>
         <?php if (isset($_SESSION['id']) AND $_SESSION['id'] > 1) { ?>
-          <a href="../Controlers/Produits.php" class="link" id="autres"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
+          <a href="../Controlers/faq.php" class="link" id="autres"><i class="fa fa-question" aria-hidden="true"></i> Faq</a>
           <a href="contact.php" class="link" id="autres"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
 
                 <?php if ($_SESSION['admin'] == 1)  { ?>
                   <a href="admin.php" class="link"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Espace admin</a>
                 <?php }
+                  elseif ($_SESSION['admin'] == 2) { ?>
+                    <a href="admin2.php" class="link"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Espace SAV</a>
+                <?php  }
                       else { ?>
                         <a href="accueilConnectePiece.php" class="link"><i class="fa fa-home" aria-hidden="true"></i>  Gérer Sa Maison</a>
                       <?php } ?>
@@ -22,8 +25,8 @@
           <?php }
 
         else { ?>
-          <a href="" href="javascript:void(0);"class="link"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Produits</a>
-          <a href="contact.php" href="javascript:void(0);"class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
+          <a  href="faq.php" class="link"><i class="fa fa-question" aria-hidden="true"></i> Faq</a>
+          <a href="contact.php" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
           <a href="login.php" class="link" ><i class="fa fa-sign-in" aria-hidden="true"></i>  Se connecter</a>
         <?php }
         ?>

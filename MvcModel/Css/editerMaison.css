@@ -6,7 +6,7 @@ html
 
 .form-style-6{
     font: 95% Arial, Helvetica, sans-serif;
-    width: 30%;
+    width: 35%;
     max-height: 500px;
     margin-top: 6%;
     margin-left: auto;
@@ -29,11 +29,13 @@ html
 
 label
 {
-  /*  display: block;  La balise devient de type block. */
+  /* display: block;  La balise devient de type block.*/
   	width: 100%;
     margin-bottom: 10px;
 }
-
+.labell{
+  text-align: left;
+}
 .ca{
   margin-left: 10px;
   margin-right: 20px;

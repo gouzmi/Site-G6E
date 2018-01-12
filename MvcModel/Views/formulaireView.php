@@ -31,8 +31,8 @@
         <input type="text" name="ville" placeholder="Ville"required id="ville">
         <input type="text" name="tel"required title="Veuillez entrer un numéro  Ex: 0123456789" placeholder="Numéro de téléphone" id="tel">
         <input type="text" name="mail" placeholder="Adresse email" required title="Veuillez entrez l'adresse email utilisée lors de la commande" id="email">
-        <input type="text" name="mdp"  placeholder="Mot de passe" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
-        <input type="text" name="mdp2" placeholder="Confirmation Mot de passe"required id="pass">
+        <input type="password" name="mdp"  placeholder="Mot de passe" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe">
+        <input type="password" name="mdp2" placeholder="Confirmation Mot de passe"required id="pass">
         <input type="submit" name="caseconditions" value="S'inscrire" id="inscrire">
 
         </form>

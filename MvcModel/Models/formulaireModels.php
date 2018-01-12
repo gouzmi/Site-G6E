@@ -1,7 +1,10 @@
 <?php
 
   include('connexiondb.php');
+<<<<<<< HEAD
   //  include('securite.php');
+=======
+>>>>>>> d01bfc0c0291adfc7adc0220dc6d004e7aebd57c
 
 
   if(isset($_POST['caseconditions']))  //Vérif formulaire rempli
@@ -49,7 +52,7 @@
                   $erreur= "Veuillez entrer un code postal valide" ;
                 }
               else{//verif ville contient que des lettres
-                if ((preg_match('#^[\p{L}-\p{N}À-ÖØ-öø-ÿ\s]+$#', $ville)) == false){
+                if ((preg_match('#^[\p{L}-À-ÖØ-öø-ÿ\s]+$#', $ville)) == false){
                     $erreur= "La ville ne doit contenir que des lettres" ;
                   }
                 else {//vérifie le format du numéro de telephone OXXXXXXXXX
@@ -87,6 +90,14 @@
 
                                   $erreur= "Votre compte a bien été créé ! <a href=\"login.php\"> Se connecter</a> ";
                                 }
+                                elseif($adminverify['admin'] == 2)   //---les services
+                                {
+                                  $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, adresse_contact, cp_contact, ville_contact, telephone, mail, mdp, admin)
+                                                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, 1)");
+                                  $insert->execute(array($nom, $prenom, $adresse, $cp, $ville, $tel, $mail, $mdp)) ;
+
+                                  $erreur= "Votre compte a bien été créé ! <a href=\"login.php\"> Se connecter</a> ";
+                                }                                    //---les services
                                 else {
                                   $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, adresse_contact, cp_contact, ville_contact, telephone, mail, mdp)
                                                             VALUES(?, ?, ?, ?, ?, ?, ?, ?)");

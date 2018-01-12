@@ -1,6 +1,10 @@
 <?php
   include('connexiondb.php');
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> d01bfc0c0291adfc7adc0220dc6d004e7aebd57c
   if(isset($_POST['formconnexion']))
 		{
 			$mailconnect = ($_POST['mailconnect']);
@@ -27,7 +31,7 @@
                 }
               else
                 {
-                  header("Location: accueilConnectePiece.php?id=".$_SESSION['id']);
+                  header("Location: profil.php?id=".$_SESSION['id']);
                 }
             }
           else{

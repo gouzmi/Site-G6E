@@ -22,7 +22,7 @@
      <form action="" method="post" class="form-style-6">
        <h1>Editer votre maison ici !</h1>
        <center>
-       <label >Que souhaitez-vous modifier ? </label>
+       <label>Que souhaitez-vous modifier ? </label>
        <br><br><br><br>
        <input type="radio" name="capteur" id="capteur"><label class="ca" for="capteur" >Capteur</label>
        <input type="radio" name="piece" id="piece"><label class="ca" for="piece">Pièce</label>
