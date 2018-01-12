@@ -1,5 +1,5 @@
 <?php
-// Connexion à la base de données
+
 try
 {
     $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;

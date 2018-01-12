@@ -35,17 +35,18 @@ while ($donnees = $req->fetch())
     </p>
 </div>
 
-<?php
-} // Fin de la boucle des commentaires
-$req->closeCursor();
-?>
-  <form method = "post" action = "index2_post.php?billet=<?php echo $_GET['billet'];?>">
+      <?php
+          } // Fin de la boucle des commentaires
+            $req->closeCursor();
+      ?>
+
+<form method = "post" action = "index2_post.php?billet=">
                 <p>
-                    <label for = "titre"><strong>Votre pseudo :</strong></label>
-                    <input type = "contenu" name = "titre" id = "titre"/><br/>
-                    <label for = "contnur"><strong>Sujet :</strong></label><br/>
-                    <textarea type ="text" name = "commentaire" id = "commentaire" rows ="8" cols="45">Votre billet...</textarea><br/>
-                    <input type = "submit" value = "Poster votre billet"/>
+                    <label for = "auteur"><strong>Votre pseudo :</strong></label>
+                    <input type = "text" name = "auteur" id = "auteur"/><br/>
+                    <label for = "contenu"><strong>Commentaire :</strong></label><br/>
+                    <textarea type ="text" name = "commentaire" id = "commentaire" rows ="8" cols="45">Votre post...</textarea><br/>
+                    <input type = "submit" value = "Poster Votre sujet"/>
                 </p>
             </form>
 
