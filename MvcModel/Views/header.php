@@ -18,7 +18,7 @@
                     <a href="admin2.php" class="link"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Espace SAV</a>
                 <?php  }
                       else { ?>
-                        <a href="accueilConnectePiece.php" class="link"><i class="fa fa-home" aria-hidden="true"></i>  Gérer Sa Maison</a>
+                        <a href="<?php echo "../Controlers/profil.php?id=".$_SESSION['id']; ?>" class="link"><i class="fa fa-home" aria-hidden="true"></i>  Gérer Sa Maison</a>
                       <?php } ?>
 
           <a href="../Controlers/deconnexion.php" class="link" id="autres"><i class="fa fa-sign-out" aria-hidden="true"></i>Se déconnecter</a>
