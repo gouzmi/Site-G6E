@@ -30,7 +30,7 @@
        <input type="submit" value="Valider" id="Valider">
      </center>
 
-     <div id="retour"><a href="editerMaison.php"> Retour </a></div>
+     <div id="retour"><a href="<?php echo "../Controlers/editerMaison.php?id=".$user['id_utilisateur']; ?>"> Retour </a></div>
    </form>
      <br>
 </div>

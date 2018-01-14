@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -32,12 +32,11 @@
 ?>
 
 
-<p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?>
-<br><br>
-<?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
-</div>
-
-
+                <p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?>
+                    <br><br>
+                    <?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?>
+                </p>
+      </div>
 
 <?php
 } // Fin de la boucle des commentaires
