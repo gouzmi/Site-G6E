@@ -9,8 +9,8 @@
   <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 
-    <?php include("header.php"); ?>
     <body>
+      <?php include("header.php"); ?>
         <h1>Forum de DOMHOME</h1>
         <h4>Derniers posts du forum :</h4>
 
@@ -54,6 +54,6 @@ $req->closeCursor();
 // Fin de la boucle des billets
 $req->closeCursor();
 ?>
-</body>
 <?php include("footer.php"); ?>
+</body>
 </html>

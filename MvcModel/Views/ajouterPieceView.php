@@ -8,9 +8,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
     </head>
 
-    <?php include("header.php") ?>
 
     <body class="no" id="menu">
+      <?php include("header.php") ?>
       <div id="corps">
         <?php include("../Views/slideView.php") ;?>
 
@@ -20,6 +20,6 @@
 
 
       </div>
+      <?php include("footer.php") ?>
     </body>
-    <?php include("footer.php") ?>
 </html>

@@ -7,9 +7,9 @@
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 
-    <?php include("header.php") ?>
 
     <body class="no" id="menu">
+      <?php include("header.php") ?>
       <div id="corps">
         <?php include("../Views/slideView.php") ;?>
 
@@ -17,6 +17,6 @@
 
 
       </div>
-    </body>
     <?php include("footer.php") ?>
+  </body>
 </html>

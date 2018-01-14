@@ -10,8 +10,8 @@
 </head>
 
 
-<?php include("header.php") ?>
 <body>
+	<?php include("header.php") ?>
 	<div class="page">
 
 		<form method="post" action=""  id="Login" class="form-style-6">
@@ -37,6 +37,6 @@
 
 		</form>
 	</div>
+	<?php include("footer.php") ?>
 </body>
-<?php include("footer.php") ?>
 </html>

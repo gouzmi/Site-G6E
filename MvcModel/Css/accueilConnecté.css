@@ -4,9 +4,20 @@ html
 {
     background-image: url(../Images/96f.jpg);
 }
-<<<<<<< HEAD
-#boite
-=======
+
+.boite {
+  background-color: #009688;
+  border-radius: 8px;
+  width: 20%;
+  min-width: 200px;
+  vertical-align: top;
+  margin-bottom:5px;
+}
+
+.boite h3 {
+    margin:0 0 5px;
+}
+
 
 #left
 {
@@ -16,15 +27,12 @@ html
 	justify-content: space-around;
 }
 
-
-
-
 .li{
 	display: flex;
 }
 
 .section
->>>>>>> 97131c934efef5d4d0c73e86c71157c2529cd003
+
 {
 	border: 1px solid;
 	border-radius: 10px;
@@ -71,4 +79,12 @@ html
 /* Create an active/current "tab button" class */
 .tab button.active {
     background-color: #ccc;
+}
+
+.tabcontent {
+  display:none;
+}
+
+.no-js .tabcontent, .tabcontent.active{
+  display:block;
 }

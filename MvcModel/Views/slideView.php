@@ -1,7 +1,5 @@
-<head>
-  <link rel="stylesheet" href="../Css/slide.css"/>
-  <script src="../javaScript/slide.js"></script>
-</head>
+<link rel="stylesheet" href="../Css/slide.css"/>
+<script src="../javaScript/slide.js"></script>
 
 <div class="sidebar">
 

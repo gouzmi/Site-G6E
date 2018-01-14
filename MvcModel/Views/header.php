@@ -1,8 +1,3 @@
- <head>
-  <link rel="stylesheet" href="../Css/font-awesome-4.7.0/css/font-awesome.min.css"/>
-</head>
-
-
 <header>
     <div class="header">
         <div class="image"><a href="page1.php"><img src="../Images/logodomhomepetit.png" ></a></div>

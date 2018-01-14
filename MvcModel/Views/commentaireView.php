@@ -9,8 +9,8 @@
         <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 
-    <?php include("header.php"); ?>
     <body>
+      <?php include("header.php"); ?>
         <h1>Commentaires des post</h1>
         <h2><a href="index2.php" class="link"><i aria-hidden="true"></i>Retour à la liste des post</a></h2>
 
@@ -52,6 +52,6 @@ $req->closeCursor();
                     <input type = "submit" value = "Poster Votre Commentaire"/>
                 </p>
             </form>
+            <?php include("footer.php"); ?>
 </body>
-<?php include("footer.php"); ?>
 </html>

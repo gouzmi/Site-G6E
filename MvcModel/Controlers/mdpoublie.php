@@ -1,13 +1,11 @@
 <?php
   session_start();
-
   require('../Models/mdpoublieModel.php');
 
-  if(isset($_POST['formmdpoublie'])){
+  if(isset($_SESSION['mailrecup']) AND !empty($_SESSION['mailrecup'])){
 
-    require('../Views/nouveaumdpView.php');
   }
-  else{
-
-    require('../views/mdpoublieView.php');
+  else if($_SESSION['code']){
+      require('../views/nouveaumdpView.php');
   }
+  else{require('../views/mdpoublieView.php');}

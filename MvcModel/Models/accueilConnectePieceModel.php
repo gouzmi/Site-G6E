@@ -2,33 +2,31 @@
 include('connexiondb.php');
 
 function valeur_capteur($id_type_capteur, $donnee){
+  $msg = "";
   if($id_type_capteur == 1){
     $msg= "Présence dans la pièce :".$donnee.".";
   }
-  else if ($id_type_capteur == 2) {
-    if($donnee == "")
+   if ($id_type_capteur == 2) {
     $msg= "Lumière dans la pièce :".$donnee.".";
   }
-  else if ($id_type_capteur == 3) {
+ if ($id_type_capteur == 3) {
     $msg= "Température dans la pièce :".$donnee.".";
   }
-  else if ($id_type_capteur == 4) {
+ if ($id_type_capteur == 4) {
     $msg= "Fumée :".$donnee.".";
   }
-  else if ($id_type_capteur == 5 ) {
+ if ($id_type_capteur == 5 ) {
     $msg= "La porte/fenêtre est ouverte:".$donnee.".";
   }
-  else if ($id_type_capteur == 6 ) {
+ if ($id_type_capteur == 6 ) {
     $msg= "La consomation électrique de la pièce est de :".$donnee."kW.";
   }
-  else if ($id_type_capteur == 7 ) {
-    $msg= $donnee ;
+ if ($id_type_capteur == 7 ) {
+    $msg= $donnee;
   }
   return $msg;
 
 }
-
-
 
 function logo_capteur($id_type_capteur)
 {
@@ -56,29 +54,20 @@ function logo_capteur($id_type_capteur)
   return $logo;
 }
 
+$CAPTEURS = array(
+  1 => "Capteur de Présence",
+  2 => "Capteur de Lumière",
+  3 => "Capteur de Température",
+  4 => "Détecteur de Fumée",
+  5 => "Capteur de contact",
+  6 => "Capteur de consommation",
+  7 => "Caméra de surveillance"
+);
 
 function titre_capteur($id_type_capteur){
-  if($id_type_capteur == 1){
-    $msg= "Capteur de Présence";
-  }
-  else if ($id_type_capteur == 2) {
-    if($donnee == "")
-    $msg= "Capteur de Lumière";
-  }
-  else if ($id_type_capteur == 3) {
-    $msg= "Capteur de Température";
-  }
-  else if ($id_type_capteur == 4) {
-    $msg= "Détecteur de Fumée";
-  }
-  else if ($id_type_capteur == 5 ) {
-    $msg= "Capteur de contact";
-  }
-  else if ($id_type_capteur == 6 ) {
-    $msg= "Capteur de consommation";
-  }
-  else if ($id_type_capteur == 7 ) {
-    $msg= "Caméra de surveillance" ;
+  $msg = "Type de capteur inconnu";
+  if(isset($CAPTEURS[$id_type_capteur])) {
+    $msg = $CAPTEURS[$id_type_capteur];
   }
   return $msg;
 }

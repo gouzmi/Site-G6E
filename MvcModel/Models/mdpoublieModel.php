@@ -8,7 +8,14 @@ if(isset($_POST['formmdpoublie'])){
 		$requser->execute(array($mailrecup));
 		$userexist = $requser->rowCount();
 		if($userexist == 1){
-			//paramètres d'encodage
+
+			$_SESSION['mailrecup'] = $requser->fetch();
+			$code = rand(100000, 999999);
+			$_SESSION['code'] = $code ;
+			$requser = $bdd->prepare("INSERT INTO mailrecup, code FROM recuperation VALUES (?,?,)");
+			$requser->execute(array($mailrecup, $code));
+
+			//paramètres d'encodageINSERT INTO
 			$header="MIME-Version: 1.0\r\n";
 			$header.='From:"DomHome.fr"<sav@DomHome.fr>'."\n";
 			$header.='Content-Type:text/html; charset="uft-8"'."\n";
@@ -22,7 +29,7 @@ if(isset($_POST['formmdpoublie'])){
 						Bonjour, <br><br>
 						Vous avez perdu votre mot de passe  ?<br>
 						Pas d\'inquiétude, vous pouvez dès maintenant le réinitialiser.
-						Pour cela cliquez sur le lien ci-dessous :
+						Pour cela veuillez renseigner le code suivant: <strong> <?php echo $code;?> </strong> après avoir cliqué sur le lien suivant:
 						<br><br/>
 						<center> http://localhost/git/site-G6E/MvcModel/Views/nouveaumdpView.php</center>
 						<br/>
@@ -40,7 +47,7 @@ if(isset($_POST['formmdpoublie'])){
 			</html>
 			';
 
-			mail($mailrecup, "Réinintialisation mot de passe - DomHome", $message, $header);
+			mail($_SESSION['mailrecup'], "Réinintialisation mot de passe - DomHome", $message, $header);
 			$erreur = "L'email a été envoyé avec succès.";
 			header("Location: ../Controlers/mdpoublie.php");
 
@@ -55,15 +62,33 @@ if(isset($_POST['formmdpoublie'])){
 }
 
 if(isset($POST['formnouveaumdp'])){
-	if ((preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}$#', $_POST['mdp'])) == false){
-			$erreur= '6 caractères minimun dont une majuscule, une minuscule, un chiffre et un caractère spécial' ;
-		}
-	else if ($mdp != $_POST['mdp2']){
-			$erreur= "Les mots de passes sont différents";}
-  else{
-		$mdp = password_hash($mdp,PASSWORD_BCRYPT);
-		$insert = $bdd->execute(array('UPDATE `utilisateur` SET `mdp` = '.$_POST['mdp'].' WHERE `utilisateur`.`mail` = '.$_POST['mail'].'' ));
-		//	$insert->execute(array( $mdp)) ;
-		$erreur= "Votre Mot de passe a bien été mis à jour ! ";
+	$_SESSION['code'] = $code ;
+	$reqcode = $bdd->prepare("SELECT code FROM recuperation WHERE mail_recuperation = ?");
+	$reqcode->execute(array($mailrecup));
+	$codeexist = $reqcode->rowCount();
+	$coderecup = $reqcode->fetch();
+
+
+	if ($codeexist == 1 AND $coderecup == $_POST['code'] ){
+			if ((preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}$#', $_POST['mdp'])) == false){
+					$erreur= '6 caractères minimun dont une majuscule, une minuscule, un chiffre et un caractère spécial' ;
+				}
+			else if ($mdp != $_POST['mdp2']){
+					$erreur= "Les mots de passes sont différents";}
+		  else{
+				$mdp = password_hash($mdp,PASSWORD_BCRYPT);
+				$updatemdp = $bdd->execute(array('UPDATE `utilisateur` SET `mdp` = :nvmdp WHERE`mail` = :mailrecup' ));
+				$updatemdp->execute(array(
+					'nvmdp' => $_POST['mdp'] ,
+					'mailrecup' => $_SESSION['mailrecup']));
+
+				//Supprimer la ligne de recup
+				$reqcode = $bdd->prepare("DELETE * FROM recuperation WHERE mail_recuperation = ?");
+				$reqcode->execute(array($mailrecup));
+				$erreur= "Votre Mot de passe a bien été mis à jour ! ";
+			}
+	else{
+		$erreur = "Code de récuperation non valide ";
 	}
+
 }

@@ -8,10 +8,10 @@
 </head>
 
 
-<?php include ("header.php")?>
 
 
 <body class="no" id="menu">
+  <?php include ("header.php")?>
 
 
   <div id="corps">
@@ -29,13 +29,13 @@
        <br><br><br><br>
        <input type="submit" value="Valider" id="Valider">
      </center>
-     
+
      <div id="retour"><a href="editerMaison.php"> Retour </a></div>
     </form>
      <br>
 </div>
 
 </div>
-</body>
 <?php include("footer.php") ?>
+</body>
 </html>
