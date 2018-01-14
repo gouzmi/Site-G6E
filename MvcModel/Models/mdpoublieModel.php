@@ -55,7 +55,7 @@ if(isset($_POST['formmdpoublie'])){
 		else{
 			$erreur="Adresse email non reconnue";
 		}
-		}
+
 	else{
 		$erreur="Veuillez renseigner votre adresse email";
 	}
