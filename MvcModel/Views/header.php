@@ -7,7 +7,7 @@
     <div class="header">
         <div class="image"><a href="page1.php"><img src="../Images/logodomhomepetit.png" ></a></div>
     <div>
-        <?php if (isset($_SESSION['id']) AND $_SESSION['id'] > 1) { ?>
+        <?php if (isset($_SESSION['id']) AND $_SESSION['id'] > 0) { ?>
           <a href="../Controlers/faq.php" class="link" id="autres"><i class="fa fa-question" aria-hidden="true"></i> Faq</a>
           <a href="contact.php" class="link" id="autres"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
 
@@ -18,7 +18,7 @@
                     <a href="admin2.php" class="link"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Espace SAV</a>
                 <?php  }
                       else { ?>
-                        <a href="<?php echo "../Controlers/profil.php?id=".$_SESSION['id']; ?>" class="link"><i class="fa fa-home" aria-hidden="true"></i>  Gérer Sa Maison</a>
+                        <a href="../Controlers/profil" class="link"><i class="fa fa-home" aria-hidden="true"></i>  Gérer Sa Maison</a>
                       <?php } ?>
 
           <a href="../Controlers/deconnexion.php" class="link" id="autres"><i class="fa fa-sign-out" aria-hidden="true"></i>Se déconnecter</a>

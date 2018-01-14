@@ -38,9 +38,10 @@
   {
     $requser = $bdd->prepare("SELECT * from utilisateur where mail = ? ");
     $requser->execute(array($_POST['clientView']));
-    $user = $requser->fetch();
+    $client = $requser->fetch();
+    $_SESSION['client'] = $client['id_utilisateur'];
 
-    header("Location: profil.php?id=".$user['id_utilisateur']);
+    header("Location: profil.php");
   }
 
 
