@@ -27,11 +27,7 @@
                 }
               else
                 {
-<<<<<<< HEAD
-                  header("Location: accueilConnectePiece.php?id=".$_SESSION['id']);
-=======
                   header("Location: profil.php");
->>>>>>> 2dfe1780d9e361653bfaa435394801a543d73bb8
                 }
             }
           else{

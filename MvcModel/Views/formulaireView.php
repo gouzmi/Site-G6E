@@ -11,11 +11,7 @@
 
 
     <body>
-<<<<<<< HEAD
-
-=======
       <?php include("header.php") ?>
->>>>>>> 2dfe1780d9e361653bfaa435394801a543d73bb8
     <div class="section">
       <div class= "entete"> <p id="titre"> Inscrivez-vous !</p>
 
