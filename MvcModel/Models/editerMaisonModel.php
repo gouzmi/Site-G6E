@@ -1,4 +1,7 @@
 <?php
+
+include('connexiondb.php');
+
 if (isset($_POST['capteur']))
 {
   header("Location: modifierCapteur.php");

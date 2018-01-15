@@ -1,9 +1,7 @@
 <?php session_start();
   if (isset($_SESSION['id']) ) {
-
-    require('../Models/profilModels.php');
-
-    require('../Views/profilView.php');
+    require('../Models/pieceModel.php');
+    require('../Views/pieceView.php');
   }
 
   else {

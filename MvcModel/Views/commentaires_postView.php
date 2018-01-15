@@ -8,12 +8,12 @@
         <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 
-    <?php include("header.php"); ?>
 
     <body>
+      <?php include("header.php"); ?>
 
 
 
-    </body>
     <?php include("footer.php"); ?>
+  </body>
 </html>

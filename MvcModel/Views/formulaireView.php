@@ -9,10 +9,13 @@
   <!--  <script src="verificationFormulaire.js" type="text/javascript"></script> -->
     </head>
 
-    <?php include("header.php") ?>
 
     <body>
+<<<<<<< HEAD
 
+=======
+      <?php include("header.php") ?>
+>>>>>>> 2dfe1780d9e361653bfaa435394801a543d73bb8
     <div class="section">
       <div class= "entete"> <p id="titre"> Inscrivez-vous !</p>
 
@@ -179,7 +182,7 @@
 
 
 
-    <?php include("footer.php") ?>
     </body>
+    <?php include("footer.php") ?>
 
 </html>

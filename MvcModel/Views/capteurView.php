@@ -11,10 +11,10 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </head>
 
-<?php include("header.php") ?>
 
 
 <body class="no" id="menu">
+  <?php include("header.php") ?>
 <!-- Menu pièce-->
 <div id="corps">
 
@@ -199,8 +199,8 @@ function openCate(evt, cateName) {
 document.getElementById("defaultOpen").click();
 </script>
 
+<?php include("footer.php") ?>
 </body>
 
-<?php include("footer.php") ?>
 
 </html>

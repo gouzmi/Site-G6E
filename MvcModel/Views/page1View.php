@@ -7,10 +7,10 @@
     <script src="../javaScript/jquery.fullPage.js"></script>
     <link rel="stylesheet" href="../Css/cssp11.css"/>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
-    <?php include("header.php") ?>
     </head>
 
     <body>
+      <?php include("header.php") ?>
 
     <div class="page">
     <!--page1-->
@@ -164,6 +164,6 @@
 
 </section>
     </div>
+    <?php include("footer.php") ?>
 </body>
-<?php include("footer.php") ?>
 </html>

@@ -1,4 +1,7 @@
 <?php
+
+include('connexiondb.php');
+
 if (isset($_POST['ajouter']))
 {
   header("Location: ajouterPiece.php");

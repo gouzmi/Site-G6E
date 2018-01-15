@@ -9,9 +9,9 @@
         <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     </head>
 
-    <?php include("header.php"); ?>
 
     <body>
+      <?php include("header.php"); ?>
 
 
 <?php
@@ -37,6 +37,6 @@ if(!empty($_GET['billet']) AND !empty($_POST['auteur']) AND !empty($_POST['bille
               header('Location:index2.php?billet=' . $_GET['billet']);
 }
     ?>
-    </body>
     <?php include("footer.php"); ?>
+    </body>
 </html>

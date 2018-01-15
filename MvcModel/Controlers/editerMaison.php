@@ -1,7 +1,9 @@
 <?php session_start();
-  if (isset($_SESSION['id']) and ($_SESSION['id'] == $_GET['id'] or $_SESSION['admin'] == 1 )) {
-    require('../Views/editerMaisonView.php');
+  if (isset($_SESSION['id'])) {
+
     require('../Models/editerMaisonModel.php');
+    require('../Views/editerMaisonView.php');
+
   }
 
   else {

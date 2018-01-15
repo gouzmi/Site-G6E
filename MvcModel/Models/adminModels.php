@@ -22,15 +22,27 @@
       $info3 = "Succès";
     }
 
+  $selectclient = $bdd->query('SELECT * FROM utilisateur');
   $suppression = $bdd->query('SELECT * FROM utilisateur');
 
-  if (isset($_POST['suppclient2']))
-    {
-      $suppcl = $bdd->prepare("DELETE FROM `utilisateur` WHERE mail=? ");
-      $suppcl->execute(array($_POST['suppmailclient2']));
-      $info4 = "Succès";
-    }
 
+
+  if (isset($_POST['suppclient1']))
+  {
+    $suppcl = $bdd->prepare("DELETE FROM `utilisateur` WHERE mail=? ");
+    $suppcl->execute(array($_POST['suppmailclient1']));
+    $info4 = "Succès";
+  }
+
+  if (isset($_POST['accesclient']))
+  {
+    $requser = $bdd->prepare("SELECT * from utilisateur where mail = ? ");
+    $requser->execute(array($_POST['clientView']));
+    $client = $requser->fetch();
+    $_SESSION['client'] = $client['id_utilisateur'];
+
+    header("Location: profil.php");
+  }
 
 
  ?>
