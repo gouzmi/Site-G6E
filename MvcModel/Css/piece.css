@@ -4,9 +4,21 @@ html
 {
     background-image: url(../Images/96f.jpg);
 }
-<<<<<<< HEAD
-#boite
-=======
+
+.boite {
+  background-color: #009688;
+  border-radius: 8px;
+  width: 20%;
+  min-width: 200px;
+  vertical-align: top;
+  margin-bottom:5px;
+  display: inline-block;
+}
+
+.boite h3 {
+    margin:0 0 5px;
+}
+
 
 #left
 {
@@ -16,15 +28,12 @@ html
 	justify-content: space-around;
 }
 
-
-
-
 .li{
 	display: flex;
 }
 
 .section
->>>>>>> 97131c934efef5d4d0c73e86c71157c2529cd003
+
 {
 	border: 1px solid;
 	border-radius: 10px;
@@ -50,7 +59,7 @@ html
 }
 
 /* Style the buttons that are used to open the tab content */
-.tab button {
+.tab .tablinks {
     display: block;
     background-color: inherit;
     color: black;
@@ -61,14 +70,24 @@ html
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
+.tab .tablinks:hover {
     background-color: #ddd;
 }
 
 /* Create an active/current "tab button" class */
-.tab button.active {
+.tab .tablinks.active {
     background-color: #ccc;
+}
+
+.tabcontent {
+  display:none;
+}
+
+.no-js .tabcontent, .tabcontent.active{
+  display:block;
 }

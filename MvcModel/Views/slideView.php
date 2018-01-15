@@ -1,7 +1,5 @@
-<head>
-  <link rel="stylesheet" href="../Css/slide.css"/>
-  <script src="../javaScript/slide.js"></script>
-</head>
+<link rel="stylesheet" href="../Css/slide.css"/>
+<script src="../javaScript/slide.js"></script>
 
 <div class="sidebar">
 
@@ -28,7 +26,7 @@
       <a href="../Controlers/profil.php" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
       </div>
       <div class="rubrique">
-      <a href="../Controlers/accueilConnectePiece.php" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
+      <a href="../Controlers/piece.php" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
       </div>
       <div class="rubrique">
       <a href="../Controlers/capteur.php" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>

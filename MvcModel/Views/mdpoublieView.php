@@ -12,28 +12,27 @@
 
 <?php include("header.php") ?>
 <body>
-	<div class="page">
+	<div id="corps">
+	<form method="post" action="" class="form-style-6">
+		<h1>Récupération Mot de passe</h1>
 
-		<form method="post" action="../Controlers/login.php" class="form-style-6">
-			<h1>Récupération Mot de passe</h1>
 
+		<label>Quel est votre adresse email ? </label>
+		<input type="email" name="mail" placeholder="Adresse email" required title="Veuillez entrez l'adresse email utilisée lors de la commande" id="email">
+		<br><br><br>
+		<input type="submit" value="Envoyer" name="formmdpoublie" >
+		<br><br/>
+		<?php
+			if (isset($erreur)) {
+				echo $erreur;
+			}
+		?>
+		<br/>
+		<div id="retour"><a href="../Controlers/login.php"> Connectez-vous !</a></div>
 
-			<label>Quel est votre adresse email ? </label>
-			<input type="email" name="mail" placeholder="Adresse email" required title="Veuillez entrez l'adresse email utilisée lors de la commande" id="email">
-			<br><br><br>
-			<input type="submit" value="Envoyer" name="formmdpoublie" >
-			<br><br/>
-			<?php
-				if (isset($erreur)) {
-				  echo $erreur;
-				}
-			?>
-			<br/>
-			<div id="retour"><!--<a href="../Controlers/login.php"> Connectez-vous !</a>--></div>
-
-		</form>
-		<br>
-	</div>
+	</form>
+	<br>
+</div>
 </body>
 <?php include("footer.php") ?>
 </html>

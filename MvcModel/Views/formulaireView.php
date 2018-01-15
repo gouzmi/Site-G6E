@@ -8,9 +8,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
     </head>
 
-    <?php include("header.php") ?>
 
     <body>
+      <?php include("header.php") ?>
     <div class="section">
       <div class= "entete"> <p id="titre"> Inscrivez-vous !</p>
 
@@ -37,7 +37,7 @@
       </div>
       </div>
 
-    <?php include("footer.php") ?>
     </body>
+    <?php include("footer.php") ?>
 
 </html>

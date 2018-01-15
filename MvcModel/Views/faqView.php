@@ -10,11 +10,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
     </head>
 
-
-    <?php include("header.php"); ?>
 <body class="no" id="menu">
+  <?php include("header.php"); ?>
 
-    <div class="page">
+    <div id="page1">
 
 
         <h1 class="titre">Foire aux questions</h1>
@@ -57,8 +56,8 @@
 </body>
 
 
-</body>
 <?php include("footer.php"); ?>
+</body>
 
 
 </html>
