@@ -26,7 +26,7 @@ if($ajax) {
       $sqlpiece ='SELECT piece.id_piece, piece.nom_piece
                      FROM piece INNER JOIN logement
                      ON piece.id_logement = logement.id_logement
-                     WHERE logement.id_utilisateur = '.$_SESSION['id'].'' ;
+                     WHERE logement.id_utilisateur = '.$user['id_utilisateur'].'' ;
 
 
 

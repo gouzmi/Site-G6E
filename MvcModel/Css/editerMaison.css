@@ -3,6 +3,9 @@ html
     background-image: url(../Images/96f.jpg);
 }
 
+#corps{
+  flex-direction: column;
+}
 
 .form-style-6{
     font: 95% Arial, Helvetica, sans-serif;
