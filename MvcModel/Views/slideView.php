@@ -23,16 +23,16 @@
       </div>
 
       <div class="rubrique">
-      <a href="<?php echo "../Controlers/profil.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
+      <a href="../Controlers/profil.php" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
       </div>
       <div class="rubrique">
-      <a href="<?php echo "../Controlers/piece.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
+      <a href=""../Controlers/piece.php" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
       </div>
       <div class="rubrique">
-      <a href="<?php echo "../Controlers/capteur.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
+      <a href="../Controlers/capteur.php" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>
       </div>
       <div class="rubrique">
-      <a href="<?php echo "../Controlers/editerMaison.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Editer sa Maison</a>
+      <a href="../Controlers/editerMaison.php" class="lien"><i class="" aria-hidden="true"></i> Editer sa Maison</a>
       </div>
       <div class="rubrique">
       <a href="" class="lien"><i class="" aria-hidden="true"></i> Forum</a>
