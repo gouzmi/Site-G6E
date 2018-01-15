@@ -12,7 +12,7 @@
 
 <body>
 	<?php include("header.php") ?>
-	<div id="corps">
+	<div id="page1">
 
 		<form method="post" action=""  id="Login" class="form-style-6">
 			<h1>Connectez-vous !</h1>

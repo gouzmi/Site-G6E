@@ -12,7 +12,7 @@
 
     <body>
       <?php include("header.php") ?>
-    <div id="corps">
+    <div id="page1">
     <h1 class="titre">Contact</h1>
         <article>
             <div>

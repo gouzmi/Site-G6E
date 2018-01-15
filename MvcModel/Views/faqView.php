@@ -13,7 +13,7 @@
 <body class="no" id="menu">
   <?php include("header.php"); ?>
 
-    <div id="corps">
+    <div id="page1">
 
 
         <h1 class="titre">Foire aux questions</h1>
