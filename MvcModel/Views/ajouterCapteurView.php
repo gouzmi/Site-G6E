@@ -18,7 +18,7 @@
   <div id="corps">
   <?php include("../Views/slideView.php") ;?>
   <div class="page">
-
+    <p id="erreur"><?php if (isset($info)) {echo $info;} ?></p>
     <form action="" method="post" class="form-style-6">
       <h1>Insérez-vous</h1>
 
@@ -60,7 +60,7 @@
 
         <br><br>
         <label>Le Cemac associé :</label>
-        <select name="idCemac">
+        <select name="idCemac"  id="idCemac" type="text">
           <?php
               while ($donnees3 = $variete3->fetch())
               {
@@ -74,10 +74,6 @@
         <br><br><br><br>
 
         <input type="submit" value="Enregistrer" name="Enregistrer">
-
-        <?php if (isset($info)){
-            echo $info;
-        } ?>
       </center>
     </form>
 
