@@ -1,7 +1,7 @@
 <?php session_start();
   if (isset($_SESSION['id']) and ($_SESSION['id'] == $_GET['id'] or $_SESSION['admin'] == 1 )) {
-    require('../Models/accueilConnectePieceModel.php');
-    require('../Views/accueilConnectePieceView.php');
+    require('../Models/pieceModel.php');
+    require('../Views/pieceView.php');
   }
 
   else {

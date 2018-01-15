@@ -1,4 +1,6 @@
 function openPiece(evt, id) {
+    event.preventDefault();
+
     // Declare all variables
     var i, tabcontent, tablinks;
 
@@ -17,4 +19,19 @@ function openPiece(evt, id) {
     // Show the current tab, and add an "active" class to the link that opened the tab
     document.getElementById(id).className+=" active";
     evt.currentTarget.className += " active";
+
+    // Ajax call only if never call
+    var btn = evt.currentTarget;
+    if(!btn.ajaxDone) {
+      var content = document.getElementById(id);
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          btn.ajaxDone = true;
+          content.innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET",  btn.href+'&ajax', true);
+      xhttp.send();
+    }
 }

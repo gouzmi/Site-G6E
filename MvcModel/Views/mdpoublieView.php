@@ -12,7 +12,7 @@
 
 <?php include("header.php") ?>
 <body>
-	<div class="page">
+	<div id="corps">
 	<form method="post" action="" class="form-style-6">
 		<h1>Récupération Mot de passe</h1>
 

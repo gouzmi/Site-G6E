@@ -12,6 +12,7 @@ html
   min-width: 200px;
   vertical-align: top;
   margin-bottom:5px;
+  display: inline-block;
 }
 
 .boite h3 {
@@ -58,7 +59,7 @@ html
 }
 
 /* Style the buttons that are used to open the tab content */
-.tab button {
+.tab .tablinks {
     display: block;
     background-color: inherit;
     color: black;
@@ -69,15 +70,17 @@ html
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
+.tab .tablinks:hover {
     background-color: #ddd;
 }
 
 /* Create an active/current "tab button" class */
-.tab button.active {
+.tab .tablinks.active {
     background-color: #ccc;
 }
 

@@ -10,9 +10,9 @@
 </head>
 
 
-<?php include("header.php") ?>
 <body>
-  <div class="page">
+  <?php include("header.php") ?>
+  <div id="corps">
     <form method="post" action=""  id="Login" class="form-style-6">
       <h1>Créez un nouveau mot de passe</h1>
       <input type="email" name="mail" placeholder="Adresse email" required title="Veuillez entrez votre adresse email" >
@@ -29,10 +29,11 @@
         }
       ?>
       </br>
-      <div id="inscription"><a href="formulaire.php">> Inscription</a></br>
+      <div id="inscription"><a href="formulaire.php">> Inscription</a></br></div>
       <div id="retour"><a href="../Controlers/login.php"> Connectez-vous !</a></div>
     </form>
   </div>
+  <?php include("footer.php") ?>
 </body>
-<?php include("footer.php") ?>
+
 </html>

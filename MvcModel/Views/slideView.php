@@ -26,7 +26,7 @@
       <a href="<?php echo "../Controlers/profil.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Profil</a>
       </div>
       <div class="rubrique">
-      <a href="<?php echo "../Controlers/accueilConnectePiece.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
+      <a href="<?php echo "../Controlers/piece.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Pièces</a>
       </div>
       <div class="rubrique">
       <a href="<?php echo "../Controlers/capteur.php?id=".$user['id_utilisateur']; ?>" class="lien"><i class="" aria-hidden="true"></i> Tous les capteurs</a>

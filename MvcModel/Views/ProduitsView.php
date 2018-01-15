@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <link rel="stylesheet" href="../Css/Produit.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
-    <script src="../javaScript/accueilConnectePiece.js"></script>
+    <script src="../javaScript/piece.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
 <script>
  function SELECTION(id){
