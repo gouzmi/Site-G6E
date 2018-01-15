@@ -2,3 +2,4 @@
   require('../Models/formulaireModels.php');
 
   require('../Views/formulaireView.php');
+?>

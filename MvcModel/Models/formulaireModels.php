@@ -2,7 +2,6 @@
 
   include('connexiondb.php');
 
-
   if(isset($_POST['caseconditions']))  //Vérif formulaire rempli
     {
       //Nettoyage des données reçues
@@ -30,7 +29,7 @@
       $mdp = $_POST['mdp'];
 
       //Vérif du format de chaque donnée nettoyée
-
+/*
       if ((preg_match('#^[A-Za-zÀ-ÖØ-öø-ÿ-]+$#', $nom)) == false){ //verif nom contient que des lettres
           $erreur= 'Le nom ne doit contenir que des lettres' ;
         }
@@ -48,7 +47,7 @@
                   $erreur= "Veuillez entrer un code postal valide" ;
                 }
               else{//verif ville contient que des lettres
-                if ((preg_match('#^[\p{L}-À-ÖØ-öø-ÿ\s]+$#', $ville)) == false){
+                if ((preg_match('#^[\p{L}-\p{N}À-ÖØ-öø-ÿ\s]+$#', $ville)) == false){
                     $erreur= "La ville ne doit contenir que des lettres" ;
                   }
                 else {//vérifie le format du numéro de telephone OXXXXXXXXX
@@ -66,8 +65,8 @@
                           else{
                             if ($mdp != $_POST['mdp2']){
                               $erreur= "Les mots de passes sont différents";}
-
-                           else{// cryptage mdp + verif mail dans la table precommande
+*/
+                        //   else{// cryptage mdp + verif mail dans la table precommande
 
                               $mdp = password_hash($mdp,PASSWORD_BCRYPT);
                               $verifemail = $bdd->prepare("SELECT * FROM precommande WHERE email_commande = ?");
@@ -86,14 +85,6 @@
 
                                   $erreur= "Votre compte a bien été créé ! <a href=\"login.php\"> Se connecter</a> ";
                                 }
-                                elseif($adminverify['admin'] == 2)   //---les services
-                                {
-                                  $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, adresse_contact, cp_contact, ville_contact, telephone, mail, mdp, admin)
-                                                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, 1)");
-                                  $insert->execute(array($nom, $prenom, $adresse, $cp, $ville, $tel, $mail, $mdp)) ;
-
-                                  $erreur= "Votre compte a bien été créé ! <a href=\"login.php\"> Se connecter</a> ";
-                                }                                    //---les services
                                 else {
                                   $insert = $bdd->prepare("INSERT INTO utilisateur(nom, prenom, adresse_contact, cp_contact, ville_contact, telephone, mail, mdp)
                                                             VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
@@ -104,7 +95,7 @@
                               }
 
                           }
-                      }
+                  /*    }
                   }
                 }
               }
@@ -112,5 +103,5 @@
         }
         }
       }
-    }
+    } */
 ?>
