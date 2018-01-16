@@ -25,6 +25,10 @@
                 {
             			header("Location: admin.php");
                 }
+              elseif ($userinfo['admin'] == 2)
+              {
+                  header("Location: admin2.php");
+              }
               else
                 {
                   header("Location: profil.php");
