@@ -12,7 +12,7 @@
 
 <body>
   <?php include("header.php") ?>
-  <div id="corps">
+  <div id="page1">
     <form method="post" action=""  id="Login" class="form-style-6">
       <h1>Créez un nouveau mot de passe</h1>
       <input type="email" name="mail" placeholder="Adresse email" required title="Veuillez entrez votre adresse email" >

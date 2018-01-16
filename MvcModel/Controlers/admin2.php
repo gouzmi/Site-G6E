@@ -1,5 +1,5 @@
 <?php session_start();
-if (isset($_SESSION['id']) AND $_SESSION['admin'] == 2) {
+if (isset($_SESSION['id']) AND $_SESSION['admin'] >=  1) {
 
   require('../Models/adminModels2.php');
 
