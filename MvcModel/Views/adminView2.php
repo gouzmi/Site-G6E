@@ -49,22 +49,23 @@
                 </p>
               </div>
               <div class="form">
-                <form method="post" action="" id="supprimer">
-                  <label>email : </label><br />
-
-                  <select>
-                  <?php
+                                <form method="post" action="" id="supprimer">
+                <label for="supprimerclient"> Email:</label> 
+                
+                <input type="text" name="clientmail" id="supprimerclient" list="clientlist"> 
+                <datalist id="clientlist"> 
+                <?php
                       while ($donnees = $suppression->fetch())
                       {
-                      ?>
-                                <option value="<?php $donnees['mail']; ?>"><?php echo $donnees['mail']; ?></option>
+                ?>
+                                <option value="<?php echo $donnees['mail']; ?>"><?php echo $donnees['mail']; ?></option>
                       <?php
                       }
                   ?>
-                  </select>
-
-                  <input type="submit" value="Supprimer" name="suppclient1" />
-                  <center>
+                </datalist>
+                
+                <input type="submit" value="Supprimer" name="suppclient1" />
+                                  <center>
                     <?php if (isset($info4)){
                         echo $info4;
                     } ?>
