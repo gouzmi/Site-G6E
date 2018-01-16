@@ -63,7 +63,7 @@
 
           </div>
 
-          <h3>Suppression d'un client :</h3>
+        <h3>Suppression d'un client :</h3>
             <div id="cas">
 
                   <div class="info">
@@ -96,7 +96,7 @@
                   </div>
             </div>
 
-          <h3>Ajout d'information dans la FAQ</h3>
+        <h3>Ajout d'information dans la FAQ</h3>
             <div id="cas">
 
                   <div class="info">
@@ -123,7 +123,7 @@
 
             </div>
 
-            <h3>Accéder à la vue d'un client :</h3>
+        <h3>Accéder à la vue d'un client :</h3>
               <div id="cas">
 
                     <div class="info">
@@ -156,6 +156,33 @@
                     </div>
 
               </div>
+
+        <h3>Modification des informations de DomHome:</h3>
+          <div id="cas">
+
+                <div class="info">
+                  <p>
+                    Pour modifier une information concernant la société DomHome sur le site, veuillez remplir le formulaire.
+                  </p>
+                </div>
+                <div class="form">
+                  <form method="post" action="" id="info">
+                    <label>Numéro de téléphone: </label><br />
+                    <input type="text" class="quesrep" name="numdomhome" placeholder="01 43 01 02 46" /><br />
+                    <label>Adresse DomHome: </label><br />
+                    <input type="text" class="quesrep" name="adressedomhome" placeholder="28 rue Notre-Dame des Champs, 75006 Paris"/><br />
+                    <label>Email DomHome: </label><br />
+                    <input type="email"class="quesrep" name="emaildomhome" placeholder="domisep@domhome.fr"/><br />
+                    <input type="submit" value="Modifier" name="modifsite" />
+                    <center>
+                      <?php if (isset($info5)){
+                            echo $info5;}
+                           ?>
+                    </center>
+                  </form>
+                </div>
+
+          </div>
 
       </article>
 

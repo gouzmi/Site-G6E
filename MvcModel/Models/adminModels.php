@@ -44,5 +44,26 @@
     header("Location: profil.php");
   }
 
+  if (isset($_POST['modifsite']))
+  {
+  if(isset($_POST['numdomhome']) AND !empty($_POST['numdomhome'])){
+      $updatenum = $bdd->prepare("UPDATE maintenance SET desc_maintenance = :nvnum WHERE type_maintenance = 'numéro domhome'" );
+      $updatenum->execute(array(
+        'nvnum' => $_POST['numdomhome'] ));
+    }
+  if(isset($_POST['adressedomhome']) AND !empty($_POST['adressedomhome'])){
+      $updatenum = $bdd->prepare("UPDATE maintenance SET desc_maintenance = :nvadresse WHERE type_maintenance ='adresse domhome'" );
+      $updatenum->execute(array(
+        'nvadresse' => $_POST['adressedomhome'] ));
+    }
+  if(isset($_POST['emaildomhome']) AND !empty($_POST['emaildomhome'])){
+      $updatenum = $bdd->prepare("UPDATE maintenance SET desc_maintenance = :nvemail WHERE type_maintenance = 'adresse mail'" );
+      $updatenum->execute(array(
+        'nvemail' => $_POST['emaildomhome'] ));
+    }
+    $info5 = "Succès";
+  }
+
+
 
  ?>

@@ -1,20 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1
--- Généré le :  Ven 12 Janvier 2018 à 10:16
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mar. 16 jan. 2018 à 23:49
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `test2`
@@ -26,21 +28,14 @@ SET time_zone = "+00:00";
 -- Structure de la table `billets`
 --
 
+DROP TABLE IF EXISTS `billets`;
 CREATE TABLE IF NOT EXISTS `billets` (
   `id_billet` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) COLLATE utf8_bin NOT NULL,
   `contenu` text COLLATE utf8_bin NOT NULL,
   `date_creation` datetime NOT NULL,
-  `auteur` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_billet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
-
---
--- Contenu de la table `billets`
---
-
-INSERT INTO `billets` (`id_billet`, `titre`, `contenu`, `date_creation`, `auteur`) VALUES
-(1, 'premier sujet', 'Concernant l''inscription des autre locataires pour qu''ils puissent gérer la maison.', '0000-00-00 00:00:00', '');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -48,6 +43,7 @@ INSERT INTO `billets` (`id_billet`, `titre`, `contenu`, `date_creation`, `auteur
 -- Structure de la table `capteur`
 --
 
+DROP TABLE IF EXISTS `capteur`;
 CREATE TABLE IF NOT EXISTS `capteur` (
   `id_capteur` int(255) NOT NULL AUTO_INCREMENT,
   `fonctionnement` tinyint(1) NOT NULL DEFAULT '0',
@@ -58,10 +54,10 @@ CREATE TABLE IF NOT EXISTS `capteur` (
   KEY `id_type_capteur` (`id_type_capteur`),
   KEY `id_piece` (`id_piece`) USING BTREE,
   KEY `id_cemac` (`id_cemac`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `capteur`
+-- Déchargement des données de la table `capteur`
 --
 
 INSERT INTO `capteur` (`id_capteur`, `fonctionnement`, `id_type_capteur`, `id_cemac`, `id_piece`) VALUES
@@ -84,15 +80,16 @@ INSERT INTO `capteur` (`id_capteur`, `fonctionnement`, `id_type_capteur`, `id_ce
 -- Structure de la table `cemac`
 --
 
+DROP TABLE IF EXISTS `cemac`;
 CREATE TABLE IF NOT EXISTS `cemac` (
   `id_cemac` int(255) NOT NULL AUTO_INCREMENT,
   `id_piece` int(255) NOT NULL,
   PRIMARY KEY (`id_cemac`),
   KEY `id_piece` (`id_piece`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `cemac`
+-- Déchargement des données de la table `cemac`
 --
 
 INSERT INTO `cemac` (`id_cemac`, `id_piece`) VALUES
@@ -107,6 +104,7 @@ INSERT INTO `cemac` (`id_cemac`, `id_piece`) VALUES
 -- Structure de la table `commentaires`
 --
 
+DROP TABLE IF EXISTS `commentaires`;
 CREATE TABLE IF NOT EXISTS `commentaires` (
   `id_commentaire` int(11) NOT NULL AUTO_INCREMENT,
   `id_billet` int(11) NOT NULL,
@@ -115,15 +113,7 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
   `date_creation` datetime NOT NULL,
   PRIMARY KEY (`id_commentaire`),
   KEY `id_billet` (`id_billet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
-
---
--- Contenu de la table `commentaires`
---
-
-INSERT INTO `commentaires` (`id_commentaire`, `id_billet`, `auteur`, `commentaire`, `date_creation`) VALUES
-(1, 1, 'b', 'Votre commentaire...egr', '2018-01-12 10:04:11'),
-(2, 1, 'fhh', 'Votre commentairehhg', '2018-01-12 10:04:21');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -131,13 +121,21 @@ INSERT INTO `commentaires` (`id_commentaire`, `id_billet`, `auteur`, `commentair
 -- Structure de la table `faq`
 --
 
+DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
   `id_faq` int(255) NOT NULL AUTO_INCREMENT,
   `question_faq` varchar(255) COLLATE utf8_bin NOT NULL,
   `reponse_faq` varchar(255) COLLATE utf8_bin NOT NULL,
   `theme_faq` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_faq`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `faq`
+--
+
+INSERT INTO `faq` (`id_faq`, `question_faq`, `reponse_faq`, `theme_faq`) VALUES
+(1, 'Comment tu t\'appelles ?', 'Darlène', 'Tet\r\n');
 
 -- --------------------------------------------------------
 
@@ -145,6 +143,7 @@ CREATE TABLE IF NOT EXISTS `faq` (
 -- Structure de la table `historique_capteur`
 --
 
+DROP TABLE IF EXISTS `historique_capteur`;
 CREATE TABLE IF NOT EXISTS `historique_capteur` (
   `id_historique_capteur` int(255) NOT NULL AUTO_INCREMENT,
   `id_capteur` int(255) NOT NULL,
@@ -153,10 +152,10 @@ CREATE TABLE IF NOT EXISTS `historique_capteur` (
   `heure_donnee` time NOT NULL,
   PRIMARY KEY (`id_historique_capteur`),
   KEY `id_capteur` (`id_capteur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `historique_capteur`
+-- Déchargement des données de la table `historique_capteur`
 --
 
 INSERT INTO `historique_capteur` (`id_historique_capteur`, `id_capteur`, `valeur_capteur`, `date_donnee`, `heure_donnee`) VALUES
@@ -172,6 +171,7 @@ INSERT INTO `historique_capteur` (`id_historique_capteur`, `id_capteur`, `valeur
 -- Structure de la table `logement`
 --
 
+DROP TABLE IF EXISTS `logement`;
 CREATE TABLE IF NOT EXISTS `logement` (
   `id_logement` int(255) NOT NULL AUTO_INCREMENT,
   `adresse` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -180,10 +180,10 @@ CREATE TABLE IF NOT EXISTS `logement` (
   `id_utilisateur` int(255) NOT NULL,
   PRIMARY KEY (`id_logement`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `logement`
+-- Déchargement des données de la table `logement`
 --
 
 INSERT INTO `logement` (`id_logement`, `adresse`, `code_postale_logement`, `ville_logement`, `id_utilisateur`) VALUES
@@ -193,9 +193,41 @@ INSERT INTO `logement` (`id_logement`, `adresse`, `code_postale_logement`, `vill
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `maintenance`
+--
+
+DROP TABLE IF EXISTS `maintenance`;
+CREATE TABLE IF NOT EXISTS `maintenance` (
+  `id_maintenance` int(11) NOT NULL AUTO_INCREMENT,
+  `type_maintenance` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `desc_maintenance` varchar(255) COLLATE utf8_bin NOT NULL,
+  `desc_maintenance2` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id_maintenance`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `maintenance`
+--
+
+INSERT INTO `maintenance` (`id_maintenance`, `type_maintenance`, `desc_maintenance`, `desc_maintenance2`) VALUES
+(1, 'horaire lundi', '09:00-12:00,14:00-17:00', NULL),
+(2, 'horaire mardi', '09:00-12:00,14:00-17:00', NULL),
+(3, 'horaire mercredi', '09:00-12:00,14:00-17:00', NULL),
+(4, 'horaire jeudi', '09:00-12:00,14:00-17:00', NULL),
+(5, 'horaire vendredi', '09:00-12:00,14:00-17:00', NULL),
+(6, 'horaire samedi', 'Fermé', NULL),
+(7, 'horaire dimanche', 'Fermé', NULL),
+(8, 'numéro domhome', '01 43 01 02 46', NULL),
+(9, 'adresse domhome', '28 rue Notre-Dame des Champs, 75006 Paris', NULL),
+(10, 'adresse mail', 'domisep@domhome.fr', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `panne`
 --
 
+DROP TABLE IF EXISTS `panne`;
 CREATE TABLE IF NOT EXISTS `panne` (
   `id_panne` int(255) NOT NULL AUTO_INCREMENT,
   `probleme` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -209,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `panne` (
   KEY `id_capteur` (`id_capteur`),
   KEY `id_logement` (`id_logement`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -217,6 +249,7 @@ CREATE TABLE IF NOT EXISTS `panne` (
 -- Structure de la table `piece`
 --
 
+DROP TABLE IF EXISTS `piece`;
 CREATE TABLE IF NOT EXISTS `piece` (
   `id_piece` int(255) NOT NULL AUTO_INCREMENT,
   `id_type_piece` int(255) NOT NULL,
@@ -226,10 +259,10 @@ CREATE TABLE IF NOT EXISTS `piece` (
   PRIMARY KEY (`id_piece`),
   KEY `id_type_piece` (`id_type_piece`),
   KEY `id_logement` (`id_logement`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `piece`
+-- Déchargement des données de la table `piece`
 --
 
 INSERT INTO `piece` (`id_piece`, `id_type_piece`, `id_logement`, `nom_piece`, `superficie_piece`) VALUES
@@ -238,7 +271,7 @@ INSERT INTO `piece` (`id_piece`, `id_type_piece`, `id_logement`, `nom_piece`, `s
 (3, 4, 1, 'Salle à Manger', 25),
 (4, 1, 1, 'Chambre de Darlène', 15),
 (5, 1, 1, 'Chambre de Marvin', 15),
-(6, 1, 1, 'Chambre d''Axel', 15),
+(6, 1, 1, 'Chambre d\'Axel', 15),
 (7, 1, 1, 'Chambre des Parents', 22),
 (8, 6, 1, 'Cuisine', 10),
 (9, 9, 1, 'Garage', 20),
@@ -260,24 +293,45 @@ INSERT INTO `piece` (`id_piece`, `id_type_piece`, `id_logement`, `nom_piece`, `s
 -- Structure de la table `precommande`
 --
 
+DROP TABLE IF EXISTS `precommande`;
 CREATE TABLE IF NOT EXISTS `precommande` (
   `id_precommande` int(255) NOT NULL AUTO_INCREMENT,
-  `date_commande` date NOT NULL,
-  `id_capteur` int(255) NOT NULL,
+  `date_commande` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `email_commande` varchar(255) COLLATE utf8_bin NOT NULL,
   `admin` int(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_precommande`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `precommande`
+-- Déchargement des données de la table `precommande`
 --
 
-INSERT INTO `precommande` (`id_precommande`, `date_commande`, `id_capteur`, `email_commande`, `admin`) VALUES
-(1, '2017-12-30', 2, 'test@gmail.com', 0),
-(2, '2018-01-01', 2, 'adresse@gmail.com', 0),
-(3, '2018-01-03', 5, 'admin@gmail.com', 1),
-(4, '0000-00-00', 0, 'bruno-der@hotmail.fr', 0);
+INSERT INTO `precommande` (`id_precommande`, `date_commande`, `email_commande`, `admin`) VALUES
+(1, '2017-12-30 00:00:00', 'test@gmail.com', 0),
+(2, '2018-01-01 00:00:00', 'adresse@gmail.com', 0),
+(3, '2018-01-03 00:00:00', 'admin@gmail.com', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `recuperation`
+--
+
+DROP TABLE IF EXISTS `recuperation`;
+CREATE TABLE IF NOT EXISTS `recuperation` (
+  `id_recuperation` int(11) NOT NULL AUTO_INCREMENT,
+  `mail_recuperation` varchar(255) COLLATE utf8_bin NOT NULL,
+  `code` int(255) NOT NULL,
+  PRIMARY KEY (`id_recuperation`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `recuperation`
+--
+
+INSERT INTO `recuperation` (`id_recuperation`, `mail_recuperation`, `code`) VALUES
+(17, 'darlene.eustache@gmail.com', 291738),
+(18, 'darlene.eustache@gmail.com', 604794);
 
 -- --------------------------------------------------------
 
@@ -285,6 +339,7 @@ INSERT INTO `precommande` (`id_precommande`, `date_commande`, `id_capteur`, `ema
 -- Structure de la table `scenario`
 --
 
+DROP TABLE IF EXISTS `scenario`;
 CREATE TABLE IF NOT EXISTS `scenario` (
   `id_scenario` int(255) NOT NULL AUTO_INCREMENT,
   `action` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -293,7 +348,7 @@ CREATE TABLE IF NOT EXISTS `scenario` (
   PRIMARY KEY (`id_scenario`),
   KEY `id_utilisateur` (`id_utilisateur`),
   KEY `id_capteur` (`id_capteur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -301,26 +356,32 @@ CREATE TABLE IF NOT EXISTS `scenario` (
 -- Structure de la table `type_capteur`
 --
 
+DROP TABLE IF EXISTS `type_capteur`;
 CREATE TABLE IF NOT EXISTS `type_capteur` (
   `id_type_capteur` int(11) NOT NULL AUTO_INCREMENT,
   `variete_capteur` varchar(255) COLLATE utf8_bin NOT NULL,
+  `image_url` varchar(11) COLLATE utf8_bin DEFAULT NULL,
+  `taille_image` int(11) DEFAULT NULL,
+  `desc_image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `desc_capteur` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id_type_capteur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `type_capteur`
+-- Déchargement des données de la table `type_capteur`
 --
 
-INSERT INTO `type_capteur` (`id_type_capteur`, `variete_capteur`) VALUES
-(1, 'Présence'),
-(2, 'Lumière'),
-(3, 'Température'),
-(4, 'Fumée'),
-(5, 'Contact'),
-(6, 'Consommation'),
-(7, 'Caméra'),
-(8, 'Cemac'),
-(9, 'Actionneur');
+INSERT INTO `type_capteur` (`id_type_capteur`, `variete_capteur`, `image_url`, `taille_image`, `desc_image`, `desc_capteur`) VALUES
+(1, 'Présence', '0', 0, '0', '0'),
+(2, 'Lumière', '0', 0, '0', '0'),
+(3, 'Température', '0', 0, '0', '0'),
+(4, 'Fumée', '0', 0, '0', '0'),
+(5, 'Contact', '0', 0, '0', '0'),
+(6, 'Consommation', '0', 0, '0', '0'),
+(7, 'Caméra', '0', 0, '0', '0'),
+(8, 'Volet', '0', 0, '0', '0'),
+(9, 'Cemac', '0', 0, '0', '0'),
+(10, 'Actionneur', '0', 0, '0', '0');
 
 -- --------------------------------------------------------
 
@@ -328,14 +389,15 @@ INSERT INTO `type_capteur` (`id_type_capteur`, `variete_capteur`) VALUES
 -- Structure de la table `type_piece`
 --
 
+DROP TABLE IF EXISTS `type_piece`;
 CREATE TABLE IF NOT EXISTS `type_piece` (
   `id_type_piece` int(255) NOT NULL AUTO_INCREMENT,
   `variete_piece` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_type_piece`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `type_piece`
+-- Déchargement des données de la table `type_piece`
 --
 
 INSERT INTO `type_piece` (`id_type_piece`, `variete_piece`) VALUES
@@ -355,6 +417,7 @@ INSERT INTO `type_piece` (`id_type_piece`, `variete_piece`) VALUES
 -- Structure de la table `utilisateur`
 --
 
+DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id_utilisateur` int(255) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -366,22 +429,23 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mail` varchar(255) COLLATE utf8_bin NOT NULL,
   `admin` int(10) NOT NULL DEFAULT '0',
   `mdp` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id_utilisateur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=6 ;
+  PRIMARY KEY (`id_utilisateur`),
+  UNIQUE KEY `id_utilisateur` (`id_utilisateur`),
+  UNIQUE KEY `mail` (`mail`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Contenu de la table `utilisateur`
+-- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `adresse_contact`, `cp_contact`, `ville_contact`, `telephone`, `mail`, `admin`, `mdp`) VALUES
-(1, 'Eustache', 'DarlÃ¨ne', '6  Rue AmpÃ¨re', '95000', 'Goussainville', '06123456789', 'darlene@gmail.com', 0, '$2y$10$J79FbrpkyzRtmlu65tp6s.Vxf8BTpytl9V..TTqOhlKiYC2Z/o3rW'),
-(2, 'Dupont', 'Guillaume', '4 avenue Victor Hugo', '94160', 'Saint-Mandé', '0613544337', 'guillaume.dupont.rm@gmail.com', 0, '$2y$10$ZCNaYKAWxx83DrBh2Td7oe6NZMMhEKTSzWGGBXWrPhuDNm9As7KxS'),
-(3, 'Eustache', 'Darlene', '6  Rue Ampère', '95190', 'Goussainville', '0123456789', 'adresse@gmail.com', 0, '$2y$10$CXTDDtpvArmwGduBKFZTe.dNCQWZ7kv9IVTPCG4ylWJBoc.d7Peei'),
-(4, 'ADMINISTRATEUR', 'Admin', '2 Rue des Bois', '12345', 'Ville', '0123456789', 'admin@gmail.com', 1, '$2y$10$nVDEnGUXVzfVFOMvQ8G12./oBRfdrsnvGDagk9g/4VT0duXSjkuIK'),
-(5, 'rosamel', 'bruno', '24 rue Auguste Bailly', '92600', 'asnieres', '0620638564', 'bruno-der@hotmail.fr', 0, '$2y$10$LBW9wiDDYpJF8Qt5vaJhr.ecDV0RCAhNlUoO9CrcIb8Byb5M4lhvG');
+(1, 'Eustache', 'Darlène\r\n', '6  Rue AmpÃ¨re', '95000', 'Goussainville', '06123456789', 'darlene@gmail.com', 0, '$2y$10$J79FbrpkyzRtmlu65tp6s.Vxf8BTpytl9V..TTqOhlKiYC2Z/o3rW'),
+(2, 'Dupont', 'Guillaume', '4 avenue Victor Hugo', '94160', 'Saint-Mandé', '0613544337', 'guillaume.dupont.rm@gmail.com', 0, '$2y$10$Jb5c.gzbbv91BZ2AVdPhV.6EhJY6Wz02zaFMqZUqeCgIgpN7R4jDS'),
+(3, 'Eustache', 'Darlene', '6  Rue Ampère', '95190', 'Goussainville', '0123456789', 'darlene.eustache@gmail.com', 1, '$2y$10$7Z2aofPDnWgq.MSZwbdOMue.1ehCh/WWJkGfmVNWwxG9LWAfLWlgW'),
+(4, 'ADMINISTRATEUR', 'Admin', '2 Rue des Bois', '12345', 'Ville', '0123456789', 'admin@gmail.com', 0, '$2y$10$nVDEnGUXVzfVFOMvQ8G12./oBRfdrsnvGDagk9g/4VT0duXSjkuIK');
 
 --
--- Contraintes pour les tables exportées
+-- Contraintes pour les tables déchargées
 --
 
 --
@@ -437,6 +501,7 @@ ALTER TABLE `piece`
 ALTER TABLE `scenario`
   ADD CONSTRAINT `scenario_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`),
   ADD CONSTRAINT `scenario_ibfk_2` FOREIGN KEY (`id_capteur`) REFERENCES `capteur` (`id_capteur`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
