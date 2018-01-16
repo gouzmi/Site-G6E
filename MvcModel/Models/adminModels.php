@@ -8,6 +8,13 @@
       $info1 = "Succès";
     }
 
+    if (isset($_POST['ajoutsav']))
+      {
+        $ajoutad = $bdd->prepare("INSERT INTO `precommande`(`email_commande`, `admin`) VALUES (?, 2)");
+        $ajoutad->execute(array($_POST['mailsav']));
+        $info = "Succès";
+      }
+
   if (isset($_POST['ajoutclient']))
     {
       $ajoutcl = $bdd->prepare("INSERT INTO `precommande`(`email_commande`) VALUES (?)");

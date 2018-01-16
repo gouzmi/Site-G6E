@@ -40,6 +40,29 @@
 
           </div>
 
+          <h3>Ajout d'un SAV :</h3>
+            <div id="cas">
+
+                  <div class="info">
+                    <p>
+                      Pour ajouter un SAV, vous devez rentrez l'email que ce dernier utilisera à chaque connexion.
+                    </p>
+                  </div>
+                  <div class="form">
+                    <form method="post" action="" id="admin">
+                      <label>email : </label><br />
+                      <input type="email" name="mailsav" placeholder="sav@gmail.com" required/>
+                      <input type="submit" value="Ajouter" name="ajoutsav" />
+                      <center>
+                        <?php if (isset($info)){
+                            echo $info;
+                        } ?>
+                      </center>
+                    </form>
+                  </div>
+
+            </div>
+
         <h3>Ajout d'un client :</h3>
           <div id="cas">
 
@@ -75,16 +98,17 @@
                     <form method="post" action="" id="supprimer">
                       <label>email : </label><br />
 
-                      <select name="suppmailclient1">
+                      <input type="text" name="suppmailclient1" id="supprimerclient" list="clientlist" placeholder="client@gmail.com" required>
+                      <datalist id="clientlist">
                       <?php
-                          while ($donnees = $suppression->fetch())
-                          {
-                          ?>
-                                    <option value="<?php echo $donnees['mail'] ?>"><?php echo $donnees['mail'] ?></option>
-                          <?php
-                          }
+                            while ($donnees = $suppression->fetch())
+                            {
                       ?>
-                      </select>
+                                      <option value="<?php echo $donnees['mail']; ?>"><?php echo $donnees['mail']; ?></option>
+                            <?php
+                            }
+                        ?>
+                      </datalist>
 
                       <input type="submit" value="Supprimer" name="suppclient1" />
                       <center>
@@ -135,16 +159,17 @@
                       <form method="post" action="" id="clientView">
                         <label>email : </label><br />
 
-                        <select name="clientView">
+                        <input type="text" name="clientView" id="supprimerclient" list="clientlist" placeholder="client@gmail.com" required>
+                        <datalist id="clientlist">
                         <?php
-                            while ($donnees = $selectclient->fetch())
-                            {
-                            ?>
-                                      <option value="<?php echo $donnees['mail'] ?>"><?php echo $donnees['mail'] ?></option>
-                            <?php
-                            }
+                              while ($donnees = $suppression->fetch())
+                              {
                         ?>
-                        </select>
+                                        <option value="<?php echo $donnees['mail']; ?>"><?php echo $donnees['mail']; ?></option>
+                              <?php
+                              }
+                          ?>
+                        </datalist>
 
                         <input type="submit" value="Accéder" name="accesclient" />
                         <center>
