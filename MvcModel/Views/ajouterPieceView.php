@@ -26,7 +26,7 @@
         <label for="nom">Nom du pièce :</label>
         <input type="text" name="nom" id="nom" required/>
         <br>
-        <?php if (isset($erreur)) { echo $erreur;} ?>
+        <p style=""><?php if (isset($erreur)) { echo $erreur;} ?></p>
         <br><br>
 
         <label for="">Superficie du pièce :</label>
@@ -51,6 +51,7 @@
 
         <input type="submit" value="Enregistrer" name="Enregistrer">
       </center>
+      <div id="retour"><a href="../Controlers/modifierPiece.php"> Retour </a></div>
     </form>
 
     <br>

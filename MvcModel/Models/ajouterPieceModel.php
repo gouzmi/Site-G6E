@@ -24,8 +24,8 @@
     }
     else
     {
-      $ajoutPie = $bdd->prepare("INSERT INTO piece (id_type_piece, id_logement, nom_piece, superficie_piece) VALUES (1, 2, ?,?)");
-      $ajoutPie->execute(array($nom,$superficie));
+      $ajoutPie = $bdd->prepare("INSERT INTO piece (id_type_piece, id_logement, nom_piece, superficie_piece) VALUES (1, 2,'ops',24)");
+      $ajoutPie->execute();
       $info = "Votre pièce a été bien ajouté !";
     }
   }
