@@ -25,14 +25,16 @@
       <center>
 
         <label>Type du capteur :</label>
-        <select name="varieteCap">
+        <select name="varieteCap" type="select">
 
 
             <?php
+          
                 while ($donnees1 = $variete1->fetch())
                 {
+
                   ?>
-                        <option value="<?php $donnees1['variete_capteur']; ?>"><?php echo $donnees1['variete_capteur']; ?></option>
+                        <option><?php echo $donnees1['variete_capteur']; ?></option>
             <?php
                 }
             ?>
@@ -40,18 +42,18 @@
 				</select>
 
         <br><br>
-        <!--<button type="button" onclick="">Ajouter un type de capteur</button>
-        <input type="text" name="ajoutTypeC">
-
-        <br><br>-->
+        <!--pour test-->
+        <label>nom:</label>
+        <input type="text" name="name" />
+      <br><br>
         <label>La pièce associée :</label>
-        <select name="varietePie">
+        <select name="varietePie" id ="varietePie"type="select">
 
           <?php
               while ($donnees2 = $variete2->fetch())
               {
               ?>
-                        <option value="<?php $donnees2['nom_piece']; ?>"><?php echo $donnees2['nom_piece']; ?></option>
+                        <option value="<?php $_POST['varietePie'] ?>"><?php echo $donnees2['nom_piece']; ?></option>
               <?php
               }
           ?>
@@ -60,7 +62,7 @@
 
         <br><br>
         <label>Le Cemac associé :</label>
-        <select name="idCemac"  id="idCemac" type="text">
+        <select name="idCemac"  id="idCemac" type="select">
           <?php
               while ($donnees3 = $variete3->fetch())
               {
