@@ -29,32 +29,26 @@
 
 
             <?php
-          
+
                 while ($donnees1 = $variete1->fetch())
                 {
 
-                  ?>
-                        <option><?php echo $donnees1['variete_capteur']; ?></option>
-            <?php
+
+                      echo ' <option value='.$donnees1['id_type_capteur'].'> '.$donnees1['variete_capteur'].';</option>';
+
                 }
             ?>
 
 				</select>
 
         <br><br>
-        <!--pour test-->
-        <label>nom:</label>
-        <input type="text" name="name" />
-      <br><br>
         <label>La pièce associée :</label>
         <select name="varietePie" id ="varietePie"type="select">
 
           <?php
               while ($donnees2 = $variete2->fetch())
               {
-              ?>
-                        <option value="<?php $_POST['varietePie'] ?>"><?php echo $donnees2['nom_piece']; ?></option>
-              <?php
+              echo ' <option value='.$donnees2['id_piece'].'> '.$donnees2['nom_piece'].';</option>';
               }
           ?>
 
@@ -67,7 +61,7 @@
               while ($donnees3 = $variete3->fetch())
               {
               ?>
-                        <option value="<?php $donnees3['id_cemac']; ?>"><?php echo $donnees3['id_cemac']; ?></option>
+                        <option><?php echo $donnees3['id_cemac']; ?></option>
               <?php
               }
           ?>
