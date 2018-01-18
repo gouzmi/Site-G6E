@@ -48,24 +48,20 @@ while ($donnees = $req->fetch())
 </div>
 
 <?php
-} // Fin de la boucle des commentaires
-$req->closeCursor();
+}
 ?>
   <form method = "post" action = "index2_post.php?billet=">
                 <p>
-                    <label for = "titre"><strong>Votre pseudo :</strong></label>
-                    <input type = "contenu" name = "titre" id = "titre"/><br/>
-                    <label for = "contnur"><strong>Sujet :</strong></label><br/>
-                    <textarea type ="text" name = "commentaire" id = "commentaire" rows ="8" cols="45">Votre billet...</textarea><br/>
-                    <input type = "submit" value = "Poster votre billet"/>
+
+                    <label for = "contenu"><strong>Sujet :</strong></label><br/>
+                    <input type = "contenu" name = "titre" id = "titre" required/><br/>
+                    <textarea type ="text" name = "contenu" id = "commentaire" rows ="8" cols="45" placeholder="Votre billet..." required></textarea><br/>
+                    <input type = "submit" name="action" value = "Poster votre billet"/>
                 </p>
             </form>
 
 
-<?php
 
-$req->closeCursor();
-?>
 </body>
 <?php include("footer.php"); ?>
 </html>
