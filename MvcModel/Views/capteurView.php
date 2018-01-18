@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Acceuil Connecté par pièce</title>
+    <title>Tous vos capteurs</title>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <link rel="stylesheet" href="../Css/capteur.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>

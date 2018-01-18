@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Acceuil Connecté par pièce</title>
+    <title>Votre Profil</title>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <link rel="stylesheet" href="../Css/profil.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>

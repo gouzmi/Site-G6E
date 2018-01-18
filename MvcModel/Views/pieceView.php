@@ -10,7 +10,7 @@ if($ajax) {
   <html>
   <head>
       <meta charset="UTF-8">
-      <title>Acceuil Connecté par pièce</title>
+      <title>Toutes vos Pièces</title>
       <link rel="stylesheet" href="../Css/headerfooterr.css"/>
       <link rel="stylesheet" href="../Css/piece.css"/>
 
