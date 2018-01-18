@@ -22,8 +22,7 @@
                 <p>Il vous permettra de gérer votre maison à distance et de garantir votre sécurité.</p><br>
 
             </div>
-            <!--petite image à droite-->
-            <img src="../Images/page1.png">
+
         </section>
 
     <!--page2-->

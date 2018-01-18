@@ -75,6 +75,7 @@
 
         <input type="submit" value="Enregistrer" name="Enregistrer">
       </center>
+      <div id="retour"><a href="../Controlers/modifierCapteur.php"> Retour </a></div>
     </form>
 
     <br>
