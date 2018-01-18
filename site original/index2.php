@@ -51,7 +51,7 @@ while ($donnees = $req->fetch())
 } // Fin de la boucle des commentaires
 $req->closeCursor();
 ?>
-  <form method = "post" action = "index2_post.php?billet=<?php echo $_GET['billet'];?>">
+  <form method = "post" action = "index2_post.php?billet=">
                 <p>
                     <label for = "titre"><strong>Votre pseudo :</strong></label>
                     <input type = "contenu" name = "titre" id = "titre"/><br/>

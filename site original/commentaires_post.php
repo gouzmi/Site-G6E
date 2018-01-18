@@ -28,7 +28,7 @@ catch(Exception $e)
 if(!empty($_GET['billet']) AND !empty($_POST['auteur']) AND !empty($_POST['commentaire']))
 {
  // Insertion du message à l'aide d'une requête préparée
-    $req = $bdd->prepare('INSERT INTO commentaires(id_billet, auteur, commentaire, date_commentaire) VALUES(:id_billet, :auteur, :commentaire, NOW())') or die(print_r($bdd -> getMessage()));
+    $req = $bdd->prepare('INSERT INTO commentaires(id_billet, auteur, commentaire, date_creation) VALUES(:id_billet, :auteur, :commentaire, NOW())') or die(print_r($bdd -> getMessage()));
     $req->execute(array(
                          ':id_billet' => htmlspecialchars($_GET['billet']),
                          ':auteur' => htmlspecialchars($_POST['auteur']),
