@@ -40,7 +40,7 @@ while ($donnees = $req->fetch())
             $req->closeCursor();
       ?>
 
-<form method = "post" action = "index2_post.php?billet=">
+<form method = "post" action = "index2_post.php?billet=<?php echo $_GET['billet'];?>">
                 <p>
                     <label for = "auteur"><strong>Votre pseudo :</strong></label>
                     <input type = "text" name = "auteur" id = "auteur"/><br/>
