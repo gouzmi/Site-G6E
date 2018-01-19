@@ -29,7 +29,7 @@
       $mdp = $_POST['mdp'];
 
       //Vérif du format de chaque donnée nettoyée
-/*
+
       if ((preg_match('#^[A-Za-zÀ-ÖØ-öø-ÿ-]+$#', $nom)) == false){ //verif nom contient que des lettres
           $erreur= 'Le nom ne doit contenir que des lettres' ;
         }
@@ -65,7 +65,7 @@
                           else{
                             if ($mdp != $_POST['mdp2']){
                               $erreur= "Les mots de passes sont différents";}
-*/
+
                         //   else{// cryptage mdp + verif mail dans la table precommande
 
                               $mdp = password_hash($mdp,PASSWORD_BCRYPT);

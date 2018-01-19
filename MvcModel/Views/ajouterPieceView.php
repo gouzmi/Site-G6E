@@ -39,9 +39,7 @@
           <?php
               while ($donnees1 = $variete1->fetch())
               {
-              ?>
-                        <option value="<?php $donnees1['variete_piece']; ?>"><?php echo $donnees1['variete_piece']; ?></option>
-              <?php
+                echo'<option value='.$donnees1['id_type_piece'].'>'.$donnees1['variete_piece'].'</option>';
               }
           ?>
 

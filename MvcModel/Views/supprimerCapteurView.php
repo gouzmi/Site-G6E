@@ -19,22 +19,15 @@
           <table>
           <?php echo "<table align=center>
           <tr>
-          <td>id_capteur</td><td>id_cemac</td><td>id_piece</td><td>nom</td>
+          <td align=center>id_capteur</td><td align=center>id_cemac</td><td align=center>id_piece</td><td align=center>nom</td>
           </tr>";
-          while ($donnee2 = $reponse2->fetch()) {
+          while ($donnee1 = $reponse1->fetch()) {
             echo "<tr>";
             echo '<td align=center>' . $donnee1['id_capteur'] . '</td>'.
-            /*while ($donnee2 = $reponse2->fetch()) {
-              '<td align=center>' . $donnee2['variete_capteur'] . '</td>'.
-            }*/
-            '<td align=center>' . $donnee2['variete_capteur'] . '</td>'.
             '<td align=center>' . $donnee1['id_cemac'] . '</td>'.
-            '<td align=center>' . $donnee1['id_piece'] . '</td>';
+            '<td align=center>' . $donnee1['id_capteur'] . '</td>'.
+            '<td align=center>' . $donnee1['variete_capteur'] . '</td>'.'<td><button href="xxx.php?'.$donnee1['id_capteur'].'">Supprimer</button></td>';
           }
-        /*  while ($donnee2 = $reponse2->fetch()) {
-            echo '<td align=center>' . $donnee2['variete_capteur'] . '</td>';
-            echo '</tr>'
-          }*/
           ?>
         </table>
 

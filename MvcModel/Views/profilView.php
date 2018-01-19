@@ -28,6 +28,7 @@
               echo $erreur;} ?>
           </center>
           <form method="post" action="" id="Formulaire" name="Formulaire">
+<<<<<<< HEAD
           <span id="missNom"></span>
           <input type="text" name="nom" placeholder="Nom" id="nom" value="<?php echo $user['nom']?>"/>
           <span id="missPrenom"></span>
@@ -47,9 +48,24 @@
           <span id="missMdp2"></span>
           <input type="password" name="mdp2" id="mdp2" required id="pass" placeholder="Confirmation de mot de passe"/>
           <input type="submit" name="caseconditions" id="modifier" value="Modifier son profil" />
+=======
+          <span id='missNom'></span>
+          <input type="text" name="nom" placeholder="Nom" id="nom"  value="<?php echo $user['nom']?>"/>
+          <span id='missPrenom'></span>
+          <input type="text" name="prenom" placeholder="Prénom" id="prenom" value="<?php echo $user['prenom']?>" />
+          <input type="text" name="adresse" placeholder="Adresse" value="<?php echo $user['adresse_contact']?>"/>
+          <input type="text" name="cp" pattern="(^[0-9]{5}$)|(^2(A|B)[0-9]{3}$)"  placeholder="Code Postal" value="<?php echo $user['cp_contact']?>">
+          <input type="text" name="ville" placeholder="Ville" value="<?php echo $user['ville_contact']?>">
+          <input type="text" name="tel" placeholder="Téléphone" value="<?php echo $user['telephone']?>">
+          <input type="email" name="mail" placeholder="Email Address" value="<?php echo $user['mail']?>">
+          <input type="password" name="mdp" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}" required title="6 caractères minimun en majuscule et minuscule et un caractère spécial"  id="passe" placeholder="Mot de passe" value="">
+          <input type="password" name="mdp2" required id="pass" placeholder="Confirmation de mot de passe">
+          <input type="submit" name="caseconditions" id="inscrire" value="Modifier son profil" />
+>>>>>>> aea384e951f4b58d9b602df162b9cbdb11fc608b
           </form>
     </div>
 
+    <script src="../javaScript/verificationFormulaire.js" type="text/javascript"></script>
 
 
 </div>

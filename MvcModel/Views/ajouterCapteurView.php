@@ -34,7 +34,7 @@
                 {
 
 
-                      echo ' <option value='.$donnees1['id_type_capteur'].'> '.$donnees1['variete_capteur'].';</option>';
+                      echo ' <option value='.$donnees1['id_type_capteur'].'> '.$donnees1['variete_capteur'].'</option>';
 
                 }
             ?>
@@ -48,7 +48,7 @@
           <?php
               while ($donnees2 = $variete2->fetch())
               {
-              echo ' <option value='.$donnees2['id_piece'].'> '.$donnees2['nom_piece'].';</option>';
+              echo ' <option value='.$donnees2['id_piece'].'> '.$donnees2['nom_piece'].'</option>';
               }
           ?>
 
