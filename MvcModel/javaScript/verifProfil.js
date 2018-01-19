@@ -1,4 +1,4 @@
-var formValid = document.getElementById('inscrire');
+var formValid = document.getElementById('modifier');
 var nom = document.getElementById('nom');
 var missNom = document.getElementById('missNom');
 var nomValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
@@ -41,6 +41,7 @@ function validation(event){
     missMdp.textContent = '';
     missMdp2.textContent = '';
     if (nom.validity.valueMissing){
+     //   document.getElementById('Formulaire')innerHTML = 'test';
         event.preventDefault();
         missNom.textContent = 'Nom manquant';
         missNom.style.color = 'red';}
@@ -115,7 +116,6 @@ function validation(event){
       missMdp.style.color = 'red';
     }
     else if (mdpValid.test(mdp.value) == false){
-  //    document.getElementById('Formulaire')innerHTML = 'test';
         event.preventDefault();
         missMdp.textContent = 'Format incorrect';
         missMdp.style.color = 'orange';

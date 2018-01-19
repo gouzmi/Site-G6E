@@ -13,6 +13,7 @@
       <?php include("header.php") ?>
 
     <div class="page">
+
     <!--page1-->
         <section class="section s1" id="page1">
             <div><h1 class="Entreprise1">Notre entreprise</h1>
