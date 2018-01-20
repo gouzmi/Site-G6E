@@ -4,18 +4,18 @@ html
 {
     background-image: url(../Images/fondfaq.jpg);
 }
-}
 
-#section
+
+section
 {
-  padding:25px;
-  margin: 25px;
-  margin-left:5%;
-  width: 50%;
-  background-color: #444;
-  color: white;
-  border-radius: 3px;
-  overflow: scroll;
+    padding:25px;
+    margin: 25px;
+    margin-left:5%;
+    width: 50%;
+    background-color: rgba(120, 120, 120, 0.75);
+    color: white;
+    border-radius: 10px;
+
 }
 
 
@@ -31,8 +31,9 @@ html
     font-weight: 700;
     font-size: 18px;
     border-radius: 3px;
-    margin-top: 8%;
-    margin-bottom: 3%;}
+    margin-top: 20%;
+    margin-bottom: 3%;
+  }
 
 p
 {
