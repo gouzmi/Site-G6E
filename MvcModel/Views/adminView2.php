@@ -98,32 +98,7 @@
                   </div>
             </div>
 
-          <h3>Ajout d'information dans la FAQ</h3>
-            <div id="cas">
-
-                  <div class="info">
-                    <p>
-                      Pour ajouter des informations dans la table FAQ visible par les membres, vous devez rentrez la question et la réponse correspondante.
-                    </p>
-                  </div>
-                  <div class="form">
-                    <form method="post" action="" id="faq">
-                      <label>question : </label><br />
-                      <textarea class="quesrep" name="question" required></textarea><br />
-                      <label>réponse : </label><br />
-                      <textarea class="quesrep" name="reponse" required></textarea><br />
-                      <label>thème : </label><br />
-                      <input type="text" name="theme" placeholder="thème">
-                      <input type="submit" value="Ajouter" name="ajoutfaq" />
-                      <center>
-                        <?php if (isset($info3)){
-                            echo $info3;
-                        } ?>
-                      </center>
-                    </form>
-                  </div>
-
-            </div>
+          
 
             <h3>Accéder à la vue d'un client :</h3>
               <div id="cas">

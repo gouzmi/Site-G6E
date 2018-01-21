@@ -147,6 +147,39 @@
 
             </div>
 
+            <h3>Suppression d'information dans la FAQ</h3>
+                <div id="cas">
+
+                      <div class="info">
+                        <p>
+                          Pour supprimer des informations dans la table FAQ visible par les membres, vous devez sélectionner la question.
+                        </p>
+                      </div>
+                      <div class="form">
+                        <form method="post" action="" id="faq">
+                          <label>question : </label><br />
+                          <select name="suppfaq2">
+                            <?php
+                                  while ($donnees = $suppressionfaq->fetch())
+                                  {
+                            ?>
+                                            <option value="<?php echo $donnees['question_faq']; ?>"><?php echo $donnees['question_faq']; ?></option>
+                                  <?php
+                                  }
+                              ?>
+                          </select>
+
+                          <input type="submit" value="Supprimer" name="suppfaq" />
+                          <center>
+                            <?php if (isset($info7)){
+                                echo $info7;
+                            } ?>
+                          </center>
+                        </form>
+                      </div>
+
+                </div>
+
         <h3>Accéder à la vue d'un client :</h3>
               <div id="cas">
 
@@ -162,7 +195,7 @@
                         <input type="text" name="clientView" id="supprimerclient" list="clientlist" placeholder="client@gmail.com" required>
                         <datalist id="clientlist">
                         <?php
-                              while ($donnees = $suppression->fetch())
+                              while ($donnees = $selectclient->fetch())
                               {
                         ?>
                                         <option value="<?php echo $donnees['mail']; ?>"><?php echo $donnees['mail']; ?></option>
@@ -182,6 +215,7 @@
 
               </div>
 
+
         <h3>Modification des informations de DomHome:</h3>
           <div id="cas">
 
@@ -200,8 +234,8 @@
                     <input type="email"class="quesrep" name="emaildomhome" placeholder="domisep@domhome.fr"/><br />
                     <input type="submit" value="Modifier" name="modifsite" />
                     <center>
-                      <?php if (isset($info5)){
-                            echo $info5;}
+                      <?php if (isset($info6)){
+                            echo $info6;}
                            ?>
                     </center>
                   </form>
