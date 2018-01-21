@@ -1,41 +1,111 @@
 /* CSS */
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Roboto:300,400,700');
 
-html
-{
+html{
     background-image: url(../Images/96f.jpg);
 }
 
 .s1{
 
 }
-.titre
-{
-    margin-left: auto;
-    margin-right: auto;
+.titre{
+    margin-left: auto;margin-top: 3%;margin-bottom: 3%;margin-right: auto;
     background-color: rgba(255,255,255 ,0.7);
-    width: 12%;
+    width: 30%;
     text-align: center;
     padding: 10px;
-    text-transform: uppercase;
-    font-family: 'Roboto';
-    font-weight: 700;
-    font-size: 18px;
+    font-family: 'Roboto';font-weight: 700;
     border-radius: 3px;
-    margin-top: 3%;
-    margin-bottom: 3%;
   }
-.p
-{
-    padding:25px;
-    margin-left:5%;
+.p{
+    margin-left: auto;margin-top: 3%;margin-bottom: 3%;margin-right: auto;
+    padding:20px;
     width: 60%;
     background-color: rgba(120, 120, 120, 0.75);
     color: white;
-    margin:auto;
     border-radius: 10px ;
     display: flex;
     justify-content: space-around;
-    margin-left:5%;
-    font-size: 15px;
+    font-size: 18px;
+}
+.s2{
+
+}
+.picandp{
+  left: 10%;
+}
+.imgg img{
+  width: 40%; height: 40%;
+}
+
+
+.s4 .ca-container{
+	position:relative;
+	margin:5px auto 20px auto;
+	width:990px;height:450px;
+}
+.s4 .ca-wrapper{
+	width:100%;height:90%;
+	position:relative;
+  overflow:hidden;
+}
+.s4 .ca-item{
+	position:relative;
+	float:left;
+	width:330px;height:100%;
+	text-align:center;
+}
+.s4 .ca-item-main{
+	padding:15px;
+	position:absolute;
+	top:3%;left:2%;right:2%;
+	background:#fff;
+	overflow:hidden;
+	box-shadow:10px 10px 30px rgba(0,0,0,0.2);
+}
+.s4 .ca-icon{
+	width:220px;height:250px;
+	/*position:relative;*/
+	margin:0 auto;
+	background:transparent url(../Images/bruno.jpg) no-repeat center center;
+}
+.s4 .ca-item-2 .ca-icon{
+	background-image:url(../Images/yuqing.jpg) ;
+}
+.s4 .ca-item-3 .ca-icon{
+	background-image:url(../Images/guillaume.jpg);
+}
+.s4 .ca-item-4 .ca-icon{
+	background-image:url(../Images/morgane.jpg);
+}
+.s4 .ca-item-5 .ca-icon{
+	background-image:url(../Images/darlene.jpg);
+}
+.s4 .ca-item-6 .ca-icon{
+	background-image:url(../Images/tibo.jpg);
+}
+.s4 .ca-item h3{
+	font-family: 'Coustard'; font-style: oblique;font-size:30px;
+	color:#622931e6;
+  margin-bottom: 5%;
+	height:45px;
+	text-align:center;
+}
+
+/*definir les deux flèches*/
+.s4 .ca-nav span{
+	width:25px;height:38px;
+	background:transparent url(../Images/arrows.png) no-repeat top left;
+	position:absolute;
+	top:50%;
+	margin-top:-19px;
+	left:-40px;
+	text-indent:-9000px;
+	opacity:0.7;
+	cursor:pointer;
+	z-index:100;
+}
+.s4 .ca-nav span.ca-nav-next{
+	background-position:top right;
+	left:auto;right:-40px;
 }
