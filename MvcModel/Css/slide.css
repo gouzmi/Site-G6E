@@ -9,6 +9,10 @@
 	min-height: 900px;
 }
 
+#menu{
+	transition: 0.8s;
+}
+
 #right
 {
 	flex: 0.7;
@@ -67,7 +71,7 @@ h1{
     height: 4.5px;
     background-color: white;
     margin-top: 3px; margin-bottom: 3px;
-    transition: 0.5s;
+    transition: 0.4s;
 		margin-right: 20px;
 }
 
@@ -93,7 +97,7 @@ h1{
 	overflow: hidden;
 	background-color: #37474F;
 	border-radius: 0px 0px 5px 0px;
-	transition: transform 0.5s;
+	transition: transform 0.4s;
 	min-height: 900px;
 }
 
