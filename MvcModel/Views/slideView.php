@@ -35,7 +35,7 @@
       <a href="../Controlers/editerMaison.php" class="lien"><i class="" aria-hidden="true"></i> Editer sa Maison</a>
       </div>
       <div class="rubrique">
-      <a href="" class="lien"><i class="" aria-hidden="true"></i> Forum</a>
+      <a href="../Controlers/billet.php" class="lien"><i class="" aria-hidden="true"></i> Forum</a>
       </div>
 
 </div>

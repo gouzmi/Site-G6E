@@ -1,11 +1,12 @@
 #corps
 {
 	display: flex;
-	height: 900px;
 	background-color: initial;
 	margin-top: 0px;
 	margin-left: 90px;
-	transition: 0.3s;
+	transition: 0.5s;
+	flex:1;
+	min-height: 900px;
 }
 
 #right
@@ -66,7 +67,7 @@ h1{
     height: 4.5px;
     background-color: white;
     margin-top: 3px; margin-bottom: 3px;
-    transition: 0.4s;
+    transition: 0.5s;
 		margin-right: 20px;
 }
 
@@ -88,10 +89,12 @@ h1{
 	position: absolute;
 	left: -225px;
 	width: 300px;
-	height: 900px;
+	height: 80%;
+	overflow: hidden;
 	background-color: #37474F;
 	border-radius: 0px 0px 5px 0px;
-	transition: transform 0.3s;
+	transition: transform 0.5s;
+	min-height: 900px;
 }
 
 .yes .sidebar{

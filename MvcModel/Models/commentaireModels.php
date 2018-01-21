@@ -1,9 +1,10 @@
 <?php
 
   require('connexiondb.php');
+  require('userdb.php');
 
   // Récupération du billet
-      $req = $bdd->prepare('SELECT id_billet, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets WHERE id = ?');
+      $req = $bdd->prepare('SELECT * FROM billets WHERE id_billet = ?');
       $req->execute(array($_GET['billet']));
       $donnees = $req->fetch();
 
@@ -11,11 +12,14 @@
       $req2 = $bdd->prepare('SELECT * FROM commentaires WHERE id_billet = ? ORDER BY date_creation');
       $req2->execute(array($_GET['billet']));
 
-      if(!empty($_GET['billet']) AND !empty($_POST['auteur']) AND !empty($_POST['commentaire']))
+      
+
+      if (isset($_POST['com']))
       {
        // Insertion du message à l'aide d'une requête préparée
-          $req = $bdd->prepare("INSERT INTO `commentaires`( `id_billet`, `auteur`, `commentaire`) VALUES (?,?,?)");
-          $req->execute(array($_GET['billet'], $_POST['auteur'], $_POST['commentaire']));
+          $req = $bdd->prepare('INSERT INTO `commentaires`(`id_billet`, `commentaire`, `id_utilisateur`)
+                                VALUES (?,?,?)');
+          $req->execute(array($_GET['billet'],  $_POST['commentaire'], $user['id_utilisateur']));
           header('Location:commentaire.php?billet=' . $_GET['billet']);
       }
 

@@ -1,8 +1,8 @@
 <?php
   include("connexiondb.php");
 
-  $selectclient = $bdd->query('SELECT * FROM utilisateur');
-  $suppression = $bdd->query('SELECT * FROM utilisateur');
+  $selectclient = $bdd->query('SELECT * FROM utilisateur where admin = 0');
+  $suppression = $bdd->query('SELECT * FROM utilisateur where admin = 0');
   $suppressionfaq = $bdd->query('SELECT * FROM faq');
 
   if (isset($_POST['ajoutadmin']))
