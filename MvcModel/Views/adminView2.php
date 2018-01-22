@@ -4,7 +4,7 @@
     <head>
     <meta charset="UTF-8">
     <title>Page d'accueil</title>
-    <link rel="stylesheet" href="../Css/admin2.css"/>
+    <link rel="stylesheet" href="../Css/admin.css"/>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
@@ -98,7 +98,7 @@
                   </div>
             </div>
 
-          
+
 
             <h3>Accéder à la vue d'un client :</h3>
               <div id="cas">

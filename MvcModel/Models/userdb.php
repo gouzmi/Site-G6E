@@ -1,7 +1,7 @@
 <?php
 
 
-  if ($_SESSION['admin'] > 0)
+  if (isset($_SESSION['client']) and $_SESSION['admin'] > 0)
   {
     $requser = $bdd->prepare("SELECT * from utilisateur where id_utilisateur  =? ");
     $requser->execute(array($_SESSION['client']));

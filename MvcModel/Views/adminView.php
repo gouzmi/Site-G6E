@@ -17,6 +17,18 @@
       <h1 class="titre">Espace d'administration</h1>
 
       <article>
+
+        <div id="first">
+              <div>
+                <p>
+                  En tant qu'administrateur vous pouvez accéder au forum pour résoudre les problèmes de vos clients.
+                </p>
+              </div>
+              <div>
+                <h3 style="margin:auto"><a href="../Controlers/billet.php" class="lien">>> Accéder au forum <<</a></h3>
+              </div>
+        </div>
+
         <h3>Ajout d'un administrateur :</h3>
           <div id="cas">
 
