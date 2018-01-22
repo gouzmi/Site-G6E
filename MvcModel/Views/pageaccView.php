@@ -5,11 +5,13 @@
     <title>Page d'accueil</title>
     <link rel="stylesheet" href="../Css/pageacc.css"/>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
+
     <script src="../javaScript/jquery-1.8.3.min.js"></script>
     </head>
 
     <body>
       <?php include("header.php") ?>
+
 
     <div class="page">
       <!--partie1-->
@@ -99,6 +101,36 @@
                 </div>
             </div>
         </div>
+        
+        <a id="scrollToTop"  class="scrollToTop" href=""><i class="fa fa-arrow-circle-up"></i></a>
+        <script>
+          $(document).ready(function(){
+            var btt = $('.scrollToTop');
+
+            btt.on('click',function(e){
+              $('html,body').animate({
+                scrollTop:0
+              },500);
+              e.preventDefault();
+            });
+
+            $(window).on('scroll',function(){
+              var self = $(this),
+                height = self.height(),
+                top = self.scrollTop();
+
+              if (top > height) {
+                if (!btt.is(':visible')) {
+                  btt.show();
+                }
+              }else {
+                btt.hide();
+              }
+            });
+          });
+
+
+        </script>
 
     <script type="text/javascript" src="../javaScript/jquery.easing.1.3.js"></script>
     <!-- the jScrollPane script, pour la page de l'équipe-->
