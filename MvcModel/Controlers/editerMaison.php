@@ -62,7 +62,7 @@
       else {
         require('../Views/editerMaisonView.php');
       }
-      //redirection vers la bonne vue pour l'édition de la maison en fonction du choix
+
     }
   }
   else {  header("Location: login.php");} ?>

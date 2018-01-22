@@ -50,5 +50,30 @@
     }
   }
 
+  function supPiece($bdd){
+    $reqpiece= $bdd->prepare('SELECT * FROM piece WHERE id_logement=?');
+    $reqpiece->execute(array($_SESSION['id_logement']));
+
+    echo '<form method="post" action="">
+    <table align=center>
+    <tr>
+    <td>Nom de la Pièce</td><td>Superficie</td><td>Référence de la pièce</td><td>Supprimer</td>
+    </tr>';
+    $pieces = $reqpiece->fetchall(PDO::FETCH_ASSOC) ;
+    $i=1;
+    foreach($pieces as $key => $piece) {
+      echo '<tr>
+      <td>',$piece['nom_piece'],'</td>
+      <td>',$piece['superficie_piece'],'</td>
+      <td>',$piece['id_piece'],'</td>
+      <td><input type="checkbox" name="id_rep['.$i.']" value="'.$piece['id_piece'].'" /></td>
+      </tr>';
+      $i++;
+    }
+
+    echo '<tr><td colspan="4"><input type="submit" name="supPiece"  /></td></tr>
+    </table>
+    </form>';
+  }
 
 ?>
