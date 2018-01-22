@@ -4,7 +4,7 @@ html
 }
 
 #corps{
-  flex-direction: column;
+  display: flex;
 }
 
 .form-style-6{

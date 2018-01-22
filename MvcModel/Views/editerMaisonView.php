@@ -15,7 +15,7 @@
 
   <div id="corps">
   <?php include("../Views/slideView.php") ;?>
-  <div class="page">
+
 
 
      <form action="" method="post" class="form-style-6">
@@ -23,15 +23,16 @@
        <center>
        <label>Que souhaitez-vous modifier ? </label>
        <br><br><br><br>
-       <input type="radio" name="capteur" id="capteur"><label class="ca" for="capteur" >Capteur</label>
-       <input type="radio" name="piece" id="piece"><label class="ca" for="piece">Pièce</label>
+       <input type="radio" name="modifpiece" id="piece"><label class="ca" for="piece">Pièce</label>
+       <input type="radio" name="modifcemac" id="cemac"><label class="ca" for="cemac">Cemac</label>
+       <input type="radio" name="modifcapteur" id="capteur"><label class="ca" for="capteur" >Capteur</label>
        <br><br><br><br><br>
        <input type="submit" value="Valider" id="Valider">
      </center>
      </form>
 
 
-</div>
+
 </div>
 <?php include("footer.php") ?>
 </body>
