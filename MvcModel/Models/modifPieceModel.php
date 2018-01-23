@@ -40,13 +40,14 @@
   }
   //formulaire modificication rempli
   if(isset($_POST['modif'])){
-    if(isset($_POST['ajouter'])){
-      $_SESSION['modifpiece'] = "ajout" ;
-      header("Location: editerMaison.php");
-    }
-    if(isset($_POST['supprimer'])){
-      $_SESSION['modifpiece'] = "supp" ;
-      header("Location: editerMaison.php");
+    if(isset($_POST['ajsupp'])){
+      if( $_POST['ajsupp'] == "ajouter"){
+        $_SESSION['modifpiece'] = "ajout";
+        header("Location: editerMaison.php");
+      }
+      else if( $_POST['ajsupp'] == "supprimer"){
+       $_SESSION['modifpiece'] = "supp";
+       header("Location: editerMaison.php");}
     }
   }
 

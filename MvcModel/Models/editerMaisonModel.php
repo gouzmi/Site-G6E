@@ -27,17 +27,21 @@ if(!isset($_SESSION['id_logement'])){
 }
 
 //enregistre la catégorie à éditer et renvoie au controller
-if(isset($_POST['modifcemac'])){
-  $_SESSION['modifcemac'] = "modif";
-  header("Location: editerMaison.php");
+if(isset($_POST['categorie'])){
+  if($_POST['categorie'] == "cemac"){
+    $_SESSION['modifcemac'] = "modif";
+    header("Location: editerMaison.php");
+  }
+  else if (isset($_POST['categorie']) == "piece"){
+    $_SESSION['modifpiece'] = "modif";
+    header("Location: editerMaison.php");
+  }
+  else if (isset($_POST['categorie']) == "capteur"){
+    $_SESSION['modifcapteur'] = "categorie";
+    header("Location: editerMaison.php");
+  }
 }
-else if (isset($_POST['modifcapteur'])){
-  $_SESSION['modifcapteur'] = "modif";
-  header("Location: editerMaison.php");
-}
-else if (isset($_POST['modifpiece'])){
-  $_SESSION['modifpiece'] = "modif";
-  header("Location: editerMaison.php");
-}
+
+
 
 ?>

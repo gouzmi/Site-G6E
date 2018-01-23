@@ -20,13 +20,14 @@
 
 <?php include("../Views/slideView.php") ;?>
 
-<h1>Commentaires des post</h1>
+<h5>Commentaires des post</h5>
 <h2><a href="billet.php">Retour à la liste des post</a></h2>
 
 <div class="news">
 <h3>
   <?php echo htmlspecialchars($donnees['titre']); ?>
-  <em>le <?php echo $donnees['date_creation']; ?></em>
+  <em>--- le <?php echo $donnees['date_creation']; ?>--- </em>
+
 </h3>
 </div>
 
@@ -48,7 +49,9 @@
       ?>
 
 
-      <p><strong><?php echo "<i class='nom'>".mb_strtoupper($auteur['nom'])." ".ucfirst(mb_strtolower($auteur['prenom']))."</i>"; ?></strong> le <?php echo $info['date_creation']; ?>
+      <p><strong><?php echo "<i class='nom'>".mb_strtoupper($auteur['nom'])." ".ucfirst(mb_strtolower($auteur['prenom']))."</i>"; ?></strong>le <?php echo $info['date_creation']; ?>
+      <br>
+      _____________________________________________________________________________________________
       <br><br>
       <?php echo nl2br(htmlspecialchars($info['commentaire'])); ?></p>
 

@@ -23,8 +23,7 @@
 
 
 
-<h1>Forum de DOMHOME</h1>
-<h4>Derniers posts du forum :</h4>
+<h5>Forum de DOMHOME</h5>
 
 <?php
 
