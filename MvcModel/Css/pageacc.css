@@ -47,7 +47,8 @@ html{
 }
 .imgg img{
   width: 40%; height: 40%;
-  margin-left: 380px;
+  display: block;
+  margin: auto;
 }
 
 
@@ -158,7 +159,7 @@ html{
 	background-image:url(../Images/presence.jpg) ;
 }
 .s3 .ca-item1-31 .ca-icon1{
-	background-image:url(../Images/thermostat.jpg);
+	background-image:url(../Images/thermostat.png);
 }
 .s3 .ca-item1-41 .ca-icon1{
 	background-image:url(../Images/fumee.png);
