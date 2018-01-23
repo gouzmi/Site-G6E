@@ -23,8 +23,8 @@
        <center>
        <label>Voulez vous ajouter ou supprimer <?php echo $modif; ?>? </label>
        <br><br><br><br>
-       <input type="radio" name="ajouter" value="ajouter" id="ajouter"><label class="ca" for="ajouter" >Ajouter </label>
-       <input type="radio" name="supprimer" value="supprimer" id="supprimer"><label class="ca" for="supprimer">Supprimer </label>
+       <input type="radio" name="ajsupp" value="ajouter" id="ajouter"><label class="ca" for="ajouter" >Ajouter </label>
+       <input type="radio" name="ajsupp" value="supprimer" id="supprimer"><label class="ca" for="supprimer">Supprimer </label>
        <br><br><br><br>
        <input type="submit" name="modif" value="Valider">
      </center>

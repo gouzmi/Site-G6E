@@ -31,13 +31,14 @@
   }
   //fomulaire modification rempli
   if(isset($_POST['modif'])){
-    if(isset($_POST['ajouter'])){
-      $_SESSION['modifcapteur'] = "ajout";
-      header("Location: editerMaison.php");
-    }
-    if(isset($_POST['supprimer'])){
-      $_SESSION['modifcapteur'] = "supp";
-      header("Location: editerMaison.php");
+    if(isset($_POST['ajsupp'])){
+      if( $_POST['ajsupp'] == "ajouter"){
+        $_SESSION['modifcapteur'] = "ajout";
+        header("Location: editerMaison.php");
+      }
+      else if( $_POST['ajsupp'] == "supprimer"){
+       $_SESSION['modifcapteur'] = "supp";
+       header("Location: editerMaison.php");}
     }
   }
   function supCapteur($bdd){
