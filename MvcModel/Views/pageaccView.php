@@ -41,6 +41,106 @@
       <!--partie3-->
           <section class="section s3">
             <h1 class="titre">Catalogue des capteurs</h1>
+            <div id="ca-container1" class="ca-container1">
+              <!--ce sont les deux flèches
+              <div class="ca-nav">
+                <span class="ca-nav-prev">Previous</span>
+                <span class="ca-nav-next">Next</span>
+              </div>-->
+
+                <!--notre photos, j'importe le source dans cssp11.css
+                xxxxxxxxx sont des introductions de chacuns
+                &ldq-->
+                <div class="ca-wrapper1">
+                    <div class="ca-item1 ca-item-11" style="position:absolute; left: 0px;">
+                        <div class="ca-item-main1">
+                            <div class="ca-icon1"></div>
+                            <h3>Capteur de température</h3>
+                            <p>Capteur permettant de connaître en temps réel les températures dans votre maison</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="ca-item1 ca-item-21" style="position:absolute; left: 330px;">
+                        <div class="ca-item-main1">
+                            <div class="ca-icon1"></div>
+                            <h3>Détecteur de présence</h3>
+                            <p>Capteur permettant d'assurer la sécurité dans votre maison.</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="ca-item1 ca-item-31" style="position:absolute; left: 660px;">
+                        <div class="ca-item-main1">
+                            <div class="ca-icon1"></div>
+                            <h3>Thermostat</h3>
+                            <p> Cet actionneur vous permettra de déterminer la température dans votre maison à tout moment. </p>
+
+                        </div>
+                    </div>
+
+                    <div class="ca-item1 ca-item-41" style="position:absolute; left: 990px;">
+                        <div class="ca-item-main1">
+                            <div class="ca-icon1"></div>
+                            <h3>Détecteur de fumée</h3>
+                            <p> Ce capteur permettra d'assurer la sécurité dans votre maison en cas d'incendie.</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="ca-item1 ca-item-51" style="position:absolute; left: 1320px;">
+                        <div class="ca-item-main1">
+                            <div class="ca-icon1"></div>
+                            <h3>Caméra</h3>
+                            <p> Cette caméra vous permettra de visualiser en temps réelle votre maison.</p>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="ca-item1 ca-item-61" style="position:absolute; left: 1650px;">
+                        <div class="ca-item-main1">
+                            <div class="ca-icon1"></div>
+                            <h3>Capteur de contact</h3>
+                            <p> Ce capteur vous permettra de savoir en temps réel l'état d'ouverture de vos fenêtre et portes.</p>
+
+                        </div>
+                      </div>
+                    <div class="ca-item1 ca-item-71" style="position:absolute; left: 1980px;">
+                        <div class="ca-item-main1">
+                            <div class="ca-icon1"></div>
+                            <h3>Capteur de luminosité</h3>
+                            <p> Ce capteur vous permet de connaître le pourcentage de luminosité dans votre maison et ainsi améliorer la gestion des lumières de votre foyer.</p>
+                            <br>
+                        </div>
+                        </div>
+                        <div class="ca-item1 ca-item-81" style="position:absolute; left: 2310px;">
+                            <div class="ca-item-main1">
+                                <div class="ca-icon1"></div>
+                                <h3>Capteur de volet</h3>
+                                <p> Ce capteur vous permettra de connaître l'état d'ouverture de vos volets vous permettant ensuite de gérer la luminosité de votre maison.</p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="ca-item1 ca-item-91" style="position:absolute; left: 2310px;">
+                            <div class="ca-item-main1">
+                                <div class="ca-icon1"></div>
+                                <h3>Capteur de consommation</h3>
+                                <p> Ce capteur vous permettra de connaître l'état de votre consommation en énergie. Cela vous permettra de réduire votre consommation et donc les dépenses en énergie.</p>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript" src="../javaScript/jquery.easing.1.3.js"></script>
+            <!-- the jScrollPane script, pour la page de l'équipe-->
+            <script type="text/javascript" src="../javaScript/jquery.mousewheel.js"></script>
+            <script type="text/javascript" src="../javaScript/jquery.contentcarousel.js"></script>
+            <script type="text/javascript">
+                $('#ca-container1').contentcarousel();
+            </script>
+
 
           </section>
 
