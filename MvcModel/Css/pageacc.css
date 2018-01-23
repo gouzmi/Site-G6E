@@ -36,6 +36,7 @@ html{
 }
 .imgg img{
   width: 40%; height: 40%;
+  margin-left: 380px;
 }
 
 
@@ -108,4 +109,86 @@ html{
 .s4 .ca-nav span.ca-nav-next{
 	background-position:top right;
 	left:auto;right:-40px;
+}
+
+
+.s3 .ca-container1{
+	position:relative;
+	margin:5px auto 20px auto;
+	width:990px;height:500px;
+}
+.s3 .ca-wrapper1{
+	width:105%;height:200%;
+	position:relative;
+  overflow:hidden;
+  margin-left: -35px;
+}
+.s3 .ca-item1{
+	position:relative;
+	float:left;
+	width:350px;height:500px;
+	text-align:center;
+}
+.s3 .ca-item-main1{
+	padding:15px;
+	position:absolute;
+	top:3%;left:2%;right:2%;
+	background:#fff;
+	overflow:hidden;
+	box-shadow:10px 10px 30px rgba(0,0,0,0.2);
+}
+.s3 .ca-icon1{
+	width:220px;height:250px;
+	/*position:relative;*/
+	margin:0 auto;
+	background:transparent url(../Images/temperature.png) no-repeat center center;
+}
+.s3 .ca-item-21 .ca-icon1{
+	background-image:url(../Images/presence.jpg) ;
+}
+.s3 .ca-item-31 .ca-icon1{
+	background-image:url(../Images/thermostat.jpg);
+}
+.s3 .ca-item-41 .ca-icon1{
+	background-image:url(../Images/fumee.png);
+}
+.s3 .ca-item-51 .ca-icon1{
+	background-image:url(../Images/camera.jpg);
+}
+.s3 .ca-item-61 .ca-icon1{
+	background-image:url(../Images/contact.jpg);
+}
+.s3 .ca-item-71 .ca-icon1{
+	background-image:url(../Images/luminosite.jpg);
+}
+.s3 .ca-item-81 .ca-icon1{
+	background-image:url(../Images/volet.jpg);
+}
+.s3 .ca-item-91 .ca-icon1{
+	background-image:url(../Images/consommation.jpg);
+}
+.s3 .ca-item1 h3{
+	font-family: 'Coustard'; font-style: oblique;font-size:30px;
+	color:#622931e6;
+  margin-bottom: 5%;
+	height:45px;
+	text-align:center;
+}
+
+/*definir les deux flèches*/
+.s3 .ca-nav1 span{
+	width:25px;height:38px;
+	background:transparent url(../Images/arrows.png) no-repeat top left;
+	position:absolute;
+	top:50%;
+	margin-top:-19px;
+	left:-75px;
+	text-indent:-9000px;
+	opacity:0.7;
+	cursor:pointer;
+	z-index:100;
+}
+.s3 .ca-nav1 span.ca-nav1-next{
+	background-position:top right;
+	left:auto;right:-60px;
 }
