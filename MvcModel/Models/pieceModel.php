@@ -10,7 +10,7 @@ function valeur_capteur($id_type_capteur, $donnee){
     $msg= "Lumière dans la pièce :".$donnee.".";
   }
   if ($id_type_capteur == 3) {
-    $msg= "Température dans la pièce :".$donnee.".";
+    $msg= "Température dans la pièce :".$donnee."°C";
   }
   if ($id_type_capteur == 4) {
     $msg= "Fumée :".$donnee.".";
@@ -29,6 +29,28 @@ function valeur_capteur($id_type_capteur, $donnee){
    }
   return $msg;
 
+}
+
+function bouton_capteur($id_type_capteur, $donnee)
+{
+  switch ($id_type_capteur) {
+    case 2:
+    case 7:
+    case 9:
+       $bouton =  "<label class='switch'>
+                    <input type='checkbox' checked>
+                    <span class='slider round'></span>
+                    </label>" ;
+      break;
+    case 3:
+       $bouton =  "<input type='number' name='nombre' value='$donnee'>" ;
+      break;
+
+    default:
+       $bouton = "";
+      break;
+  }
+  return $bouton;
 }
 
 function logo_capteur($id_type_capteur)
@@ -107,11 +129,12 @@ function getCapteurs($pieceId, $bdd) {
     $logo = logo_capteur($capteur['id_type_capteur']);
     $titre = titre_capteur($capteur['id_type_capteur']);
     $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
+    $action = bouton_capteur($capteur['id_type_capteur'],  $capteur['valeur_capteur']);
   ?>
     <section class="boite">
       <h3><?php echo $titre; ?> </h3>
       <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-      <div class="bouton"> BOUTON</div>
+      <div class="bouton"><?php echo $action; ?></div>
       <div class="info"> <?php echo $info; ?></div>
       <div class="historique"> <a href="" class="link">Historique </a></div>
     </section>

@@ -53,7 +53,7 @@
                         </div>
                     </div>
 
-                    <div class="ca-item1 ca-item1-21" style="position:absolute; left: 330px;">
+                    <div class="ca-item1 ca-item1-21" style="position:absolute; left: 350px;">
                         <div class="ca-item1-main1">
                             <div class="ca-icon1"></div>
                             <h3>Détecteur de présence</h3>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="ca-item1 ca-item1-31" style="position:absolute; left: 660px;">
+                    <div class="ca-item1 ca-item1-31" style="position:absolute; left: 700px;">
                         <div class="ca-item1-main1">
                             <div class="ca-icon1"></div>
                             <h3>Thermostat</h3>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
 
-                    <div class="ca-item1 ca-item1-41" style="position:absolute; left: 990px;">
+                    <div class="ca-item1 ca-item1-41" style="position:absolute; left: 1050px;">
                         <div class="ca-item1-main1">
                             <div class="ca-icon1"></div>
                             <h3>Détecteur de fumée</h3>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="ca-item1 ca-item1-51" style="position:absolute; left: 1320px;">
+                    <div class="ca-item1 ca-item1-51" style="position:absolute; left: 1400px;">
                         <div class="ca-item1-main1">
                             <div class="ca-icon1"></div>
                             <h3>Caméra</h3>
@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="ca-item1 ca-item1-61" style="position:absolute; left: 1650px;">
+                    <div class="ca-item1 ca-item1-61" style="position:absolute; left: 1750px;">
                         <div class="ca-item1-main1">
                             <div class="ca-icon1"></div>
                             <h3>Capteur de contact</h3>
@@ -98,7 +98,7 @@
 
                         </div>
                       </div>
-                    <div class="ca-item1 ca-item1-71" style="position:absolute; left: 1980px;">
+                    <div class="ca-item1 ca-item1-71" style="position:absolute; left: 2100px;">
                         <div class="ca-item1-main1">
                             <div class="ca-icon1"></div>
                             <h3>Capteur de luminosité</h3>
@@ -106,7 +106,7 @@
                             <br>
                         </div>
                         </div>
-                        <div class="ca-item1 ca-item1-81" style="position:absolute; left: 2310px;">
+                        <div class="ca-item1 ca-item1-81" style="position:absolute; left: 2450px;">
                             <div class="ca-item1-main1">
                                 <div class="ca-icon1"></div>
                                 <h3>Capteur de volet</h3>
@@ -114,7 +114,7 @@
                                 <br>
                             </div>
                         </div>
-                        <div class="ca-item1 ca-item1-91" style="position:absolute; left: 2310px;">
+                        <div class="ca-item1 ca-item1-91" style="position:absolute; left: 2800px;">
                             <div class="ca-item1-main1">
                                 <div class="ca-icon1"></div>
                                 <h3>Capteur de consommation</h3>
