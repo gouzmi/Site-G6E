@@ -29,7 +29,7 @@
        <input type="submit" name="modif" value="Valider">
      </center>
 
-     <div id="retour"><a href="../Controlers/editerMaison.php"> Retour </a></div>
+     <!--<div id="retour"><a href="../Controlers/editerMaison.php"> Retour </a></div>-->
     </form>
      <br>
 </div>

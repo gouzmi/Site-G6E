@@ -32,12 +32,12 @@ if(isset($_POST['categorie'])){
     $_SESSION['modifcemac'] = "modif";
     header("Location: editerMaison.php");
   }
-  else if (isset($_POST['categorie']) == "piece"){
+  else if ($_POST['categorie'] == "piece"){
     $_SESSION['modifpiece'] = "modif";
     header("Location: editerMaison.php");
   }
-  else if (isset($_POST['categorie']) == "capteur"){
-    $_SESSION['modifcapteur'] = "categorie";
+  else if ($_POST['categorie'] == "capteur"){
+    $_SESSION['modifcapteur'] = "modif";
     header("Location: editerMaison.php");
   }
 }
