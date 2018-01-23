@@ -49,7 +49,6 @@
             <input type="submit" value="Ajouter" name="ajCapteur">
           </center>
 
-          <div id="retour"><a href="../Controlers/modifierCapteur.php"> Retour </a></div>
         </form>
 
         <br>

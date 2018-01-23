@@ -85,10 +85,7 @@
 					}
 				});
 			},
-			// show / hide the item's more button
-			toggleMore	: function( $item1, show ) {
-				( show ) ? $item1.find('a.ca-more').show() : $item1.find('a.ca-more').hide();
-			},
+
 			// close all the items
 			// the current one is animated
 			closeItems1	: function( $wrapper1, $openedItem1, opts, cache ) {
@@ -189,25 +186,6 @@
 								position	: 'absolute',
 								left		: i * cache.item1W + 'px'
 							});
-						});
-
-						// click to open the item(s)
-						$el.find('a.ca-more').live('click.contentcarousel', function( event ) {
-							if( cache.isAnimating ) return false;
-							cache.isAnimating	= true;
-							$(this).hide();
-							var $item1	= $(this).closest('div.ca-item1');
-							aux.openItem1( $wrapper1, $item1, settings, cache );
-							return false;
-						});
-
-						// click to close the item(s)
-						$el.find('a.ca-close').live('click.contentcarousel1', function( event ) {
-							if( cache.isAnimating ) return false;
-							cache.isAnimating	= true;
-							var $item1	= $(this).closest('div.ca-item1');
-							aux.closeItems1( $wrapper1, $item1, settings, cache );
-							return false;
 						});
 
 						// navigate left

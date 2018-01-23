@@ -47,7 +47,6 @@
 
         <input type="submit" value="Ajouter" name="ajPiece">
       </center>
-      <div id="retour"><a href="../Controlers/editerMaison.php"> Retour </a></div>
     </form>
 
     <br>

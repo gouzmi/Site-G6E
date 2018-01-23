@@ -47,7 +47,8 @@ html{
 }
 .imgg img{
   width: 40%; height: 40%;
-  margin-left: 380px;
+  display: block;
+  margin: auto;
 }
 
 
@@ -152,7 +153,7 @@ html{
 	width:220px;height:250px;
 	/*position:relative;*/
 	margin:0 auto;
-	background:transparent url(../Images/temperature.png) no-repeat center center;
+	background:transparent url(../Images/temperature.jpg) no-repeat center center;
 }
 .s3 .ca-item1-21 .ca-icon1{
 	background-image:url(../Images/presence.jpg) ;
@@ -161,7 +162,7 @@ html{
 	background-image:url(../Images/thermostat.jpg);
 }
 .s3 .ca-item1-41 .ca-icon1{
-	background-image:url(../Images/fumee.png);
+	background-image:url(../Images/fumee.jpg);
 }
 .s3 .ca-item1-51 .ca-icon1{
 	background-image:url(../Images/camera.jpg);
