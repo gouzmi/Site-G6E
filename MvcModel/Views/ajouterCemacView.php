@@ -32,7 +32,6 @@
         <br><br>
         <input type="submit" value="Ajouter" name="ajCemac">
       </center>
-      <div id="retour"><a href="../Controlers/modifierCapteur.php"> Retour </a></div>
     </form>
   </div>
   <?php include("footer.php")?>

@@ -1,5 +1,5 @@
 function openPiece(evt, id) {
-    event.preventDefault();
+    evt.preventDefault();
 
     // Declare all variables
     var i, tabcontent, tablinks;
