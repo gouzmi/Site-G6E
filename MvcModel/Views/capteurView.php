@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../Css/capteur.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../javaScript/jquery-1.8.3.min.js"></script>
+    <script src="../javaScript/capteur.js"></script>
+
 </head>
 
 
@@ -114,36 +116,72 @@
         <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
 
         <div id="Alarme" class="tabcontent">
+
         </div>
 
         <div id="Portes &amp; Fenêtres" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('5',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
         <div id="Fumée" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('4',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
         <div id="Mouvement" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('1',$piece['nom_piece'], $piece['id_piece'], $bdd);
+
+            }
+            ?>
         </div>
 
         <div id="Caméra" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('7',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
         <div id="Eclairage" class="tabcontent">
-
                     <?php
                       foreach ($pieces as $key => $piece){
-                        getCapteurs('2', $piece['id_piece'], $bdd);
+                        getCapteurs('2', $piece['nom_piece'], $piece['id_piece'], $bdd);
                       }
                       ?>
         </div>
 
         <div id="Température" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('3',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
         <div id="Consommation" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('6',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
         <div id="Autres actionneurs" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('9',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
     </div>

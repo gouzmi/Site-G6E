@@ -1,6 +1,19 @@
 <?php
 include('connexiondb.php');
 
+require('userdb.php');
+
+$sqlpiece ='SELECT piece.id_piece, piece.nom_piece
+               FROM piece INNER JOIN logement
+               ON piece.id_logement = logement.id_logement
+               WHERE logement.id_utilisateur = '.$user['id_utilisateur'].'' ;
+
+
+
+              $reqpiece = $bdd ->query($sqlpiece);
+              $nbpiece = $reqpiece->rowCount();
+              $pieces = $reqpiece->fetchall();
+
 function valeur_capteur($id_type_capteur, $donnee){
   $msg = "";
   if($id_type_capteur == 1){
@@ -24,9 +37,7 @@ function valeur_capteur($id_type_capteur, $donnee){
   if ($id_type_capteur == 7 ) {
     $msg= $donnee;
   }
-  if ($id_type_capteur == 8 ) {
-     $msg= "Les volets de la pièce sont ouvets :".$donnee.".";
-   }
+
   return $msg;
 
 }
@@ -81,9 +92,7 @@ function logo_capteur($id_type_capteur)
   else if ($id_type_capteur == 7 ) {
     $logo= '<i class="fa fa-video-camera" aria-hidden="true"></i>';
   }
-  else if ($id_type_capteur == 8 ) {
-    $logo= '<i class="fa fa-window" aria-hidden="true"></i>';
-  }
+
   return $logo;
 }
 
@@ -97,9 +106,6 @@ function titre_capteur($id_type_capteur){
     5 => "Capteur de Contact",
     6 => "Capteur de Consommation",
     7 => "Caméra de Surveillance",
-    8 => "Capteur d'ouverture des Volets ",
-    9 => "Cemac",
-    10 => "Actionneur"
   );
 
   $msg = "Type de capteur inconnu : ".$id_type_capteur;
@@ -115,30 +121,56 @@ function getPieceUrl($pieceId) {
   return "?".$queryString;
 }
 
-function getCapteurs($pieceId, $bdd) {
-  $sqlcapteur='SELECT *
-               FROM historique_capteur INNER JOIN capteur
-               ON  historique_capteur.id_capteur = capteur.id_capteur
-               WHERE capteur.id_piece = '.$pieceId.'
-               ORDER BY capteur.id_type_capteur ';
-  $reqcapteur = $bdd -> query($sqlcapteur);
-  $capteurs = $reqcapteur->fetchall();
-  //$capteurs = $pieces['capteurs'];
-  foreach ($capteurs as $capteur) {
-    $idtypecapteur = $capteur['id_type_capteur'];
-    $valeur=$capteur['valeur_capteur'];
-    $reference= $capteur['id_capteur'];
-    $logo = logo_capteur($capteur['id_type_capteur']);
-    $titre = titre_capteur($capteur['id_type_capteur']);
-    $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
-    $action = bouton_capteur($capteur);
-  ?>
-    <section class="boite">
-      <h3><?php echo $titre; ?> </h3>
-      <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-      <div class="bouton"><?php echo $action; ?></div>
-      <div class="info"> <?php echo $info; ?></div>
-      <div class="historique"> <a href="" class="link">Historique </a></div>
-    </section>
-<?php }
+function getCapteurs($type, $nompiece, $pieceId, $bdd) {
+  if ($type == 0 AND $nompiece == 0) {
+    $sqlcapteur='SELECT *
+                 FROM historique_capteur INNER JOIN capteur
+                 ON  historique_capteur.id_capteur = capteur.id_capteur
+                 WHERE capteur.id_piece = '.$pieceId.'
+                 ORDER BY capteur.id_type_capteur ';
+    $reqcapteur = $bdd -> query($sqlcapteur);
+    $capteurs = $reqcapteur->fetchall();
+    //$capteurs = $pieces['capteurs'];
+    foreach ($capteurs as $capteur) {
+      $idtypecapteur = $capteur['id_type_capteur'];
+      $valeur=$capteur['valeur_capteur'];
+      $reference= $capteur['id_capteur'];
+      $logo = logo_capteur($capteur['id_type_capteur']);
+      $titre = titre_capteur($capteur['id_type_capteur']);
+      $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
+    ?>
+      <section class="boite">
+        <h3><?php echo $titre; ?> </h3>
+        <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
+        <div class="info"> <?php echo $info; ?></div>
+        <div class="historique"> <a href="" class="link">Historique </a></div>
+      </section>
+  <?php }
+  }
+  else {
+    $sqlcapteur='SELECT *
+                 FROM historique_capteur INNER JOIN capteur
+                 ON  historique_capteur.id_capteur = capteur.id_capteur
+                 WHERE capteur.id_piece = '.$pieceId.' AND capteur.id_type_capteur = '.$type.'
+                 ORDER BY capteur.id_type_capteur ';
+    $reqcapteur = $bdd -> query($sqlcapteur);
+    $capteurs = $reqcapteur->fetchall();
+    //$capteurs = $pieces['capteurs'];
+    foreach ($capteurs as $capteur) {
+      $idtypecapteur = $capteur['id_type_capteur'];
+      $valeur=$capteur['valeur_capteur'];
+      $reference= $capteur['id_capteur'];
+      $logo = logo_capteur($capteur['id_type_capteur']);
+      $titre = titre_capteur($capteur['id_type_capteur']);
+      $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
+    ?>
+      <section class="boite">
+        <h3><?php echo $titre; ?> </h3>
+        <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
+        <div class="info"> <?php echo $info; ?></div>
+        <div class="info"> <?php echo $nompiece; ?></div>
+        <div class="historique"> <a href="" class="link">Historique </a></div>
+      </section>
+  <?php }
+  }
 }

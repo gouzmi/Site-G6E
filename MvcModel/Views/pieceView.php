@@ -3,7 +3,7 @@ $ajax = isset($_GET['ajax']);
 $currentPiece = isset($_GET['piece']) ? $_GET['piece'] : 1; // 1 == id premiere pièce dans la bdd
 
 if($ajax) {
-  echo getCapteurs($currentPiece, $bdd);
+  echo getCapteurs('0', '0', $currentPiece, $bdd);
 } else { ?>
   <!DOCTYPE html>
 
@@ -26,16 +26,7 @@ if($ajax) {
     <?php include("header.php") ?>
     <div id="corps">
       <?php include("../Views/slideView.php") ;
-      $sqlpiece ='SELECT piece.id_piece, piece.nom_piece
-                     FROM piece INNER JOIN logement
-                     ON piece.id_logement = logement.id_logement
-                     WHERE logement.id_utilisateur = '.$user['id_utilisateur'].'' ;
 
-
-
-      $reqpiece = $bdd ->query($sqlpiece);
-      $nbpiece = $reqpiece->rowCount();
-      $pieces = $reqpiece->fetchall();
 
       if ($nbpiece != 0)
       {
@@ -56,7 +47,7 @@ if($ajax) {
             <div id="piece_<?php echo $piece['id_piece']?>" class="tabcontent <?php echo $isActive ? "active" : ""?>">
               <?php
               if($isActive) {
-                  getCapteurs($piece['id_piece'], $bdd);
+                  getCapteurs('0','0', $piece['id_piece'], $bdd);
                }?>
            </div>
 
