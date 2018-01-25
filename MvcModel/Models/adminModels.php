@@ -4,6 +4,7 @@
   $selectclient = $bdd->query('SELECT * FROM utilisateur where admin = 0');
   $suppression = $bdd->query('SELECT * FROM utilisateur where admin = 0');
   $suppressionfaq = $bdd->query('SELECT * FROM faq');
+  $forum = $bdd->query('SELECT * FROM billets');
 
   if (isset($_POST['ajoutadmin']))
     {
@@ -39,6 +40,13 @@
         $suppfaq->execute(array($_POST['suppfaq2']));
         $info7 = "Succès";
       }
+
+if (isset($_POST['forum']))
+          {
+            $suppfaq = $bdd->prepare("DELETE FROM `billets` WHERE titre=? ");
+            $suppfaq->execute(array($_POST['forum']));
+            $info8 = "Succès";
+          }
 
 
 
