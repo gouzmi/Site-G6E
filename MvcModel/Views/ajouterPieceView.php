@@ -46,6 +46,7 @@
         <br><br><br><br>
 
         <input type="submit" value="Ajouter" name="ajPiece">
+        <input type ="submit" name="retour" value="Retour">
       </center>
     </form>
 

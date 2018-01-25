@@ -31,6 +31,7 @@
 				</select>
         <br><br>
         <input type="submit" value="Ajouter" name="ajCemac">
+        <input type ="submit" name="retour" value="Retour">
       </center>
     </form>
   </div>

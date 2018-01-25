@@ -76,8 +76,9 @@
       $i++;
     }
     echo "</table>";
-    echo '<br><input type="submit" name="supCapteur" value="Supprimer"  /></td></tr>
-
+    echo '<br>
+    <input type="submit" name="supCapteur" value="Supprimer"  /></td></tr>
+    <input type ="submit" name="retour" value="Retour">
     </form>';
   }
 

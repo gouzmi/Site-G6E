@@ -81,7 +81,8 @@
       $i++;
     }
 
-    echo '<tr><td colspan="4"><br><input type="submit" name="supPiece"  /></td></tr>
+    echo '<tr><td colspan="4"><br><input type="submit" name="supPiece"  />
+    <input type ="submit" name="retour" value="Retour"></td></tr>
     </table>
     </form>';
   }

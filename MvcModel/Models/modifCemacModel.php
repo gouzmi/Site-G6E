@@ -75,6 +75,7 @@
       $i++;
     }
     echo "</table>";
-    echo '<tr><td colspan="4"><br><input type="submit" name="supCemac"/></td></tr>
+    echo '<tr><td colspan="4"><br><input type="submit" name="supCemac"/>
+    <input type ="submit" name="retour" value="Retour"></td></tr>
     </form>';
   }?>
