@@ -27,9 +27,12 @@
        <input type="radio" name="ajsupp" value="supprimer" id="supprimer"><label class="ca" for="supprimer">Supprimer </label>
        <br><br><br><br>
        <input type="submit" name="modif" value="Valider">
+       <form action="" method="post">
+         <input type ="submit" name="retour" value="Retour">
+       </form>
      </center>
-
     </form>
+
      <br>
 </div>
 <?php include("footer.php") ?>

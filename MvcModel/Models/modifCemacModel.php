@@ -6,6 +6,12 @@
   $variete3 = $bdd->query('SELECT cemac.id_cemac FROM cemac
                            INNER JOIN piece ON cemac.id_piece = piece.id_piece
                            WHERE piece.id_logement = '.$_SESSION['id_logement'].'');
+   //bouton Retour
+   if(isset($_POST['retour'] )){
+     if(isset($_SESSION['modifcemac'])){
+       unset($_SESSION['modifcemac']);
+     }
+   }
   //formulaire supp rempli
   if(isset($_POST['supCemac'])){
      foreach($_POST['id_rep'] as $valeur){
@@ -51,22 +57,25 @@
     $reqcemac->execute(array($_SESSION['id_logement']));
     $cemacs = $reqcemac->fetchall(PDO::FETCH_ASSOC) ;
 
-    echo '<form method="post" action="">
-    <table>
+    echo '<form method="post" action="" class="form-style-5">
+    <table align="center" class="table">
+    <h1>Veuillez choisir les Cemacs  que vous voulez supprimer </h1>
     <tr>
-    <td>Référence du Cemac</td><td>Supprimer</td>
+    <br>
+    <td align="center" class="p">Référence du Cemac</td><td align="center" class="p">Supprimer</td>
     </tr>';
 
      $i=1;
     foreach($cemacs as $key => $cemac) {
       echo '<tr>
-      <td>',$cemac['id_cemac'],'</td>
-      <td><input type="checkbox" name="id_rep['.$i.']" value="'.$cemac['id_cemac'].'" /></td>
+      <td align="center">',$cemac['id_cemac'],'</td>
+      <td align="center"><input type="checkbox" name="id_rep['.$i.']" value="'.$cemac['id_cemac'].'" /></td>
+
       </tr>';
       $i++;
     }
-
-    echo '<tr><td colspan="4"><input type="submit" name="supCemac"  /></td></tr>
-    </table>
+    echo "</table>";
+    echo '<tr><td colspan="4"><br><input type="submit" name="supCemac"/>
+    <input type ="submit" name="retour" value="Retour"></td></tr>
     </form>';
   }?>

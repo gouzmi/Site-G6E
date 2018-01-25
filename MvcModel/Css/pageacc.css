@@ -98,16 +98,19 @@ html{
 	background-image:url(../Images/tibo.jpg);
 }
 .s4 .ca-item h3{
-	font-family: 'Coustard'; font-style: oblique;font-size:25px;
-	color:#622931e6;
+	font-family: 'Coustard';
+  font-style: oblique;
+  font-size: 25px;
+	color: #622931e6;
   margin-bottom: 5%;
-	height:45px;
-	text-align:center;
+	height: 45px;
+	text-align: center;
 }
 
 /*definir les deux flèches*/
-.s4 .ca-nav span{
-	width:25px;height:38px;
+.ca-nav span{
+	width:25px;
+  height:38px;
 	background:transparent url(../Images/arrows.png) no-repeat top left;
 	position:absolute;
 	top:50%;
@@ -118,7 +121,7 @@ html{
 	cursor:pointer;
 	z-index:100;
 }
-.s4 .ca-nav span.ca-nav-next{
+.ca-nav span.ca-nav-next{
 	background-position:top right;
 	left:auto;right:-40px;
 }
@@ -188,7 +191,7 @@ html{
 }
 
 /*definir les deux flèches*/
-.s3 .ca-nav1 span{
+.s3 .ca-nav span{
 	width:25px;height:38px;
 	background:transparent url(../Images/arrows.png) no-repeat top left;
 	position:absolute;
@@ -200,7 +203,7 @@ html{
 	cursor:pointer;
 	z-index:100;
 }
-.s3 .ca-nav1 span.ca-nav-next{
+.s3 .ca-nav span.ca-nav-next{
 	background-position:top right;
 	left:auto;right:-60px;
 }

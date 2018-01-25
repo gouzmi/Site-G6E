@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../Css/capteur.css"/>
     <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="../javaScript/jquery-1.8.3.min.js"></script>
+    <script src="../javaScript/capteur.js"></script>
+
 </head>
 
 
@@ -44,17 +46,17 @@
                 </a>
               </li>
               <li>
-                <a href='#settings'>
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Fumée')">
                   Fumée
                 </a>
               </li>
               <li>
-                <a href='#settings'>
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Mouvement')">
                   Mouvement
                 </a>
               </li>
               <li>
-                <a href='#settings'>
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Caméra')">
                   Caméra
                 </a>
               </li>
@@ -64,7 +66,7 @@
         </ul>
       </nav>
 
-      <nav class='animated bounceInDown' id="comfort">
+      <nav class='animated bounceInDown' id="confort">
         <ul>
 
           <li class='sub-menu'>
@@ -80,17 +82,17 @@
                 </a>
               </li>
               <li>
-                <a href='#settings'>
-                  Radiateur
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Température')">
+                  Température
                 </a>
               </li>
               <li>
-                <a href='#settings'>
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Consommation')">
                   Consommation
                 </a>
               </li>
               <li>
-                <a href='#settings'>
+                <a href='#settings' class="tablinks" onclick="openCate(event, 'Autres actionneurs')">
                   Autres actionneurs
                 </a>
               </li>
@@ -114,70 +116,74 @@
         <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
 
         <div id="Alarme" class="tabcontent">
-          <div class="boite">
-            <div>Nom_Capteur</div>
-            <div>Données</div>
-            <div>Pièce</div>
-            <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-            </label>
-          </div>
-
-          <div class="boite">
-            <div>Nom_Capteur</div>
-            <div>Données</div>
-            <div>Pièce</div>
-            <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-            </label>
-          </div>
-
-          <div class="boite">
-            <div>Nom_Capteur</div>
-            <div>Données</div>
-            <div>Pièce</div>
-            <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-            </label>
-          </div>
 
         </div>
 
         <div id="Portes &amp; Fenêtres" class="tabcontent">
-          <div class="boite">
-            <div>Nom_Capteur</div>
-            <div>Données</div>
-            <div>Pièce</div>
-            <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-            </label>
-          </div>
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('5',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
+        </div>
+
+        <div id="Fumée" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('4',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
+        </div>
+
+        <div id="Mouvement" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('1',$piece['nom_piece'], $piece['id_piece'], $bdd);
+
+            }
+            ?>
+        </div>
+
+        <div id="Caméra" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('7',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
         <div id="Eclairage" class="tabcontent">
-          <div class="boite">
-            <div>Nom_Capteur</div>
-            <div>Données</div>
-            <div>Pièce</div>
-            <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-            </label>
-          </div>
-          <div class="boite">
-            <div>Nom_Capteur</div>
-            <div>Données</div>
-            <div>Pièce</div>
-            <label class="switch">
-                <input type="checkbox" checked>
-                <span class="slider round"></span>
-            </label>
-          </div>
+                    <?php
+                      foreach ($pieces as $key => $piece){
+                        getCapteurs('2', $piece['nom_piece'], $piece['id_piece'], $bdd);
+                      }
+                      ?>
         </div>
+
+        <div id="Température" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('3',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
+        </div>
+
+        <div id="Consommation" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('6',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
+        </div>
+
+        <div id="Autres actionneurs" class="tabcontent">
+          <?php
+            foreach ($pieces as $key => $piece){
+              getCapteurs('9',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
+        </div>
+
     </div>
 
 </div>

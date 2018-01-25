@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="../Css/editerMaison.css">
 <?php
   include('connexiondb.php');
 
@@ -6,6 +7,12 @@
   $variete3 = $bdd->query('SELECT cemac.id_cemac FROM cemac
                            INNER JOIN piece ON cemac.id_piece = piece.id_piece
                            WHERE piece.id_logement = '.$_SESSION['id_logement'].'');
+  //bouton Retour
+  if(isset($_POST['retour'] )){
+    if(isset($_SESSION['modifcapteur'])){
+      unset($_SESSION['modifcapteur']);
+    }
+  }
   //formulaire supp rempli
   if(isset($_POST['supCapteur'])){
     foreach($_POST['id_rep'] as $valeur){
@@ -50,25 +57,28 @@
                              WHERE piece.id_logement =?');
     $reqcapteur->execute(array($_SESSION['id_logement']));
 
-    echo '<form method="post" action="">
-    <table align=center>
+    echo '<form method="post" action="" class="form-style-5">
+    <table align="center" class="table">
+    <h1>Veuillez choisir les capteurs que vous voulez supprimer </h1>
     <tr>
-    <td>Référence du Capteur</td><td>Pièce</td><td>Type du Capteur</td><td>Supprimer</td>
+    <br>
+    <td align="center" class="p">Référence du Capteur</td><td align="center" class="p">Pièce</td><td align="center" class="p">Type du Capteur</td><td align="center" class="p">Supprimer</td>
     </tr>';
     $capteurs = $reqcapteur->fetchall(PDO::FETCH_ASSOC) ;
     $i=1;
     foreach($capteurs as $key => $capteur) {
       echo '<tr>
-      <td>',$capteur['id_capteur'],'</td>
+      <td align="center">',$capteur['id_capteur'],'</td>
       <td>',$capteur['nom_piece'],'</td>
-      <td>',$capteur['variete_capteur'],'</td>
-      <td><input type="checkbox" name="id_rep['.$i.']" value="'.$capteur['id_capteur'].'" /></td>
+      <td align="center">',$capteur['variete_capteur'],'</td>
+      <td align="center"><input type="checkbox" name="id_rep['.$i.']" value="'.$capteur['id_capteur'].'" /></td>
       </tr>';
       $i++;
     }
-
-    echo '<tr><td colspan="4"><input type="submit" name="supCapteur" value="Supprimer"  /></td></tr>
-    </table>
+    echo "</table>";
+    echo '<br>
+    <input type="submit" name="supCapteur" value="Supprimer"  /></td></tr>
+    <input type ="submit" name="retour" value="Retour">
     </form>';
   }
 

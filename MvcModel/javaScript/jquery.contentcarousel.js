@@ -193,7 +193,8 @@
 
 						// click to open the item(s)
 						$el.find('a.ca-more').live('click.contentcarousel', function( event ) {
-							if( cache.isAnimating ) return false;
+							if( cache.isAnimating )
+								return false;
 							cache.isAnimating	= true;
 							$(this).hide();
 							var $item	= $(this).closest('div.ca-item');
