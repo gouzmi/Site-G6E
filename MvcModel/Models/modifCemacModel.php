@@ -6,6 +6,12 @@
   $variete3 = $bdd->query('SELECT cemac.id_cemac FROM cemac
                            INNER JOIN piece ON cemac.id_piece = piece.id_piece
                            WHERE piece.id_logement = '.$_SESSION['id_logement'].'');
+   //bouton Retour
+   if(isset($_POST['retour'] )){
+     if(isset($_SESSION['modifcemac'])){
+       unset($_SESSION['modifcemac']);
+     }
+   }
   //formulaire supp rempli
   if(isset($_POST['supCemac'])){
      foreach($_POST['id_rep'] as $valeur){
