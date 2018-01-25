@@ -59,7 +59,7 @@
 
     echo '<form method="post" action="" class="form-style-5">
     <table align="center" class="table">
-    <h1>Veuillez choisir des capteurs ce que vous voulez supprimer </h1>
+    <h1>Veuillez choisir les capteurs que vous voulez supprimer </h1>
     <tr>
     <br>
     <td align="center" class="p">Référence du Capteur</td><td align="center" class="p">Pièce</td><td align="center" class="p">Type du Capteur</td><td align="center" class="p">Supprimer</td>

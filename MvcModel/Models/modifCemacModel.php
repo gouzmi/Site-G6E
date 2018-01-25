@@ -59,7 +59,7 @@
 
     echo '<form method="post" action="" class="form-style-5">
     <table align="center" class="table">
-    <h1>Veuillez choisir des Cemacs ce que vous voulez supprimer </h1>
+    <h1>Veuillez choisir les Cemacs  que vous voulez supprimer </h1>
     <tr>
     <br>
     <td align="center" class="p">Référence du Cemac</td><td align="center" class="p">Supprimer</td>

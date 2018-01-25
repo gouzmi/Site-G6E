@@ -64,7 +64,7 @@
 
     echo '<form method="post" action="" class="form-style-5">
     <table align=center>
-    <h1>Veuillez choisir des pièces ce que vous voulez supprimer</h1>
+    <h1>Veuillez choisir les pièces que vous voulez supprimer</h1>
     <tr>
     <br>
     <td align="center" class="p">Nom de la Pièce</td><td align="center" class="p">Superficie</td><td align="center" class="p">Référence de la pièce</td><td align="center" class="p">Supprimer</td>
