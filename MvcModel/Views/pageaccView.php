@@ -119,7 +119,6 @@
                                 <div class="ca-icon1"></div>
                                 <h3>Capteur de consommation</h3>
                                 <p>Ce capteur vous permettra de connaître l'état de votre consommation en énergie. Cela vous permettra de réduire votre consommation et donc les dépenses en énergie.</p>
-
                             </div>
                         </div>
                     </div>
@@ -140,7 +139,7 @@
         <div id="ca-container" class="ca-container">
           <!--ce sont les deux flèches
           <div class="ca-nav">
-          <span class="ca-nav-prev">Previous</span>
+            <span class="ca-nav-prev">Previous</span>
             <span class="ca-nav-next">Next</span>
           </div>
         qui est deja definir dans le jquery.contentcarousel.js et le pageacc.css-->

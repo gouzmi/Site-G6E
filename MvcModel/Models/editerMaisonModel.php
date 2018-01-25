@@ -41,7 +41,17 @@ if(isset($_POST['categorie'])){
     header("Location: editerMaison.php");
   }
 }
-
+ if(isset($_POST['retour'] )){
+   if(isset($_SESSION['modifcemac'])){
+     unset($_SESSION['modifcemac']);
+   }
+   else if(isset($_SESSION['modifcapteur'])){
+     unset($_SESSION['modifcapteur']);
+   }
+   else if(isset($_SESSION['modifpiece'])){
+     unset($_SESSION['modifpiece']);
+   }
+ }
 
 
 ?>

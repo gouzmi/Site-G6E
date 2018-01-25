@@ -20,9 +20,9 @@
           <?php }
 
         else { ?>
-          <a  href="faq.php" class="link"><i class="fa fa-question" aria-hidden="true"></i> Faq</a>
-          <a href="contact.php" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
-          <a href="login.php" class="link" ><i class="fa fa-sign-in" aria-hidden="true"></i>  Se connecter</a>
+          <a href="../Controlers/faq.php" class="link"><i class="fa fa-question" aria-hidden="true"></i> Faq</a>
+          <a href="../Controlers/contact.php" class="link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
+          <a href="../Controlers/login.php" class="link" ><i class="fa fa-sign-in" aria-hidden="true"></i>  Se connecter</a>
         <?php }
         ?>
 

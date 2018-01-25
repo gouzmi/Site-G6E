@@ -3,6 +3,12 @@
   include('connexiondb.php');
 
   $variete1 = $bdd->query('SELECT * FROM type_piece');
+  //bouton Retour
+  if(isset($_POST['retour'] )){
+    if(isset($_SESSION['modifpiece'])){
+      unset($_SESSION['modifpiece']);
+    }
+  }
   //formulaire supp rempli
   if(isset($_POST['supPiece'])){
      foreach($_POST['id_rep'] as $valeur){
