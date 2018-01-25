@@ -39,8 +39,9 @@ function bouton_capteur($capteur)
   $fonctionnement = $capteur['fonctionnement'];
   switch ($id_type_capteur) {
     case 2:
-    case 9:
     case 7:
+    case 5:
+    case 9:
        $bouton =  "<label class='switch'>
                     <input type='checkbox' ".($fonctionnement==1?"checked":"")." data-id-capteur='$capteurId'>
                     <span class='slider round'></span>
