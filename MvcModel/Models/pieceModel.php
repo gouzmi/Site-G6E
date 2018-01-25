@@ -31,14 +31,18 @@ function valeur_capteur($id_type_capteur, $donnee){
 
 }
 
-function bouton_capteur($id_type_capteur, $donnee)
+function bouton_capteur($capteur)
 {
+  $id_type_capteur = $capteur['id_type_capteur'];
+  $donnee = $capteur['valeur_capteur'];
+  $capteurId = $capteur['id_capteur'];
+  $fonctionnement = $capteur['fonctionnement'];
   switch ($id_type_capteur) {
     case 2:
-    case 7:
     case 9:
+    case 7:
        $bouton =  "<label class='switch'>
-                    <input type='checkbox' checked>
+                    <input type='checkbox' ".($fonctionnement==1?"checked":"")." data-id-capteur='$capteurId'>
                     <span class='slider round'></span>
                     </label>" ;
       break;
@@ -111,10 +115,7 @@ function getPieceUrl($pieceId) {
 }
 
 function getCapteurs($pieceId, $bdd) {
-  $sqlcapteur='SELECT capteur.id_capteur, capteur.id_type_capteur,
-                      historique_capteur.valeur_capteur,
-                      historique_capteur.date_donnee,
-                      historique_capteur.heure_donnee
+  $sqlcapteur='SELECT *
                FROM historique_capteur INNER JOIN capteur
                ON  historique_capteur.id_capteur = capteur.id_capteur
                WHERE capteur.id_piece = '.$pieceId.'
@@ -129,7 +130,7 @@ function getCapteurs($pieceId, $bdd) {
     $logo = logo_capteur($capteur['id_type_capteur']);
     $titre = titre_capteur($capteur['id_type_capteur']);
     $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
-    $action = bouton_capteur($capteur['id_type_capteur'],  $capteur['valeur_capteur']);
+    $action = bouton_capteur($capteur);
   ?>
     <section class="boite">
       <h3><?php echo $titre; ?> </h3>

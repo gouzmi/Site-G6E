@@ -15,7 +15,10 @@ if($ajax) {
       <link rel="stylesheet" href="../Css/piece.css"/>
 
       <script src="https://use.fontawesome.com/3aa3fe383f.js"></script>
+      <script src="../javaScript/jquery-1.8.3.min.js"></script>
       <script src="../javaScript/piece.js"></script>
+      <script src="../javaScript/capteur.js"></script>
+
       <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />
   </head>
 
