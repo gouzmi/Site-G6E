@@ -145,9 +145,6 @@
           </div>
         qui est deja definir dans le jquery.contentcarousel.js et le pageacc.css-->
 
-            <!--notre photos, j'importe le source dans cssp11.css
-            xxxxxxxxx sont des introductions de chacuns
-            &ldq-->
             <div class="ca-wrapper">
                 <div class="ca-item ca-item-1" style="position:absolute; left: 0px;">
                     <div class="ca-item-main">
