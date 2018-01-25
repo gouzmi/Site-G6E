@@ -40,8 +40,9 @@
                 <div class="form">
                   <form method="post" action="" id="admin">
                     <label>email : </label><br />
-                    <input type="email" name="mailadmin" placeholder="admin@gmail.com" required/>
-                    <input type="submit" value="Ajouter" name="ajoutadmin" />
+                    <span id='missMailAdmin'></span>
+                    <input type="email" name="mailadmin" id="mailAdmin" placeholder="admin@gmail.com" required/>
+                    <input type="submit" value="Ajouter" id="ajouterAdmin" name="ajoutadmin" />
                     <center>
                       <?php if (isset($info1)){
                           echo $info1;
@@ -63,8 +64,9 @@
                   <div class="form">
                     <form method="post" action="" id="admin">
                       <label>email : </label><br />
-                      <input type="email" name="mailsav" placeholder="sav@gmail.com" required/>
-                      <input type="submit" value="Ajouter" name="ajoutsav" />
+                      <span id='missMailSAV'></span>
+                      <input type="email" name="mailsav" id="mailSAV" placeholder="sav@gmail.com" required/>
+                      <input type="submit" value="Ajouter" id="ajouterSAV" name="ajoutsav" />
                       <center>
                         <?php if (isset($info)){
                             echo $info;
@@ -86,8 +88,9 @@
                 <div class="form">
                   <form method="post" action="" id="client">
                     <label>email : </label><br />
-                    <input type="email" name="mailclient" placeholder="client@gmail.com" required/>
-                    <input type="submit" value="Ajouter" name="ajoutclient" />
+                    <span id="missMailClient"></span>
+                    <input type="email" name="mailclient" id="mailClient" placeholder="client@gmail.com" required/>
+                    <input type="submit" value="Ajouter" id="ajouterClient" name="ajoutclient" />
                     <center>
                       <?php if (isset($info2)){
                           echo $info2;
@@ -109,7 +112,7 @@
                   <div class="form">
                     <form method="post" action="" id="supprimer">
                       <label>email : </label><br />
-
+                      <span id="missMailClientS"></span>
                       <input type="text" name="suppmailclient1" id="supprimerclient" list="clientlist" placeholder="client@gmail.com" required>
                       <datalist id="clientlist">
                       <?php
@@ -122,7 +125,7 @@
                         ?>
                       </datalist>
 
-                      <input type="submit" value="Supprimer" name="suppclient1" />
+                      <input type="submit" value="Supprimer" id="supprimerClient" name="suppclient1" />
                       <center>
                         <?php if (isset($info4)){
                             echo $info4;
@@ -203,8 +206,8 @@
                     <div class="form">
                       <form method="post" action="" id="clientView">
                         <label>email : </label><br />
-
-                        <input type="text" name="clientView" id="supprimerclient" list="clientlist" placeholder="client@gmail.com" required>
+                        <span id="missMailClientV"></span>
+                        <input type="text" name="clientView" id="mailClientView" list="clientlist" placeholder="client@gmail.com" required>
                         <datalist id="clientlist">
                         <?php
                               while ($donnees = $selectclient->fetch())
@@ -216,7 +219,7 @@
                           ?>
                         </datalist>
 
-                        <input type="submit" value="Accéder" name="accesclient" />
+                        <input type="submit" value="Accéder" id="accederClientView" name="accesclient" />
                         <center>
                           <?php if (isset($info5)){
                               echo $info5;
@@ -239,12 +242,15 @@
                 <div class="form">
                   <form method="post" action="" id="info">
                     <label>Numéro de téléphone: </label><br />
-                    <input type="text" class="quesrep" name="numdomhome" placeholder="01 43 01 02 46" /><br />
+                    <span id="MissTel"></span>
+                    <input type="text" class="quesrep" name="numdomhome" id="telDom" placeholder="01 43 01 02 46" required /><br />
                     <label>Adresse DomHome: </label><br />
-                    <input type="text" class="quesrep" name="adressedomhome" placeholder="28 rue Notre-Dame des Champs, 75006 Paris"/><br />
+                    <span id="missAdresseD"></span>
+                    <input type="text" class="quesrep" name="adressedomhome" id="adresseDom" placeholder="28 rue Notre-Dame des Champs, 75006 Paris" required /><br />
                     <label>Email DomHome: </label><br />
-                    <input type="email"class="quesrep" name="emaildomhome" placeholder="domisep@domhome.fr"/><br />
-                    <input type="submit" value="Modifier" name="modifsite" />
+                    <span id="missMailD"></span>
+                    <input type="email"class="quesrep" name="emaildomhome" id="mailDom" placeholder="domisep@domhome.fr" required/><br />
+                    <input type="submit" value="Modifier" id="modifier" name="modifsite" />
                     <center>
                       <?php if (isset($info6)){
                             echo $info6;}
@@ -261,6 +267,8 @@
 
     <?php include("footer.php") ?>
     </body>
+
+          <script src="../javaScript/verificationadmin.js" type="text/javascript"></script>
 
 
 </html>

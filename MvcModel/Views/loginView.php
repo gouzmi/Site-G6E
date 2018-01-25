@@ -18,10 +18,12 @@
 			<h1>Connectez-vous !</h1>
 
 			<label for="email">Adresse email :</label>
+			<span id="missMail"></span>
 			<input type="email" name="mailconnect"  id="mail" placeholder="Ex : super.client@gmail.com" required>
 			<br> <br>
 			<label for="password">Mot de passe :</label>
-			<input type="password" name="mdpconnect" id="password"  >
+			<span id="missMdp"></span>
+			<input type="password" name="mdpconnect" id="password" required >
 			<br><br><br>
 			<center>
 				<input type="submit" value="Accéder" id="acceder" name="formconnexion" >
@@ -39,4 +41,5 @@
 	</div>
 	<?php include("footer.php") ?>
 </body>
+      <script src="../javaScript/verificationLogin.js" type="text/javascript"></script>
 </html>
