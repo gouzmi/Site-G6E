@@ -43,8 +43,8 @@
 
 if (isset($_POST['forum']))
           {
-            $suppfaq = $bdd->prepare("DELETE FROM `billets` WHERE titre=? ");
-            $suppfaq->execute(array($_POST['forum']));
+            $suppforum = $bdd->prepare("DELETE FROM `billets` WHERE titre =? ");
+            $suppforum->execute(array($_POST['suppbillet']));
             $info8 = "Succès";
           }
 

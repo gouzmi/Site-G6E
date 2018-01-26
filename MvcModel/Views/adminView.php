@@ -206,7 +206,7 @@
                           <div class="form">
                             <form method="post" action="" id="forum">
                               <label>question : </label><br />
-                              <select name="forum">
+                              <select name="suppbillet">
                                 <?php
                                       while ($donnees = $forum->fetch())
                                       {
