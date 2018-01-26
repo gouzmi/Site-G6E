@@ -1,5 +1,6 @@
 <?php
   include("connexiondb.php");
+  include("userdb.php");
 
   $selectclient = $bdd->query('SELECT * FROM utilisateur where admin = 0');
   $suppression = $bdd->query('SELECT * FROM utilisateur where admin = 0');
@@ -88,6 +89,29 @@ if (isset($_POST['forum']))
           }
           $info6 = "Succès";
         }
+
+$cgu = $bdd->query('SELECT * FROM `maintenance` WHERE id_maintenance = 11');
+$cgu->execute();
+$cgu = $cgu->fetch();
+$mentions = $bdd->query("SELECT * FROM `maintenance` WHERE id_maintenance = 12");
+$mentions->execute();
+$mentions = $mentions->fetch();
+
+
+    if (isset($_POST['modif']))
+              {
+              if(isset($_POST['mentions']) AND !empty($_POST['mentions'])){
+                  $updatenum = $bdd->prepare("UPDATE maintenance SET desc_maintenance = :nvnum WHERE type_maintenance = 'mentions légales'" );
+                  $updatenum->execute(array(
+                    'nvnum' => $_POST['mentions'] ));
+                }
+              if(isset($_POST['cgu']) AND !empty($_POST['cgu'])){
+                  $updatenum = $bdd->prepare("UPDATE maintenance SET desc_maintenance = :nvadresse WHERE type_maintenance ='cgu'" );
+                  $updatenum->execute(array(
+                    'nvadresse' => $_POST['cgu'] ));
+                }
+                $info10 = "Succès";
+              }
 
 
 

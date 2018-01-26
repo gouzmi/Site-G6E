@@ -275,15 +275,12 @@
                 <div class="form">
                   <form method="post" action="" id="info">
                     <label>Numéro de téléphone: </label><br />
-                    <span id="MissTel"></span>
-                    <input type="text" class="quesrep" name="numdomhome" id="telDom" placeholder="01 43 01 02 46" required /><br />
+                    <input type="text" class="quesrep" name="numdomhome"  placeholder="01 43 01 02 46"  /><br />
                     <label>Adresse DomHome: </label><br />
-                    <span id="missAdresseD"></span>
-                    <input type="text" class="quesrep" name="adressedomhome" id="adresseDom" placeholder="28 rue Notre-Dame des Champs, 75006 Paris" required /><br />
+                    <input type="text" class="quesrep" name="adressedomhome"  placeholder="28 rue Notre-Dame des Champs, 75006 Paris"  /><br />
                     <label>Email DomHome: </label><br />
-                    <span id="missMailD"></span>
-                    <input type="email"class="quesrep" name="emaildomhome" id="mailDom" placeholder="domisep@domhome.fr" required/><br />
-                    <input type="submit" value="Modifier" id="modifier" name="modifsite" />
+                    <input type="email"class="quesrep" name="emaildomhome"  placeholder="domisep@domhome.fr" /><br />
+                    <input type="submit" value="Modifier"  name="modifsite" />
                     <center>
                       <?php if (isset($info6)){
                             echo $info6;}
@@ -293,6 +290,31 @@
                 </div>
 
           </div>
+
+          <h3>Modification des CGU et des mentions légales:</h3>
+            <div id="cas">
+
+                  <div class="info">
+                    <p>
+                      Pour modifier une information concernant la société DomHome sur le site, veuillez remplir le formulaire.
+                    </p>
+                  </div>
+                  <div class="form">
+                    <form method="post" action="" id="info">
+                      <label>CGU: </label><br />
+                      <textarea class="quesrep" name="cgu"><?php echo $cgu['desc_maintenance'];?></textarea><br />
+                      <label>Mentions légales: </label><br />
+                      <textarea class="quesrep" name="mentions"><?php echo $mentions['desc_maintenance'];?></textarea><br />
+                      <input type="submit" value="Modifier"  name="modif" />
+                      <center>
+                        <?php if (isset($info10)){
+                              echo $info10;}
+                             ?>
+                      </center>
+                    </form>
+                  </div>
+
+            </div>
 
       </article>
 
