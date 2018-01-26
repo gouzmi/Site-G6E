@@ -49,7 +49,7 @@
                             <div class="ca-icon1"></div>
                             <h3>Capteur de température</h3>
                             <p>Capteur permettant de connaître en temps réel les températures dans votre maison</p>
-                            <br><br>
+                            <br><br><br>
                         </div>
                     </div>
 
