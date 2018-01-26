@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 21 jan. 2018 à 21:24
+-- Généré le :  jeu. 25 jan. 2018 à 23:59
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -34,21 +34,33 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
   `id_billet` int(11) NOT NULL,
   `commentaire` text COLLATE utf8_bin NOT NULL,
   `date_creation` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_utilisateur` int(11) NOT NULL,
+  `id_utilisateur` int(255) NOT NULL,
   PRIMARY KEY (`id_commentaire`),
-  KEY `id_billet` (`id_billet`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  KEY `id_billet` (`id_billet`),
+  KEY `id_utilisateur` (`id_utilisateur`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `commentaires`
 --
 
 INSERT INTO `commentaires` (`id_commentaire`, `id_billet`, `commentaire`, `date_creation`, `id_utilisateur`) VALUES
-(10, 4, 'testtttt', '2018-01-21 21:20:43', 2),
-(12, 4, 'gouz', '2018-01-21 21:22:18', 10),
-(13, 4, 'guigui', '2018-01-21 21:27:53', 2),
-(14, 4, 'guigui\r\n', '2018-01-21 21:28:05', 2),
-(15, 4, 'c\'est moi\r\n', '2018-01-21 21:50:41', 2);
+(16, 9, 'ouiii', '2018-01-23 11:02:08', 0),
+(17, 9, 'nonn', '2018-01-23 11:02:33', 0),
+(18, 9, 'aa', '2018-01-23 11:16:03', 0),
+(19, 9, 'aa', '2018-01-23 11:30:51', 0),
+(20, 9, 'aa', '2018-01-23 11:30:54', 0),
+(25, 9, 'hhh', '2018-01-23 13:49:11', 0);
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `commentaires`
+--
+ALTER TABLE `commentaires`
+  ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`id_billet`) REFERENCES `billets` (`id_billet`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

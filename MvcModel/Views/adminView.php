@@ -195,6 +195,39 @@
 
                 </div>
 
+              <h3>Suppression des billets du Forum</h3>
+                    <div id="cas">
+
+                          <div class="info">
+                            <p>
+                              Pour supprimer des billets dans le forum, vous devez sélectionner le sujet en question.
+                            </p>
+                          </div>
+                          <div class="form">
+                            <form method="post" action="" id="forum">
+                              <label>question : </label><br />
+                              <select name="suppbillet">
+                                <?php
+                                      while ($donnees = $forum->fetch())
+                                      {
+                                ?>
+                                                <option value="<?php echo $donnees['titre']; ?>"><?php echo $donnees['titre']; ?></option>
+                                      <?php
+                                      }
+                                  ?>
+                              </select>
+
+                              <input type="submit" value="Supprimer" name="forum" />
+                              <center>
+                                <?php if (isset($info8)){
+                                    echo $info8;
+                                } ?>
+                              </center>
+                            </form>
+                          </div>
+
+                    </div>
+
         <h3>Accéder à la vue d'un client :</h3>
               <div id="cas">
 
