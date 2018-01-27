@@ -70,6 +70,16 @@ if (isset($_POST['forum']))
     header("Location: profil.php");
   }
 
+  $num = $bdd->query("SELECT * FROM `maintenance` WHERE type_maintenance = 'numéro domhome'");
+  $num->execute();
+  $num = $num->fetch();
+  $adresse = $bdd->query("SELECT * FROM `maintenance` WHERE type_maintenance ='adresse domhome'");
+  $adresse->execute();
+  $adresse = $adresse->fetch();
+  $mail = $bdd->query("SELECT * FROM `maintenance` WHERE type_maintenance = 'adresse mail'");
+  $mail->execute();
+  $mail = $mail->fetch();
+  
   if (isset($_POST['modifsite']))
         {
         if(isset($_POST['numdomhome']) AND !empty($_POST['numdomhome'])){
