@@ -20,7 +20,9 @@
     <form action="" method="post" class="form-style-6">
       <h1>Ajouter des Cemacs à votre Logement</h1>
       <center>
-        <br><br>
+        <p>
+          <?php if (isset($statut)) { echo $statut; }  ?>
+        </p>
         <label>La pièce où il se situe :</label>
         <select name="piece_cemac" type="select">
           <?php

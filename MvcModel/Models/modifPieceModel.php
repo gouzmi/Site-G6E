@@ -20,8 +20,7 @@
         $supppiece->execute(array($valeur));
 
       }
-      unset($_SESSION['modifpiece']);
-      header("Location: editerMaison.php");
+      $statut= "La pièce a été supprimée ! ";
    }
   //formulaire ajout rempli
   if (isset($_POST['ajPiece'])){
@@ -32,17 +31,15 @@
     $nom = $resultat['nom'];
     $superficie = $resultat['superficie'];
     if ((preg_match('#^[\p{L}-À-ÖØ-öø-ÿ\s]+$#', $nom)) == false){
-        $erreur= 'Le nom ne doit contenir que des lettres' ;
+        $statut= 'Le nom ne doit contenir que des lettres' ;
     }
     else if ((preg_match('#^[\p{N}]+$#', $superficie)) == false){
-        $erreur= 'Veuillez renseigner la superficie (m²) en chiffres' ;
+        $statut= 'Veuillez renseigner la superficie (m²) en chiffres' ;
     }
     else{
       $ajoutPie = $bdd->prepare("INSERT INTO piece(id_type_piece,id_logement,nom_piece,superficie_piece) VALUES(?,?,?,?)");
       $ajoutPie->execute(array($_POST['varietePie'],$_SESSION['id_logement'],$nom,$superficie));
-      $info = "Votre pièce a été bien ajoutée !";
-      unset($_SESSION['modifpiece']);
-      header("Location: editerMaison.php");
+      $statut = "Votre pièce a été bien ajoutée !";
     }
   }
   //formulaire modificication rempli
@@ -63,6 +60,9 @@
     $reqpiece->execute(array($_SESSION['id_logement']));
 
     echo '<form method="post" action="" class="form-style-5">
+    <p>
+      <?php if (isset($statut)) { echo $statut; }  ?>
+    </p>
     <table align=center>
     <h1>Veuillez choisir les pièces que vous voulez supprimer</h1>
     <tr>
@@ -73,9 +73,9 @@
     $i=1;
     foreach($pieces as $key => $piece) {
       echo '<tr>
-      <td align="center">',$piece['id_piece'],'</td>
       <td align="center">',$piece['nom_piece'],'</td>
-      <td align="center">',$piece['superficie_piece'],'  m2','</td>
+      <td align="center">',$piece['superficie_piece'],'  m²','</td>
+      <td align="center">',$piece['id_piece'],'</td>
       <td align="center"><input type="checkbox" name="id_rep['.$i.']" value="'.$piece['id_piece'].'" /></td>
       </tr>';
       $i++;
