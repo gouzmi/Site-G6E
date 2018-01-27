@@ -18,7 +18,8 @@ if(!isset($_SESSION['id_logement'])){
     $adresse = $info[0]['adresse_contact'];
     $cp = $info[0]['cp_contact'];
     $ville = $info[0]['ville_contact'];
-    $insert = $bdd->prepare("INSERT INTO logement(adresse, code_postale_logement, ville_logement, id_utilisateur) VALUES(?, ?, ?, ?)");
+    $insert = $bdd->prepare("INSERT INTO logement(adresse, code_postale_logement, ville_logement, id_utilisateur)
+                             VALUES(?, ?, ?, ?)");
     $insert->execute(array($adresse, $cp, $ville,$user['id_utilisateur'])) ;
     $reqlog->execute(array($user['id_utilisateur']));
     $log = $reqlog->fetch();
@@ -37,21 +38,49 @@ if(isset($_POST['categorie'])){
     header("Location: editerMaison.php");
   }
   else if ($_POST['categorie'] == "capteur"){
-    $_SESSION['modifcapteur'] = "modif";
-    header("Location: editerMaison.php");
+    $reqcemac = $bdd->query('SELECT * FROM cemac
+                              INNER JOIN piece ON cemac.id_piece = piece.id_piece
+                              INNER JOIN logement ON piece.id_logement = logement.id_logement
+                              WHERE logement.id_logement = '.$_SESSION['id_logement'].'');
+    $cemacexist = $reqcemac->rowCount();
+    if ($cemacexist == 0 ){
+      $statut = "Vous devez renseigner un cemac avant d'ajouter vos capteurs";
+    }
+    else{
+      $_SESSION['modifcapteur'] = "modif";
+      header("Location: editerMaison.php");
+    }
+  }
+  else if ($_POST['categorie'] == "actionneur"){
+    $reqcemac = $bdd->query('SELECT * FROM cemac
+                              INNER JOIN piece ON cemac.id_piece = piece.id_piece
+                              INNER JOIN logement ON piece.id_logement = logement.id_logement
+                              WHERE logement.id_logement = '.$_SESSION['id_logement'].'');
+    $cemacexist = $reqcemac->rowCount();
+    if ($cemacexist == 0 ){
+      $statut = "Vous devez renseigner un cemac avant d'ajouter vos actionneurs";
+    }
+    else{
+      $_SESSION['modifactionneur'] = "modif";
+      header("Location: editerMaison.php");
+    }
+  }
+  }
+
+if(isset($_POST['retour'] )){
+  if(isset($_SESSION['modifcemac'])){
+    unset($_SESSION['modifcemac']);
+  }
+  else if(isset($_SESSION['modifcapteur'])){
+    unset($_SESSION['modifcapteur']);
+  }
+  else if(isset($_SESSION['modifpiece'])){
+    unset($_SESSION['modifpiece']);
+  }
+  else if(isset($_SESSION['modifactionneur'])){
+    unset($_SESSION['modifactionneur']);
   }
 }
- if(isset($_POST['retour'] )){
-   if(isset($_SESSION['modifcemac'])){
-     unset($_SESSION['modifcemac']);
-   }
-   else if(isset($_SESSION['modifcapteur'])){
-     unset($_SESSION['modifcapteur']);
-   }
-   else if(isset($_SESSION['modifpiece'])){
-     unset($_SESSION['modifpiece']);
-   }
- }
 
 
 ?>

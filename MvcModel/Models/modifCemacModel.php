@@ -22,19 +22,16 @@
         $suppcemac->execute(array($valeur));
 
       }
-      unset($_SESSION['modifcemac']);
-      header("Location: editerMaison.php");
+      $statut = "Le Cemac a été supprimé !";
    }
   //formulaire ajout rempli
   if(isset($_POST['ajCemac'])){
     if (!empty(isset($_POST['piece_cemac']))) {
       $ajcemac = $bdd->prepare("INSERT INTO `cemac`(`id_piece`) VALUES (?)");
       $ajcemac->execute(array($_POST['piece_cemac']));
-      $info= "Succès! Votre cemac a bien été ajouté !  ";
-      unset($_SESSION['modifcemac']);
-      header("Location: editerMaison.php");
+      $statut = "Votre Cemac a été ajouté" ;
     }
-    else{ $info ="Veuillez remplir tous les champs du formulaire";}
+    else{ $statut ="Veuillez remplir tous les champs du formulaire";}
 
    }
   //formulaire modificication rempli
@@ -58,6 +55,9 @@
     $cemacs = $reqcemac->fetchall(PDO::FETCH_ASSOC) ;
 
     echo '<form method="post" action="" class="form-style-5">
+    <p>
+      <?php if (isset($statut)) { echo $statut; }  ?>
+    </p>
     <table align="center" class="table">
     <h1>Veuillez choisir les Cemacs  que vous voulez supprimer </h1>
     <tr>

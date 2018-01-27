@@ -20,8 +20,10 @@
 
     <form action="" method="post" class="form-style-6">
       <h1>Ajouter votre pièce</h1>
-      <p id="erreur"><?php if (isset($info)) {echo $info;} ?></p>
       <center>
+        <p>
+          <?php if (isset($statut)) { echo $statut; }  ?>
+        </p>
         <label for="nom">Nom de la pièce :</label>
         <input type="text" name="nom" id="nom" required/>
         <br>

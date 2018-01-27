@@ -44,6 +44,21 @@
           require("../Views/modifierMaisonView.php");
         }
       }
+      else if (isset($_SESSION['modifactionneur'])){
+        if($_SESSION['modifactionneur'] == "ajout"){
+          require('../Models/modifActionneurModel.php');
+          require('../Views/ajouterActionneurView.php');
+        }
+        if($_SESSION['modifactionneur'] == "supp"){
+          require('../Models/modifActionneurModel.php');
+          require('../Views/supprimerActionneurView.php');
+        }
+        if($_SESSION['modifactionneur'] == "modif"){
+          $modif = "un actionneur" ;
+          require('../Models/modifActionneurModel.php');
+          require("../Views/modifierMaisonView.php");
+        }
+      }
       else if(isset($_SESSION['modifcemac'])){
         if($_SESSION['modifcemac'] == "ajout"){
           require('../Models/modifCemacModel.php');

@@ -21,19 +21,17 @@
        $suppdonnees = $bdd->prepare("DELETE FROM `historique_capteur` WHERE id_capteur=? ");
        $suppdonnees->execute(array($valeur));
      }
-     unset($_SESSION['modifcapteur']);
-     header("Location: editerMaison.php");
+    $statut = "Le capteur a été supprimé !";
   }
   //formulaire ajout rempli
   if(isset($_POST['ajCapteur'])){
     if (!empty(isset($_POST['varieteCap'])) AND !empty(isset($_POST['varietePie'])) AND !empty(isset($_POST['idCemac']))) {
       $ajcapteur = $bdd->prepare("INSERT INTO capteur(id_type_capteur,id_piece,id_cemac) VALUES(?,?,?)");
       $ajcapteur->execute(array($_POST['varieteCap'],$_POST['varietePie'],$_POST['idCemac']));
-      $info= "Succès! Votre capteur a bien été ajouté !  ";
-      unset($_SESSION['modifcapteur']);
-      header("Location: editerMaison.php");
+      $statut= "Votre capteur a bien été ajouté !  ";
+
     }
-    else{ $info ="Veuillez remplir tous les champs du formulaire";}
+    else{ $statut ="Veuillez remplir tous les champs du formulaire";}
 
   }
   //fomulaire modification rempli
@@ -58,6 +56,9 @@
     $reqcapteur->execute(array($_SESSION['id_logement']));
 
     echo '<form method="post" action="" class="form-style-5">
+    <p>
+      <?php if (isset($statut)) { echo $statut; }  ?>
+    </p>
     <table align="center" class="table">
     <h1>Veuillez choisir les capteurs que vous voulez supprimer </h1>
     <tr>
