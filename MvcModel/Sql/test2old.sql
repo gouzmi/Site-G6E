@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 16 jan. 2018 à 10:54
+-- Généré le :  mar. 16 jan. 2018 à 23:49
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -199,11 +199,27 @@ INSERT INTO `logement` (`id_logement`, `adresse`, `code_postale_logement`, `vill
 DROP TABLE IF EXISTS `maintenance`;
 CREATE TABLE IF NOT EXISTS `maintenance` (
   `id_maintenance` int(11) NOT NULL AUTO_INCREMENT,
-  `horaire_ouverture` datetime(6) DEFAULT NULL,
-  `mail_domisep` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `adresse_domisep` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `type_maintenance` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `desc_maintenance` varchar(255) COLLATE utf8_bin NOT NULL,
+  `desc_maintenance2` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id_maintenance`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `maintenance`
+--
+
+INSERT INTO `maintenance` (`id_maintenance`, `type_maintenance`, `desc_maintenance`, `desc_maintenance2`) VALUES
+(1, 'horaire lundi', '09:00-12:00,14:00-17:00', NULL),
+(2, 'horaire mardi', '09:00-12:00,14:00-17:00', NULL),
+(3, 'horaire mercredi', '09:00-12:00,14:00-17:00', NULL),
+(4, 'horaire jeudi', '09:00-12:00,14:00-17:00', NULL),
+(5, 'horaire vendredi', '09:00-12:00,14:00-17:00', NULL),
+(6, 'horaire samedi', 'Fermé', NULL),
+(7, 'horaire dimanche', 'Fermé', NULL),
+(8, 'numéro domhome', '01 43 01 02 46', NULL),
+(9, 'adresse domhome', '28 rue Notre-Dame des Champs, 75006 Paris', NULL),
+(10, 'adresse mail', 'domisep@domhome.fr', NULL);
 
 -- --------------------------------------------------------
 
@@ -281,7 +297,6 @@ DROP TABLE IF EXISTS `precommande`;
 CREATE TABLE IF NOT EXISTS `precommande` (
   `id_precommande` int(255) NOT NULL AUTO_INCREMENT,
   `date_commande` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_capteur` int(255) NOT NULL DEFAULT '0',
   `email_commande` varchar(255) COLLATE utf8_bin NOT NULL,
   `admin` int(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_precommande`)
@@ -291,10 +306,10 @@ CREATE TABLE IF NOT EXISTS `precommande` (
 -- Déchargement des données de la table `precommande`
 --
 
-INSERT INTO `precommande` (`id_precommande`, `date_commande`, `id_capteur`, `email_commande`, `admin`) VALUES
-(1, '2017-12-30 00:00:00', 2, 'test@gmail.com', 0),
-(2, '2018-01-01 00:00:00', 2, 'adresse@gmail.com', 0),
-(3, '2018-01-03 00:00:00', 5, 'admin@gmail.com', 1);
+INSERT INTO `precommande` (`id_precommande`, `date_commande`, `email_commande`, `admin`) VALUES
+(1, '2017-12-30 00:00:00', 'test@gmail.com', 0),
+(2, '2018-01-01 00:00:00', 'adresse@gmail.com', 0),
+(3, '2018-01-03 00:00:00', 'admin@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -345,10 +360,10 @@ DROP TABLE IF EXISTS `type_capteur`;
 CREATE TABLE IF NOT EXISTS `type_capteur` (
   `id_type_capteur` int(11) NOT NULL AUTO_INCREMENT,
   `variete_capteur` varchar(255) COLLATE utf8_bin NOT NULL,
-  `image_url` varchar(11) COLLATE utf8_bin NOT NULL,
-  `taille_image` int(11) NOT NULL,
-  `desc_image` varchar(255) COLLATE utf8_bin NOT NULL,
-  `desc_capteur` varchar(255) COLLATE utf8_bin NOT NULL,
+  `image_url` varchar(11) COLLATE utf8_bin DEFAULT NULL,
+  `taille_image` int(11) DEFAULT NULL,
+  `desc_image` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `desc_capteur` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id_type_capteur`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -364,8 +379,9 @@ INSERT INTO `type_capteur` (`id_type_capteur`, `variete_capteur`, `image_url`, `
 (5, 'Contact', '0', 0, '0', '0'),
 (6, 'Consommation', '0', 0, '0', '0'),
 (7, 'Caméra', '0', 0, '0', '0'),
-(8, 'Cemac', '0', 0, '0', '0'),
-(9, 'Actionneur', '0', 0, '0', '0');
+(8, 'Volet', '0', 0, '0', '0'),
+(9, 'Cemac', '0', 0, '0', '0'),
+(10, 'Actionneur', '0', 0, '0', '0');
 
 -- --------------------------------------------------------
 
@@ -413,7 +429,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mail` varchar(255) COLLATE utf8_bin NOT NULL,
   `admin` int(10) NOT NULL DEFAULT '0',
   `mdp` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id_utilisateur`)
+  PRIMARY KEY (`id_utilisateur`),
+  UNIQUE KEY `id_utilisateur` (`id_utilisateur`),
+  UNIQUE KEY `mail` (`mail`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -423,7 +441,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `adresse_contact`, `cp_contact`, `ville_contact`, `telephone`, `mail`, `admin`, `mdp`) VALUES
 (1, 'Eustache', 'Darlène\r\n', '6  Rue AmpÃ¨re', '95000', 'Goussainville', '06123456789', 'darlene@gmail.com', 0, '$2y$10$J79FbrpkyzRtmlu65tp6s.Vxf8BTpytl9V..TTqOhlKiYC2Z/o3rW'),
 (2, 'Dupont', 'Guillaume', '4 avenue Victor Hugo', '94160', 'Saint-Mandé', '0613544337', 'guillaume.dupont.rm@gmail.com', 0, '$2y$10$Jb5c.gzbbv91BZ2AVdPhV.6EhJY6Wz02zaFMqZUqeCgIgpN7R4jDS'),
-(3, 'Eustache', 'Darlene', '6  Rue Ampère', '95190', 'Goussainville', '0123456789', 'darlene.eustache@gmail.com', 0, '$2y$10$7Z2aofPDnWgq.MSZwbdOMue.1ehCh/WWJkGfmVNWwxG9LWAfLWlgW'),
+(3, 'Eustache', 'Darlene', '6  Rue Ampère', '95190', 'Goussainville', '0123456789', 'darlene.eustache@gmail.com', 1, '$2y$10$7Z2aofPDnWgq.MSZwbdOMue.1ehCh/WWJkGfmVNWwxG9LWAfLWlgW'),
 (4, 'ADMINISTRATEUR', 'Admin', '2 Rue des Bois', '12345', 'Ville', '0123456789', 'admin@gmail.com', 0, '$2y$10$nVDEnGUXVzfVFOMvQ8G12./oBRfdrsnvGDagk9g/4VT0duXSjkuIK');
 
 --
