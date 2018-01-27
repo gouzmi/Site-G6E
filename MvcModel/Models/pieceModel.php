@@ -17,22 +17,22 @@ $sqlpiece ='SELECT piece.id_piece, piece.nom_piece
 function valeur_capteur($id_type_capteur, $donnee){
   $msg = "";
   if($id_type_capteur == 1){
-    $msg= "Présence dans la pièce :".$donnee.".";
+    $msg= "Présence dans la pièce : ".$donnee." .";
   }
   if ($id_type_capteur == 2) {
-    $msg= "Lumière dans la pièce :".$donnee.".";
+    $msg= "Lumière dans la pièce : ".$donnee." .";
   }
   if ($id_type_capteur == 3) {
-    $msg= "Température dans la pièce :".$donnee."°C";
+    $msg= "Température dans la pièce : ".$donnee." °C";
   }
   if ($id_type_capteur == 4) {
-    $msg= "Fumée :".$donnee.".";
+    $msg= "Fumée : ".$donnee." .";
   }
   if ($id_type_capteur == 5 ) {
-    $msg= "La porte/fenêtre est ouverte:".$donnee.".";
+    $msg= "La porte/fenêtre est ouverte: ".$donnee." .";
   }
   if ($id_type_capteur == 6 ) {
-    $msg= "La consomation électrique de la pièce est de :".$donnee."kW.";
+    $msg= "La consomation électrique de la pièce est de : ".$donnee." kW.";
   }
   if ($id_type_capteur == 7 ) {
     $msg= $donnee;
