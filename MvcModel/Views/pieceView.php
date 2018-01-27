@@ -4,6 +4,7 @@ $currentPiece = isset($_GET['piece']) ? $_GET['piece'] : 1; // 1 == id premiere 
 
 if($ajax) {
   echo getCapteurs('0', '0', $currentPiece, $bdd);
+  echo getActionneurs('0','0', $currentPiece, $bdd);
 } else { ?>
   <!DOCTYPE html>
 
@@ -48,6 +49,7 @@ if($ajax) {
               <?php
               if($isActive) {
                   getCapteurs('0','0', $piece['id_piece'], $bdd);
+                  getActionneurs('0','0', $piece['id_piece'], $bdd);
                }?>
            </div>
 
