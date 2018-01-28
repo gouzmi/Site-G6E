@@ -16,7 +16,7 @@
   //formulaire supp rempli
   if(isset($_POST['supActionneur'])){
     foreach($_POST['id_rep'] as $valeur){
-       $suppactionneur = $bdd->prepare("DELETE FROM `actionneur` WHERE id_actionneur=? ");
+       $suppactionneur = $bdd->prepare("DELETE FROM `actionneur` WHERE actionneur.id_actionneur= ? ");
        $suppactionneur->execute(array($valeur));
      }
     $statut = "L'actionneur a été supprimé !";
@@ -53,6 +53,7 @@
        header("Location: editerMaison.php");}
     }
   }
+
   function supActionneur($bdd){
     $reqactionneur= $bdd->prepare('SELECT actionneur.id_actionneur, type_actionneur.variete_actionneur, piece.nom_piece  FROM actionneur
                               JOIN type_actionneur
@@ -85,7 +86,7 @@
     }
     echo "</table>";
     echo '<br>
-    <input type="submit" name="supactionneur" value="Supprimer"  /></td></tr>
+    <input type="submit" name="supActionneur" value="Supprimer"  /></td></tr>
     <input type ="submit" name="retour" value="Retour">
     </form>';
   }

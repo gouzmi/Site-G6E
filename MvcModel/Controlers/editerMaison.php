@@ -2,7 +2,7 @@
   if (isset($_SESSION['id'])) {
     require('../Models/editerMaisonModel.php');
     if(isset($_SESSION['id_logement'])){
-      //test pièces existante
+      //test pièces existantes
         $reqpiece = $bdd->prepare('SELECT id_piece FROM piece WHERE id_logement=?');
         $reqpiece->execute(array($_SESSION['id_logement']));
         $pieceexist = $reqpiece->rowCount();

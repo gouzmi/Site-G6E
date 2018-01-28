@@ -12,7 +12,7 @@ if(isset($_POST['formmdpoublie'])){
 			$insert = $bdd->prepare("INSERT INTO recuperation(mail_recuperation, code) VALUES(?, ?)");
 			$insert->execute(array($mailrecup, $code)) ;
 
-			//paramètres d'encodageINSERT INTO
+			//paramètres d'encodage
 			$header="MIME-Version: 1.0\r\n";
 			$header.='From:"DomHome.fr"<sav@DomHome.fr>'."\n";
 			$header.='Content-Type:text/html; charset="uft-8"'."\n";
