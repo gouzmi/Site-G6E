@@ -50,6 +50,7 @@ if($ajax) {
               if($isActive) {
                   getCapteurs('0','0', $piece['id_piece'], $bdd);
                   getActionneurs('0','0', $piece['id_piece'], $bdd);
+
                }?>
            </div>
 

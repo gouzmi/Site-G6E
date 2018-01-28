@@ -14,6 +14,11 @@ $sqlpiece ='SELECT piece.id_piece, piece.nom_piece
               $nbpiece = $reqpiece->rowCount();
               $pieces = $reqpiece->fetchall();
 
+              if(isset($_POST['modifier'])){
+                $modif = 'UPDATE actionneur SET valeur ='.$_POST['temperature'].' WHERE id_actionneur ='.$_POST['id'].'';
+                $modif = $bdd->query($modif);
+              }
+
 function valeur_capteur($id_type_capteur, $donnee){
   $msg = "";
   if($id_type_capteur == 1){
@@ -116,7 +121,7 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
       <section class="boite capteur">
         <h3><?php echo $titre; ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-        <div class="info"> <?php echo $info; ?></div>
+        <div class="info"> <?php echo $info; ?></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
       </section>
   <?php }
@@ -142,7 +147,7 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
         <h3><?php echo $titre; ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
         <div class="info"> <?php echo $info; ?></div>
-        <div class="info"> <?php echo $nompiece; ?></div>
+        <div class="info"> <?php echo $nompiece; ?></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
       </section>
   <?php }
@@ -172,7 +177,12 @@ function bouton_actionneur($actionneur)
                     <input type='checkbox' ".($fonctionnement==1?"checked":"")." data-id-actionneur='$actionneurId'>
                     <span class='slider round'></span>
                     </label><br>
-                    <input type='number' name='nombre' value='$donnee' min='10' max='35'>" ;
+                    <form method='post' action=''>
+                      <input type='number' name='temperature' class='demand' value='$donnee' min='10' max='35'>
+                      <input name='id' class='faux' value='$actionneurId'>
+                      <input type='submit' name='modifier' class='demand' value='Modifier'>
+                    </form>
+                    " ;
       break;
 
     default:
@@ -246,7 +256,7 @@ function getActionneurs($type, $nompiece, $pieceId, $bdd) {
       <section class="boite actionneur">
         <h3><?php echo $titre; ?><br /> <?php echo $nom; ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-        <div class="bouton"><?php echo $action; ?></div>
+        <div class="bouton"><?php echo $action; ?></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
       </section>
   <?php }
@@ -266,15 +276,16 @@ function getActionneurs($type, $nompiece, $pieceId, $bdd) {
                    $reference= $actionneur['id_actionneur'];
                    $logo = logo_actionneur($actionneur['id_type_actionneur']);
                    $titre = titre_actionneur($actionneur['id_type_actionneur']);
-                   $action = bouton_actionneur($actionneur)
+                   $action = bouton_actionneur($actionneur);
                  ?>
                    <section class="boite actionneur">
                      <h3><?php echo $titre; ?><br /> <?php echo $nom; ?> </h3>
                      <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
                      <div class="info"> <?php echo $nompiece; ?></div>
-                     <div class="bouton"><?php echo $action; ?></div>
+                     <div class="bouton"><?php echo $action; ?></div><br />
                      <div class="historique"> <a href="" class="link">Historique </a></div>
                    </section>
   <?php }
+
   }
 }

@@ -160,3 +160,12 @@ input[type="number"] {
 		border-radius:5px;
 		border: 1px solid #dadada;
 	}
+
+.demand{
+  border-radius: 5px;
+}
+
+.faux{
+
+  display: none;
+}

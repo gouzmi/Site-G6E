@@ -233,3 +233,16 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.demand{
+  border-radius: 5px;
+}
+.faux{
+
+  display: none;
+}
+input[type="number"] {
+		line-height:1.5;
+		width:4em;
+		border-radius:5px;
+		border: 1px solid #dadada;
+	}
