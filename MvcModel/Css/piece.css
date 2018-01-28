@@ -19,6 +19,12 @@ html
     margin:0 0 5px;
 }
 
+.actionneur{
+  background-color: #1E88E5;
+}
+.capteur{
+  background-color: #009688;
+}
 
 #left
 {
@@ -126,7 +132,7 @@ html
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #66BB6A;
 }
 
 input:focus + .slider {
@@ -146,4 +152,20 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+input[type="number"] {
+		line-height:1.5;
+		width:4em;
+		border-radius:5px;
+		border: 1px solid #dadada;
+	}
+
+.demand{
+  border-radius: 5px;
+}
+
+.faux{
+
+  display: none;
 }

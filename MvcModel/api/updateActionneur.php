@@ -3,11 +3,11 @@ include('../Models/connexiondb.php');
 
 $data = json_decode(file_get_contents('php://input'), true);
 $fonctionnement =  $data["fonctionnement"]? 1 : 0;
-$capteurId = $data["capteurId"];
-$sqlcapteur="UPDATE capteur
+$actionneurId = $data["actionneurId"];
+$sqlactionneur="UPDATE actionneur
              SET fonctionnement = $fonctionnement
-             WHERE capteur.id_capteur = $capteurId";
-$reqpiece = $bdd ->query($sqlcapteur);
+             WHERE actionneur.id_actionneur = $actionneurId";
+$reqpiece = $bdd ->query($sqlactionneur);
 
 
 /*if($reqpiece) {

@@ -42,7 +42,7 @@
               </li>
               <li>
                 <a href='#settings' class="tablinks" onclick="openCate(event, 'Portes &amp; Fenêtres')">
-                  Portes &amp; Fenêtres
+                  Ouvrants
                 </a>
               </li>
               <li>
@@ -123,6 +123,8 @@
           <?php
             foreach ($pieces as $key => $piece){
               getCapteurs('5',$piece['nom_piece'], $piece['id_piece'], $bdd);
+              getActionneurs('1',$piece['nom_piece'], $piece['id_piece'], $bdd);
+              getActionneurs('4',$piece['nom_piece'], $piece['id_piece'], $bdd);
             }
             ?>
         </div>
@@ -156,6 +158,7 @@
                     <?php
                       foreach ($pieces as $key => $piece){
                         getCapteurs('2', $piece['nom_piece'], $piece['id_piece'], $bdd);
+                        getActionneurs('2',$piece['nom_piece'], $piece['id_piece'], $bdd);
                       }
                       ?>
         </div>
@@ -164,6 +167,7 @@
           <?php
             foreach ($pieces as $key => $piece){
               getCapteurs('3',$piece['nom_piece'], $piece['id_piece'], $bdd);
+              getActionneurs('3',$piece['nom_piece'], $piece['id_piece'], $bdd);
             }
             ?>
         </div>
@@ -180,6 +184,7 @@
           <?php
             foreach ($pieces as $key => $piece){
               getCapteurs('9',$piece['nom_piece'], $piece['id_piece'], $bdd);
+              getActionneurs('5',$piece['nom_piece'], $piece['id_piece'], $bdd);
             }
             ?>
         </div>
