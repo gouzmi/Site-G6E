@@ -1,7 +1,7 @@
 <?php
 
   include('connexiondb.php');
-
+  include('userdb.php');
 
 
   if(isset($_POST['caseconditions']))  //Vérif formulaire rempli
@@ -73,9 +73,9 @@
                            else{
                               $mdp = password_hash($mdp,PASSWORD_BCRYPT);
                               $insert = $bdd->prepare("UPDATE `utilisateur` SET `nom`= ? ,`prenom`= ? ,`adresse_contact`= ? ,`cp_contact`= ? ,`ville_contact`= ? ,`telephone`= ? ,`mail`= ?, `mdp`= ?   WHERE id = ?;");
-                              $insert->execute(array($nom, $prenom, $adresse, $cp, $ville, $tel, $mail, $mdp, $user['id'])) ;
+                              $insert->execute(array($nom, $prenom, $adresse, $cp, $ville, $tel, $mail, $mdp, $user['id_utilisateur'])) ;
                               $erreur= "Votre compte a bien été modifié ! ";
-                              $_SESSION['id'] = $user['id'];
+                              $_SESSION['id'] = $user['id_utilisateur'];
                     					$_SESSION['nom'] = $user['nom'];
                     					$_SESSION['prenom'] = $user['prenom'];
                     					$_SESSION['mail'] = $user['mail'];}
