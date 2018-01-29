@@ -25,12 +25,12 @@
           <?php if (isset($statut)) { echo $statut; }  ?>
         </p>
         <label for="nom">Nom de la pièce :</label>
-        <input type="text" name="nom" id="nom" required/>
+        <input type="text" name="nom" id="nom" />
         <br>
         <p style=""><?php if (isset($erreur)) { echo $erreur;} ?></p>
         <br>
         <label for="">Superficie de la pièce :</label>
-        <input type="text" name="superficie" required/>
+        <input type="text" name="superficie" />
         <br><br>
 
         <label>Type de la pièce :</label>

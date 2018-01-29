@@ -121,7 +121,7 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
       <section class="boite capteur">
         <h3><?php echo $titre; ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-        <div class="info"> <?php echo $info; ?></div><br />
+        <div class="info"> <span id="capteurinfo"><?php echo $info; ?></span id="capteurinfo"></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
       </section>
   <?php }
@@ -146,7 +146,7 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
       <section class="boite capteur">
         <h3><?php echo $titre; ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-        <div class="info"> <?php echo $info; ?></div>
+        <div class="info"> <span id="capteurinfo"><?php echo $info; ?></span id="capteurinfo"></div><br />
         <div class="info"> <?php echo $nompiece; ?></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
       </section>
@@ -248,13 +248,15 @@ function getActionneurs($type, $nompiece, $pieceId, $bdd) {
       $idtypeactionneur = $actionneur['id_type_actionneur'];
       $valeur=$actionneur['valeur'];
       $reference= $actionneur['id_actionneur'];
-      $nom = $actionneur['nom'];
+      if($actionneur['nom'] != NULL){
+        $nom =$actionneur['nom'];
+      }
       $logo = logo_actionneur($actionneur['id_type_actionneur']);
       $titre = titre_actionneur($actionneur['id_type_actionneur']);
       $action = bouton_actionneur($actionneur)
     ?>
       <section class="boite actionneur">
-        <h3><?php echo $titre; ?><br /> <?php echo $nom; ?> </h3>
+        <h3><?php echo $titre; ?><br /> <?php if(isset($nom)){echo $nom;} ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
         <div class="bouton"><?php echo $action; ?></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
@@ -272,14 +274,16 @@ function getActionneurs($type, $nompiece, $pieceId, $bdd) {
                  foreach ($actionneurs as $actionneur) {
                    $idtypeactionneur = $actionneur['id_type_actionneur'];
                    $valeur=$actionneur['valeur'];
-                   $nom = $actionneur['nom'];
+                   if($actionneur['nom'] != NULL){
+                     $nom =$actionneur['nom'];
+                   }
                    $reference= $actionneur['id_actionneur'];
                    $logo = logo_actionneur($actionneur['id_type_actionneur']);
                    $titre = titre_actionneur($actionneur['id_type_actionneur']);
                    $action = bouton_actionneur($actionneur);
                  ?>
                    <section class="boite actionneur">
-                     <h3><?php echo $titre; ?><br /> <?php echo $nom; ?> </h3>
+                     <h3><?php echo $titre; ?><br /> <?php if(isset($nom)){echo $nom;} ?> </h3>
                      <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
                      <div class="info"> <?php echo $nompiece; ?></div>
                      <div class="bouton"><?php echo $action; ?></div><br />

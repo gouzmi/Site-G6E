@@ -103,7 +103,7 @@
       </nav>
 
       <script>
-        $('.sub-menu ul').hide();
+        $('.sub-menu ul').show();
         $(".sub-menu a").click(function () {
         $(this).parent(".sub-menu").children("ul").slideToggle("100");
         $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
@@ -113,7 +113,7 @@
     </div>
 
     <div class="coeur" id="right">
-        <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
+        <h1 align="center" class="droit">Voici les statuts des capteurs</h1>
 
         <div id="Alarme" class="tabcontent">
 

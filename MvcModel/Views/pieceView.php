@@ -32,15 +32,27 @@ if($ajax) {
       if ($nbpiece != 0)
       {
   ?>
-        <div class="tab">
+        <div class="tab" id="left">
+
+          <ul>
+            <li>
+              <h1 class="gauche"><i class="fa fa-home" aria-hidden="true"></i> Vos Pièces</h1>
+            </li>
+
           <?php foreach ($pieces as $key => $piece) {
             $isActive = $currentPiece==$piece['id_piece'];
-            ?>
-            <a href="<?php echo getPieceUrl($piece['id_piece'])?>" class="tablinks <?php echo $isActive ? "active" : ""?>" onclick="openPiece(event, 'piece_<?php echo $piece['id_piece']?>')"><?php echo $piece['nom_piece'] ;?></a>
-          <?php }?>
+            ?><li>
+              <a href="<?php echo getPieceUrl($piece['id_piece'])?>" class="tablinks <?php echo $isActive ? "active" : ""?>" onclick="openPiece(event, 'piece_<?php echo $piece['id_piece']?>')"><?php echo $piece['nom_piece'] ;?></a>
+            <?php }?>
+            </li>
+
+        </ul>
+
         </div>
 
       <div class="coeur" id="right">
+
+        <h1  align="center" class="droit">Voici les statuts des capteurs</h1>
 
         <?php foreach ($pieces as $key => $piece) {
             $isActive = $currentPiece==$piece['id_piece'];
