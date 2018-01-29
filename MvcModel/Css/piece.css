@@ -16,6 +16,7 @@ html
   display: inline-block;
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 25px;
 }
 
 .boite h3 {
@@ -125,7 +126,7 @@ div ul li a {
 }
 
 .no-js .tabcontent, .tabcontent.active{
-  display:block;
+  display:flex;
 }
 
 .switch {
