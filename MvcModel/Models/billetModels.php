@@ -15,7 +15,7 @@
   $capteurs = $bdd->query('SELECT DISTINCT * FROM capteur
                JOIN piece ON piece.id_piece = capteur.id_piece
                JOIN logement ON piece.id_logement = logement.id_logement
-               WHERE logement.id_utilisateur = '.$user['id_utilisateur'].' ORDER BY nom_piece DESC LIMIT 0, 30');
+               WHERE logement.id_utilisateur = '.$user['id_utilisateur'].' ORDER BY nom_piece ');
   $capteurs->execute();
   $capteurs = $capteurs->fetchall();
 
