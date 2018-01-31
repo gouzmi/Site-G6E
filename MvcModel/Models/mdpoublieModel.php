@@ -21,7 +21,7 @@ if(isset($_POST['formmdpoublie'])){
 			$message='
 			<html>
 				<body>
-					<div align=left>
+					<div align="left">
 						<br><br/> <br><br/>
 						Bonjour, <br><br>
 						Vous avez perdu votre mot de passe  ?<br>
