@@ -167,6 +167,7 @@ function bouton_actionneur($actionneur)
     case 2:
     case 4:
     case 5:
+    case 6:
        $bouton =  "<label class='switch'>
                     <input type='checkbox' ".($fonctionnement==1?"checked":"")." data-id-actionneur='$actionneurId'>
                     <span class='slider round'></span>
@@ -199,6 +200,8 @@ function titre_actionneur($id_type_actionneur){
     3 => "Chauffage",
     4 => "Portail",
     5 => "Autre actionneur",
+    6 => "Alarme",
+
   );
 
   $msg = "Type d'actionneur inconnu : ".$id_type_actionneur;
@@ -225,6 +228,8 @@ function logo_actionneur($id_type_actionneur){
             break;
             case 5:
                $logo= '<i class="fa " aria-hidden="true"></i>';
+               case 6:
+                  $logo= '<i class="fa " aria-hidden="true"></i>';
               break;
 
 
@@ -248,15 +253,15 @@ function getActionneurs($type, $nompiece, $pieceId, $bdd) {
       $idtypeactionneur = $actionneur['id_type_actionneur'];
       $valeur=$actionneur['valeur'];
       $reference= $actionneur['id_actionneur'];
-      if($actionneur['nom'] != NULL){
+
         $nom =$actionneur['nom'];
-      }
+
       $logo = logo_actionneur($actionneur['id_type_actionneur']);
       $titre = titre_actionneur($actionneur['id_type_actionneur']);
       $action = bouton_actionneur($actionneur)
     ?>
       <section class="boite actionneur">
-        <h3><?php echo $titre; ?><br /> <?php if(isset($nom)){echo $nom;} ?> </h3>
+        <h3><?php echo $titre; ?><br /> <?php if(isset($nom) and $actionneur['nom'] != NULL){echo $nom;} ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
         <div class="bouton"><?php echo $action; ?></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>

@@ -116,7 +116,11 @@
         <h1 align="center" class="droit">Voici les statuts des capteurs</h1>
 
         <div id="Alarme" class="tabcontent">
-
+          <?php
+            foreach ($pieces as $key => $piece){
+              getActionneurs('6',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
         <div id="Portes &amp; Fenêtres" class="tabcontent">
@@ -183,7 +187,6 @@
         <div id="Autres actionneurs" class="tabcontent">
           <?php
             foreach ($pieces as $key => $piece){
-              getCapteurs('9',$piece['nom_piece'], $piece['id_piece'], $bdd);
               getActionneurs('5',$piece['nom_piece'], $piece['id_piece'], $bdd);
             }
             ?>
