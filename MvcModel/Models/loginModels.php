@@ -42,7 +42,7 @@
                     header("Location: piece.php");
                   }
                   else {
-                    header("Location: profil.php");
+                    header("Location: editerMaison.php");
                   }
                 }
             }
