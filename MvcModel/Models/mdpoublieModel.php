@@ -44,7 +44,7 @@ if(isset($_POST['formmdpoublie'])){
 			</html>
 			';
 
-			mail("yuqing.zhu8028@gmail.com", "Réinintialisation mot de passe - DomHome", $message, $header);
+			mail($mailrecup, "Réinintialisation mot de passe - DomHome", $message, $header);
 			$erreur = "L'email a été envoyé avec succès.";
 			$_SESSION['mailrecup'] = $mailrecup ;
 			$_SESSION['code'] = $code ;
