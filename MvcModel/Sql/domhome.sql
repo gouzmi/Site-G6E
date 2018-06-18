@@ -478,7 +478,7 @@ INSERT INTO `type_actionneur` (`id_type_actionneur`, `variete_actionneur`) VALUE
 (3, 'Chauffage'),
 (4, 'Portail'),
 (5, 'Autre Type'),
-(6, 'Alarme');
+(6, 'Alarme'),
 (7, 'Ventilateur');
 -- --------------------------------------------------------
 
