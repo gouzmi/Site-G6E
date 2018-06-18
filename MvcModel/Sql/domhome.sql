@@ -68,6 +68,7 @@ INSERT INTO `actionneur` (`id_actionneur`, `id_type_actionneur`, `fonctionnement
 (17, 1, 1, 27, '', 4, NULL),
 (18, 2, 1, 27, '', 4, NULL),
 (19, 3, 1, 27, '', 4, NULL);
+(20, 7, 0, 25, '', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -478,6 +479,7 @@ INSERT INTO `type_actionneur` (`id_type_actionneur`, `variete_actionneur`) VALUE
 (4, 'Portail'),
 (5, 'Autre Type'),
 (6, 'Alarme');
+(7, 'Ventilateur');
 
 -- --------------------------------------------------------
 
