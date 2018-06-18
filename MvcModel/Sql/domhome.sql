@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `actionneur` (
 --
 
 INSERT INTO `actionneur` (`id_actionneur`, `id_type_actionneur`, `fonctionnement`, `id_piece`, `nom`, `id_cemac`, `valeur`) VALUES
-(1, 6, 1, 21, 'Alarme', 1, NULL),
+(1, 6, 1, 21, '', 1, NULL),
 (2, 1, 1, 21, '', 1, NULL),
 (3, 2, 1, 21, '', 1, NULL),
 (4, 3, 1, 21, '', 1, NULL),
