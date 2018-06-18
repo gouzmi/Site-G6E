@@ -10,13 +10,19 @@ html
 }
 #left
 {
-	flex:0.25;
 	display: flex;
 	flex-direction: column;
   background: #444;
   border-radius: 10px 0px 0px 10px;
 }
 
+
+.actionneur{
+  background-color: #1E88E5;
+}
+.capteur{
+  background-color: #009688;
+}
 
 .li{
 	display: flex;
@@ -119,16 +125,22 @@ nav ul li a .badge {
 }
 nav ul li ul li a {
   background: #444;
-  border-left: 4px solid transparent;
   padding: 10px 20px;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+#confort ul li ul li a{
+    border-left: 4px solid #1976D2;
+}
+#security ul li ul li a{
+    border-left: 4px solid #D50000;
+}
+
 #confort ul li ul li a:hover {
   background: #333;
-  border-left: 4px solid #1976D2;
+  border-left: 30px solid #1976D2;
 }
 #security ul li ul li a:hover{
-  border-left: 4px solid #D50000;
+  border-left: 30px solid #D50000;
   background: #333;
 }
 #security .active{
@@ -164,7 +176,6 @@ nav ul li ul li a {
 }
 
 .boite{
-  background-color: #009688;
   border-radius: 8px;
   width: 20%;
   min-width: 200px;
@@ -173,6 +184,7 @@ nav ul li ul li a {
   display: inline-block;
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 25px;
 }
 .switch {
   position: relative;
@@ -208,7 +220,7 @@ nav ul li ul li a {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #66BB6A;
 }
 
 input:focus + .slider {
@@ -229,3 +241,16 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.demand{
+  border-radius: 5px;
+}
+.faux{
+
+  display: none;
+}
+input[type="number"] {
+		line-height:1.5;
+		width:4em;
+		border-radius:5px;
+		border: 1px solid #dadada;
+	}

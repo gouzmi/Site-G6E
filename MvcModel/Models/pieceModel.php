@@ -14,25 +14,30 @@ $sqlpiece ='SELECT piece.id_piece, piece.nom_piece
               $nbpiece = $reqpiece->rowCount();
               $pieces = $reqpiece->fetchall();
 
+              if(isset($_POST['modifier'])){
+                $modif = 'UPDATE actionneur SET valeur ='.$_POST['temperature'].' WHERE id_actionneur ='.$_POST['id'].'';
+                $modif = $bdd->query($modif);
+              }
+
 function valeur_capteur($id_type_capteur, $donnee){
   $msg = "";
   if($id_type_capteur == 1){
-    $msg= "Présence dans la pièce :".$donnee.".";
+    $msg= "Présence dans la pièce : ".$donnee." .";
   }
   if ($id_type_capteur == 2) {
-    $msg= "Lumière dans la pièce :".$donnee.".";
+    $msg= "Lumière dans la pièce : ".$donnee." .";
   }
   if ($id_type_capteur == 3) {
-    $msg= "Température dans la pièce :".$donnee."°C";
+    $msg= "Température dans la pièce : ".$donnee." °C";
   }
   if ($id_type_capteur == 4) {
-    $msg= "Fumée :".$donnee.".";
+    $msg= "Fumée : ".$donnee." .";
   }
   if ($id_type_capteur == 5 ) {
-    $msg= "La porte/fenêtre est ouverte:".$donnee.".";
+    $msg= "La porte/fenêtre est ouverte: ".$donnee." .";
   }
   if ($id_type_capteur == 6 ) {
-    $msg= "La consomation électrique de la pièce est de :".$donnee."kW.";
+    $msg= "La consomation électrique de la pièce est de : ".$donnee." kW.";
   }
   if ($id_type_capteur == 7 ) {
     $msg= $donnee;
@@ -42,32 +47,6 @@ function valeur_capteur($id_type_capteur, $donnee){
 
 }
 
-function bouton_capteur($capteur)
-{
-  $id_type_capteur = $capteur['id_type_capteur'];
-  $donnee = $capteur['valeur_capteur'];
-  $capteurId = $capteur['id_capteur'];
-  $fonctionnement = $capteur['fonctionnement'];
-  switch ($id_type_capteur) {
-    case 2:
-    case 7:
-    case 5:
-    case 9:
-       $bouton =  "<label class='switch'>
-                    <input type='checkbox' ".($fonctionnement==1?"checked":"")." data-id-capteur='$capteurId'>
-                    <span class='slider round'></span>
-                    </label>" ;
-      break;
-    case 3:
-       $bouton =  "<input type='number' name='nombre' value='$donnee'>" ;
-      break;
-
-    default:
-       $bouton = "";
-      break;
-  }
-  return $bouton;
-}
 
 function logo_capteur($id_type_capteur)
 {
@@ -139,10 +118,10 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
       $titre = titre_capteur($capteur['id_type_capteur']);
       $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
     ?>
-      <section class="boite">
+      <section class="boite capteur">
         <h3><?php echo $titre; ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-        <div class="info"> <?php echo $info; ?></div>
+        <div class="info"> <span id="capteurinfo"><?php echo $info; ?></span id="capteurinfo"></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
       </section>
   <?php }
@@ -164,13 +143,158 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
       $titre = titre_capteur($capteur['id_type_capteur']);
       $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
     ?>
-      <section class="boite">
+      <section class="boite capteur">
         <h3><?php echo $titre; ?> </h3>
         <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-        <div class="info"> <?php echo $info; ?></div>
-        <div class="info"> <?php echo $nompiece; ?></div>
+        <div class="info"> <span id="capteurinfo"><?php echo $info; ?></span id="capteurinfo"></div><br />
+        <div class="info"> <?php echo $nompiece; ?></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
       </section>
   <?php }
+  }
+}
+
+/* -------------------------------------- ACTIONNEURS -------------------------------------------*/
+
+function bouton_actionneur($actionneur)
+{
+  $id_type_actionneur = $actionneur['id_type_actionneur'];
+  $donnee = $actionneur['valeur'];
+  $actionneurId = $actionneur['id_actionneur'];
+  $fonctionnement = $actionneur['fonctionnement'];
+  switch ($id_type_actionneur) {
+    case 1:
+    case 2:
+    case 4:
+    case 5:
+    case 6:
+       $bouton =  "<label class='switch'>
+                    <input type='checkbox' ".($fonctionnement==1?"checked":"")." data-id-actionneur='$actionneurId'>
+                    <span class='slider round'></span>
+                    </label>" ;
+      break;
+    case 3:
+       $bouton =  "<label class='switch'>
+                    <input type='checkbox' ".($fonctionnement==1?"checked":"")." data-id-actionneur='$actionneurId'>
+                    <span class='slider round'></span>
+                    </label><br>
+                    <form method='post' action=''>
+                      <input type='number' name='temperature' class='demand' value='$donnee' min='10' max='35'>
+                      <input name='id' class='faux' value='$actionneurId'>
+                      <input type='submit' name='modifier' class='demand' value='Modifier'>
+                    </form>
+                    " ;
+      break;
+
+    default:
+       $bouton = "";
+      break;
+  }
+  return $bouton;
+}
+
+function titre_actionneur($id_type_actionneur){
+  $ACTIONNEURS = array(
+    1 => "Volets",
+    2 => "Lumière",
+    3 => "Chauffage",
+    4 => "Portail",
+    5 => "Autre actionneur",
+    6 => "Alarme",
+
+  );
+
+  $msg = "Type d'actionneur inconnu : ".$id_type_actionneur;
+  if(isset($ACTIONNEURS[$id_type_actionneur])) {
+    $msg = $ACTIONNEURS[$id_type_actionneur];
+  }
+  return $msg;
+}
+
+function logo_actionneur($id_type_actionneur){
+
+  switch ($id_type_actionneur) {
+    case 1:
+       $logo= '<i class="fa fa-window-maximize" aria-hidden="true"></i>';
+      break;
+      case 2:
+         $logo= '<i class="fa fa-lightbulb-o" aria-hidden="true"></i>';
+        break;
+        case 3:
+           $logo= '<i class="fa fa-thermometer-half" aria-hidden="true"></i>';
+          break;
+          case 4:
+             $logo= '<i class="fa fa-window-maximize" aria-hidden="true"></i>';
+            break;
+            case 5:
+               $logo= '<i class="fa " aria-hidden="true"></i>';
+               case 6:
+                  $logo= '<i class="fa " aria-hidden="true"></i>';
+              break;
+
+
+    default:
+       $logo = "";
+      break;
+  }
+    return $logo;
+}
+
+function getActionneurs($type, $nompiece, $pieceId, $bdd) {
+  if ($type == 0 AND $nompiece == 0) {
+    $sqlactionneur='SELECT *
+                 FROM actionneur
+                 WHERE actionneur.id_piece = '.$pieceId.'
+                 ORDER BY actionneur.id_type_actionneur ';
+    $reqactionneur = $bdd -> query($sqlactionneur);
+    $actionneurs = $reqactionneur->fetchall();
+    //$capteurs = $pieces['capteurs'];
+    foreach ($actionneurs as $actionneur) {
+      $idtypeactionneur = $actionneur['id_type_actionneur'];
+      $valeur=$actionneur['valeur'];
+      $reference= $actionneur['id_actionneur'];
+
+        $nom =$actionneur['nom'];
+
+      $logo = logo_actionneur($actionneur['id_type_actionneur']);
+      $titre = titre_actionneur($actionneur['id_type_actionneur']);
+      $action = bouton_actionneur($actionneur)
+    ?>
+      <section class="boite actionneur">
+        <h3><?php echo $titre; ?><br /> <?php if(isset($nom) and $actionneur['nom'] != NULL){echo $nom;} ?> </h3>
+        <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
+        <div class="bouton"><?php echo $action; ?></div><br />
+        <div class="historique"> <a href="" class="link">Historique </a></div>
+      </section>
+  <?php }
+  }
+  else {
+    $sqlactionneur='SELECT *
+                 FROM actionneur
+                 WHERE actionneur.id_piece = '.$pieceId.' AND actionneur.id_type_actionneur = '.$type.'
+                 ORDER BY id_type_actionneur ';
+                 $reqactionneur = $bdd -> query($sqlactionneur);
+                 $actionneurs = $reqactionneur->fetchall();
+                 //$capteurs = $pieces['capteurs'];
+                 foreach ($actionneurs as $actionneur) {
+                   $idtypeactionneur = $actionneur['id_type_actionneur'];
+                   $valeur=$actionneur['valeur'];
+                   if($actionneur['nom'] != NULL){
+                     $nom =$actionneur['nom'];
+                   }
+                   $reference= $actionneur['id_actionneur'];
+                   $logo = logo_actionneur($actionneur['id_type_actionneur']);
+                   $titre = titre_actionneur($actionneur['id_type_actionneur']);
+                   $action = bouton_actionneur($actionneur);
+                 ?>
+                   <section class="boite actionneur">
+                     <h3><?php echo $titre; ?><br /> <?php if(isset($nom)){echo $nom;} ?> </h3>
+                     <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
+                     <div class="info"> <?php echo $nompiece; ?></div>
+                     <div class="bouton"><?php echo $action; ?></div><br />
+                     <div class="historique"> <a href="" class="link">Historique </a></div>
+                   </section>
+  <?php }
+
   }
 }

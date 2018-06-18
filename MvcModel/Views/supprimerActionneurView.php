@@ -2,7 +2,7 @@
 <html>
     <head>
     <meta charset="UTF-8">
-    <title>Suppression de pièces</title>
+    <title>Suppression d'actionneurs</title>
     <link rel="stylesheet" href="../Css/headerfooterr.css"/>
     <link rel="stylesheet" href="../Css/editerMaison.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="../Images/miniature.png" />

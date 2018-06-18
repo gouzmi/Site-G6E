@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 29 jan. 2018 à 19:02
+-- Généré le :  mer. 31 jan. 2018 à 20:36
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `test2`
+-- Base de données :  `domhome`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +42,32 @@ CREATE TABLE IF NOT EXISTS `actionneur` (
   KEY `id_type_actionneur` (`id_type_actionneur`),
   KEY `id_actionneur` (`id_actionneur`),
   KEY `id_cemac` (`id_cemac`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `actionneur`
+--
+
+INSERT INTO `actionneur` (`id_actionneur`, `id_type_actionneur`, `fonctionnement`, `id_piece`, `nom`, `id_cemac`, `valeur`) VALUES
+(1, 6, 1, 21, 'Alarme', 1, NULL),
+(2, 1, 1, 21, '', 1, NULL),
+(3, 2, 1, 21, '', 1, NULL),
+(4, 3, 1, 21, '', 1, NULL),
+(5, 2, 1, 25, '', 2, NULL),
+(6, 2, 1, 24, '', 2, NULL),
+(7, 2, 1, 26, '', 4, NULL),
+(8, 6, 1, 26, '', 4, NULL),
+(9, 1, 1, 28, '', 2, NULL),
+(10, 2, 1, 28, '', 2, NULL),
+(11, 1, 1, 22, '', 3, NULL),
+(12, 2, 1, 22, '', 3, NULL),
+(13, 3, 1, 22, '', 3, NULL),
+(14, 1, 1, 23, '', 3, NULL),
+(15, 2, 1, 23, '', 3, NULL),
+(16, 3, 1, 23, '', 3, NULL),
+(17, 1, 1, 27, '', 4, NULL),
+(18, 2, 1, 27, '', 4, NULL),
+(19, 3, 1, 27, '', 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,25 +108,54 @@ CREATE TABLE IF NOT EXISTS `capteur` (
   KEY `id_type_capteur` (`id_type_capteur`),
   KEY `id_piece` (`id_piece`) USING BTREE,
   KEY `id_cemac` (`id_cemac`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `capteur`
 --
 
 INSERT INTO `capteur` (`id_capteur`, `fonctionnement`, `id_type_capteur`, `id_cemac`, `id_piece`) VALUES
-(35, 0, 1, 10, 6),
-(36, 0, 1, 10, 5),
-(37, 0, 1, 12, 4),
-(38, 0, 2, 12, 4),
-(39, 0, 3, 14, 3),
-(40, 0, 3, 14, 3),
-(41, 0, 3, 14, 3),
-(42, 0, 3, 14, 3),
-(43, 0, 3, 14, 3),
-(44, 0, 3, 14, 3),
-(45, 0, 3, 14, 3),
-(46, 0, 4, 12, 4);
+(47, 0, 1, 1, 21),
+(48, 0, 2, 1, 21),
+(49, 0, 3, 1, 21),
+(50, 0, 4, 1, 21),
+(51, 0, 5, 1, 21),
+(52, 0, 6, 1, 21),
+(53, 0, 1, 3, 22),
+(54, 0, 2, 3, 22),
+(55, 0, 3, 3, 22),
+(56, 0, 5, 3, 22),
+(57, 0, 6, 3, 22),
+(58, 0, 1, 3, 23),
+(59, 0, 2, 3, 23),
+(60, 0, 3, 3, 23),
+(61, 0, 5, 3, 23),
+(62, 0, 6, 3, 23),
+(63, 0, 1, 2, 24),
+(64, 0, 2, 2, 24),
+(65, 0, 6, 2, 24),
+(66, 0, 3, 2, 24),
+(67, 0, 1, 2, 25),
+(68, 0, 2, 2, 25),
+(69, 0, 5, 2, 25),
+(70, 0, 6, 2, 25),
+(71, 0, 5, 2, 24),
+(72, 0, 1, 4, 26),
+(73, 0, 2, 4, 26),
+(74, 0, 5, 4, 26),
+(75, 0, 6, 4, 26),
+(76, 0, 1, 3, 23),
+(77, 0, 2, 3, 23),
+(78, 0, 3, 3, 23),
+(79, 0, 5, 3, 23),
+(80, 0, 1, 4, 27),
+(81, 0, 2, 4, 27),
+(82, 0, 4, 4, 26),
+(83, 0, 5, 4, 27),
+(84, 0, 6, 4, 27),
+(85, 0, 1, 2, 28),
+(86, 0, 2, 2, 28),
+(87, 0, 3, 2, 28);
 
 -- --------------------------------------------------------
 
@@ -115,20 +169,17 @@ CREATE TABLE IF NOT EXISTS `cemac` (
   `id_piece` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_cemac`),
   KEY `id_piece` (`id_piece`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `cemac`
 --
 
 INSERT INTO `cemac` (`id_cemac`, `id_piece`) VALUES
-(10, 1),
-(11, 1),
-(14, 1),
-(12, 5),
-(13, 5),
-(4, 14),
-(3, 15);
+(1, 21),
+(3, 23),
+(4, 26),
+(2, 28);
 
 -- --------------------------------------------------------
 
@@ -138,27 +189,22 @@ INSERT INTO `cemac` (`id_cemac`, `id_piece`) VALUES
 
 DROP TABLE IF EXISTS `commentaires`;
 CREATE TABLE IF NOT EXISTS `commentaires` (
-  `id_commentaire` int(11) NOT NULL AUTO_INCREMENT,
-  `id_billet` int(11) NOT NULL,
-  `commentaire` text COLLATE utf8_bin NOT NULL,
-  `date_creation` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_commentaire` int(255) NOT NULL AUTO_INCREMENT,
+  `id_billet` int(255) NOT NULL,
+  `commentaire` varchar(255) COLLATE utf8_bin NOT NULL,
+  `date_creation` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   `id_utilisateur` int(255) NOT NULL,
   PRIMARY KEY (`id_commentaire`),
   KEY `id_billet` (`id_billet`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `commentaires`
 --
 
 INSERT INTO `commentaires` (`id_commentaire`, `id_billet`, `commentaire`, `date_creation`, `id_utilisateur`) VALUES
-(16, 9, 'ouiii', '2018-01-23 11:02:08', 0),
-(17, 9, 'nonn', '2018-01-23 11:02:33', 0),
-(18, 9, 'aa', '2018-01-23 11:16:03', 0),
-(19, 9, 'aa', '2018-01-23 11:30:51', 0),
-(20, 9, 'aa', '2018-01-23 11:30:54', 0),
-(25, 9, 'hhh', '2018-01-23 13:49:11', 0);
+(1, 9, 'Bonjour, Comment savoir quand le détecteur de fumée n\'a plus de piles ?', '2018-01-09 05:19:00.000000', 6);
 
 -- --------------------------------------------------------
 
@@ -180,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `faq` (
 --
 
 INSERT INTO `faq` (`id_faq`, `question_faq`, `reponse_faq`, `theme_faq`) VALUES
-(1, 'Comment tu t\'appelles ?', 'Darlène', 'Tet\r\n');
+(1, 'Sur quel site faut -il passer commande ?', 'Il faut passer commande sur DomhomeCommande.fr', 'Commande');
 
 -- --------------------------------------------------------
 
@@ -197,15 +243,50 @@ CREATE TABLE IF NOT EXISTS `historique_capteur` (
   `heure_donnee` time NOT NULL DEFAULT '00:00:00',
   PRIMARY KEY (`id_historique_capteur`),
   KEY `id_capteur` (`id_capteur`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `historique_capteur`
 --
 
 INSERT INTO `historique_capteur` (`id_historique_capteur`, `id_capteur`, `valeur_capteur`, `date_donnee`, `heure_donnee`) VALUES
-(8, 37, 'ffs', '2018-01-27 22:00:06', '00:00:00'),
-(9, 46, 'non', '2018-01-27 22:05:40', '00:00:00');
+(10, 47, 'non', '2018-01-31 19:24:17', '00:00:00'),
+(11, 48, 'non', '2018-01-31 19:24:39', '00:00:00'),
+(12, 49, '20', '2018-01-31 19:24:54', '00:00:00'),
+(13, 50, 'non', '2018-01-31 19:25:14', '00:00:00'),
+(14, 51, 'non', '2018-01-31 19:25:25', '00:00:00'),
+(15, 52, '0', '2018-01-31 19:25:35', '00:00:00'),
+(16, 53, 'non', '2018-01-31 19:27:05', '00:00:00'),
+(17, 54, 'non', '2018-01-31 19:27:10', '00:00:00'),
+(18, 55, '20', '2018-01-31 19:27:15', '00:00:00'),
+(19, 56, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(20, 57, '0', '2018-01-31 20:39:00', '00:00:00'),
+(21, 58, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(22, 59, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(23, 60, '0', '2018-01-31 20:39:00', '00:00:00'),
+(24, 61, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(25, 62, '0', '2018-01-31 20:39:00', '00:00:00'),
+(26, 63, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(27, 64, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(28, 65, '0', '2018-01-31 20:39:00', '00:00:00'),
+(29, 66, '0', '2018-01-31 20:39:00', '00:00:00'),
+(30, 67, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(31, 68, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(32, 69, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(33, 70, '0', '2018-01-31 20:39:00', '00:00:00'),
+(34, 71, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(35, 72, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(36, 73, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(37, 74, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(38, 75, 'non', '2018-01-31 20:39:00', '00:00:00'),
+(39, 80, 'non', '2018-01-31 20:47:04', '00:00:00'),
+(40, 81, 'non', '2018-01-31 20:47:23', '00:00:00'),
+(41, 82, 'non', '2018-01-31 20:47:37', '00:00:00'),
+(42, 83, 'non', '2018-01-31 20:47:51', '00:00:00'),
+(43, 84, '0', '2018-01-31 20:48:02', '00:00:00'),
+(44, 85, 'non', '2018-01-31 20:48:30', '00:00:00'),
+(45, 86, 'non', '2018-01-31 21:02:36', '00:00:00'),
+(46, 87, '20', '2018-01-31 21:02:52', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -222,16 +303,15 @@ CREATE TABLE IF NOT EXISTS `logement` (
   `id_utilisateur` int(255) NOT NULL,
   PRIMARY KEY (`id_logement`),
   KEY `id_utilisateur` (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `logement`
 --
 
 INSERT INTO `logement` (`id_logement`, `adresse`, `code_postale_logement`, `ville_logement`, `id_utilisateur`) VALUES
-(1, '6  Rue Ampère', 95190, 'Goussainville', 3),
-(2, '4 avenue Victor Hugo', 94160, 'Saint-Mandé', 2),
-(26, '6  Rue AmpÃ¨re', 95000, 'Goussainville', 1);
+(27, '10 rue du Client', 92130, 'Issy-les-Moulineaux', 6),
+(28, '28 Rue Notre Dame des Champs', 75006, 'Paris', 8);
 
 -- --------------------------------------------------------
 
@@ -304,33 +384,21 @@ CREATE TABLE IF NOT EXISTS `piece` (
   PRIMARY KEY (`id_piece`),
   KEY `id_type_piece` (`id_type_piece`),
   KEY `id_logement` (`id_logement`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `piece`
 --
 
 INSERT INTO `piece` (`id_piece`, `id_type_piece`, `id_logement`, `nom_piece`, `superficie_piece`) VALUES
-(1, 5, 1, 'SDB Bas', 5),
-(2, 3, 1, 'Salon', 30),
-(3, 4, 1, 'Salle à Manger', 25),
-(4, 1, 1, 'Chambre de Darlène', 15),
-(5, 1, 1, 'Chambre de Marvin', 15),
-(6, 1, 1, 'Chambre d\'Axel', 15),
-(7, 1, 1, 'Chambre des Parents', 22),
-(8, 6, 1, 'Cuisine', 10),
-(9, 9, 1, 'Garage', 20),
-(10, 5, 1, 'SDB Haut', 15),
-(11, 5, 2, 'SDB Bas', 5),
-(12, 3, 2, 'Salon', 30),
-(13, 4, 2, 'Salle à Manger', 25),
-(14, 1, 2, 'Chambre de Guillaume', 15),
-(15, 1, 2, 'Chambre de Charlotte', 15),
-(16, 1, 2, 'Chambre de Pauline', 15),
-(17, 1, 2, 'Chambre des Parents', 22),
-(18, 6, 2, 'Cuisine', 10),
-(19, 9, 2, 'Garage', 20),
-(20, 5, 2, 'SDB Haut', 15);
+(21, 3, 27, 'Salon', 20),
+(22, 1, 27, 'Chambre des Parents', 15),
+(23, 1, 27, 'Chambre Client', 10),
+(24, 5, 27, 'Salle de Bain', 7),
+(25, 6, 27, 'Cuisine', 8),
+(26, 9, 27, 'Garage', 20),
+(27, 4, 27, 'Salle à Manger', 15),
+(28, 7, 27, 'Bureau', 8);
 
 -- --------------------------------------------------------
 
@@ -352,9 +420,8 @@ CREATE TABLE IF NOT EXISTS `precommande` (
 --
 
 INSERT INTO `precommande` (`id_precommande`, `date_commande`, `email_commande`, `admin`) VALUES
-(1, '2017-12-30 00:00:00', 'test@gmail.com', 0),
-(2, '2018-01-01 00:00:00', 'adresse@gmail.com', 0),
-(3, '2018-01-03 00:00:00', 'admin@gmail.com', 1);
+(2, '2018-01-03 00:00:00', 'admin@gmail.com', 1),
+(3, '2018-01-01 00:00:00', 'client@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -398,7 +465,7 @@ CREATE TABLE IF NOT EXISTS `type_actionneur` (
   `id_type_actionneur` int(255) NOT NULL AUTO_INCREMENT,
   `variete_actionneur` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_type_actionneur`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `type_actionneur`
@@ -407,7 +474,10 @@ CREATE TABLE IF NOT EXISTS `type_actionneur` (
 INSERT INTO `type_actionneur` (`id_type_actionneur`, `variete_actionneur`) VALUES
 (1, 'Volets'),
 (2, 'Lumière'),
-(3, 'Chauffage');
+(3, 'Chauffage'),
+(4, 'Portail'),
+(5, 'Autre Type'),
+(6, 'Alarme');
 
 -- --------------------------------------------------------
 
@@ -486,17 +556,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `admin` int(10) NOT NULL DEFAULT '0',
   `mdp` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `adresse_contact`, `cp_contact`, `ville_contact`, `telephone`, `mail`, `admin`, `mdp`) VALUES
-(1, 'Eustache', 'Darlène\r\n', '6  Rue AmpÃ¨re', '95000', 'Goussainville', '06123456789', 'darlene@gmail.com', 0, '$2y$10$J79FbrpkyzRtmlu65tp6s.Vxf8BTpytl9V..TTqOhlKiYC2Z/o3rW'),
-(2, 'Dupont', 'Guillaume', '4 avenue Victor Hugo', '94160', 'Saint-Mandé', '0613544337', 'guillaume.dupont.rm@gmail.com', 0, '$2y$10$Jb5c.gzbbv91BZ2AVdPhV.6EhJY6Wz02zaFMqZUqeCgIgpN7R4jDS'),
-(3, 'Eustache', 'Darlene', '6  Rue Ampère', '95190', 'Goussainville', '0123456789', 'darlene.eustache@gmail.com', 0, '$2y$10$7Z2aofPDnWgq.MSZwbdOMue.1ehCh/WWJkGfmVNWwxG9LWAfLWlgW'),
-(4, 'ADMINISTRATEUR', 'Admin', '2 Rue des Bois', '12345', 'Ville', '0123456789', 'admin@gmail.com', 1, '$2y$10$nVDEnGUXVzfVFOMvQ8G12./oBRfdrsnvGDagk9g/4VT0duXSjkuIK');
+(6, 'Compte', 'Client', '10 rue du client', '92130', 'Issy', '0123456789', 'client@gmail.com', 0, '$2y$10$.W2MAFHjNl3JuCyDJoVOUOiRYHjRfXV6wV0aME2wCfClNmMWbWM2S'),
+(7, 'Admin', 'Domisep', '28 Rue Notre Dame des Champs', '75006', 'Paris', '0123456789', 'admin@gmail.com', 1, '$2y$10$C.tttl4wZYasnh5.07QfH.6kh71QzKxMPGNpem4YvFKW6OlpZNc8K'),
+(8, 'Sav', 'Domisep', '28 Rue Notre Dame des Champs', '75006', 'Paris', '0123456789', 'domhome.sav@gmail.com', 2, '$2y$10$XWgKA6Ol34jaz5EWdQyeCuNWR8ckhB794/S0IImVKZ4FrwAqjXade');
 
 --
 -- Contraintes pour les tables déchargées
@@ -528,7 +597,8 @@ ALTER TABLE `cemac`
 -- Contraintes pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`id_billet`) REFERENCES `billets` (`id_billet`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`id_billet`) REFERENCES `billets` (`id_billet`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `commentaires_ibfk_2` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `historique_capteur`

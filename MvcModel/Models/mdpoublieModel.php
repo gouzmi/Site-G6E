@@ -12,7 +12,7 @@ if(isset($_POST['formmdpoublie'])){
 			$insert = $bdd->prepare("INSERT INTO recuperation(mail_recuperation, code) VALUES(?, ?)");
 			$insert->execute(array($mailrecup, $code)) ;
 
-			//paramètres d'encodageINSERT INTO
+			//paramètres d'encodage
 			$header="MIME-Version: 1.0\r\n";
 			$header.='From:"DomHome.fr"<sav@DomHome.fr>'."\n";
 			$header.='Content-Type:text/html; charset="uft-8"'."\n";
@@ -21,7 +21,7 @@ if(isset($_POST['formmdpoublie'])){
 			$message='
 			<html>
 				<body>
-					<div align=left>
+					<div align="left">
 						<br><br/> <br><br/>
 						Bonjour, <br><br>
 						Vous avez perdu votre mot de passe  ?<br>

@@ -42,7 +42,7 @@
               </li>
               <li>
                 <a href='#settings' class="tablinks" onclick="openCate(event, 'Portes &amp; Fenêtres')">
-                  Portes &amp; Fenêtres
+                  Ouvrants
                 </a>
               </li>
               <li>
@@ -103,7 +103,7 @@
       </nav>
 
       <script>
-        $('.sub-menu ul').hide();
+        $('.sub-menu ul').show();
         $(".sub-menu a").click(function () {
         $(this).parent(".sub-menu").children("ul").slideToggle("100");
         $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
@@ -113,16 +113,22 @@
     </div>
 
     <div class="coeur" id="right">
-        <h1 class="h1" align="center">Voici les statuts des capteurs</h1>
+        <h1 align="center" class="droit">Voici les statuts des capteurs</h1>
 
         <div id="Alarme" class="tabcontent">
-
+          <?php
+            foreach ($pieces as $key => $piece){
+              getActionneurs('6',$piece['nom_piece'], $piece['id_piece'], $bdd);
+            }
+            ?>
         </div>
 
         <div id="Portes &amp; Fenêtres" class="tabcontent">
           <?php
             foreach ($pieces as $key => $piece){
               getCapteurs('5',$piece['nom_piece'], $piece['id_piece'], $bdd);
+              getActionneurs('1',$piece['nom_piece'], $piece['id_piece'], $bdd);
+              getActionneurs('4',$piece['nom_piece'], $piece['id_piece'], $bdd);
             }
             ?>
         </div>
@@ -156,6 +162,7 @@
                     <?php
                       foreach ($pieces as $key => $piece){
                         getCapteurs('2', $piece['nom_piece'], $piece['id_piece'], $bdd);
+                        getActionneurs('2',$piece['nom_piece'], $piece['id_piece'], $bdd);
                       }
                       ?>
         </div>
@@ -164,6 +171,7 @@
           <?php
             foreach ($pieces as $key => $piece){
               getCapteurs('3',$piece['nom_piece'], $piece['id_piece'], $bdd);
+              getActionneurs('3',$piece['nom_piece'], $piece['id_piece'], $bdd);
             }
             ?>
         </div>
@@ -179,7 +187,7 @@
         <div id="Autres actionneurs" class="tabcontent">
           <?php
             foreach ($pieces as $key => $piece){
-              getCapteurs('9',$piece['nom_piece'], $piece['id_piece'], $bdd);
+              getActionneurs('5',$piece['nom_piece'], $piece['id_piece'], $bdd);
             }
             ?>
         </div>

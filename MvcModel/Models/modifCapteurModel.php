@@ -23,12 +23,46 @@
      }
     $statut = "Le capteur a été supprimé !";
   }
+
+
+  function premiere_valeur($id_type_capteur){
+    switch ($id_type_capteur) {
+      case 1:
+      case 2:
+      case 4:
+      case 5:
+        $valeur = "non";
+        break;
+      case 3:
+        $valeur = 20 ;
+        break;
+      case 6:
+        $valeur = 0;
+        break;
+      default:
+        $valeur = "Nul";
+      }
+    return $valeur ;
+  }
+
   //formulaire ajout rempli
   if(isset($_POST['ajCapteur'])){
     if (!empty(isset($_POST['varieteCap'])) AND !empty(isset($_POST['varietePie'])) AND !empty(isset($_POST['idCemac']))) {
+
       $ajcapteur = $bdd->prepare("INSERT INTO capteur(id_type_capteur,id_piece,id_cemac) VALUES(?,?,?)");
       $ajcapteur->execute(array($_POST['varieteCap'],$_POST['varietePie'],$_POST['idCemac']));
-      $statut= "Votre capteur a bien été ajouté !  ";
+
+      $reqid_nvcapteur = $bdd->prepare("SELECT capteur.id_capteur FROM capteur
+                                    INNER JOIN piece ON capteur.id_piece = piece.id_piece
+                                    INNER JOIN logement ON piece.id_logement = logement.id_logement
+                                    WHERE logement.id_logement = ? AND id_type_capteur = ? ORDER BY capteur.id_capteur DESC LIMIT 1");
+      $reqid_nvcapteur->execute(array($_SESSION['id_logement'],$_POST['varieteCap']));
+      $id_nvcapteur = $reqid_nvcapteur->fetch();
+      $valeur = premiere_valeur($_POST['varieteCap']);
+      
+      $ajvaleur = $bdd->prepare("INSERT INTO historique_capteur(id_capteur,valeur_capteur) VALUES(?,?)");
+      $ajvaleur->execute(array($id_nvcapteur[0],$valeur));
+      $statut = "Le capteur a été ajouté !";
 
     }
     else{ $statut ="Veuillez remplir tous les champs du formulaire";}

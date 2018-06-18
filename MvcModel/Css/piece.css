@@ -5,32 +5,67 @@ html
     background-image: url(../Images/96f.jpg);
 }
 
-.boite {
-  background-color: #009688;
+
+
+.boite{
   border-radius: 8px;
   width: 20%;
   min-width: 200px;
   vertical-align: top;
-  margin-bottom:5px;
+  margin-bottom: 5px;
   display: inline-block;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 25px;
 }
 
 .boite h3 {
     margin:0 0 5px;
 }
 
+.actionneur{
+  background-color: #1E88E5;
+}
+.capteur{
+  background-color: #009688;
+}
 
 #left
 {
-	flex:0.25;
+
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: flex-start;
+}
+#corps {
+    justify-content: center;
+}
+#titre{
+  display: block;
+  background-color: inherit;
+  color: white;
+  padding: 22px 16px;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-left: 4px solid transparent;
 }
 
-.li{
-	display: flex;
+div ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+div ul li a {
+
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
 
 .section
 
@@ -51,45 +86,47 @@ html
 .tab {
     margin-top: 2%;
     float: left;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border-radius:10px 0px 0px 10px;
+    background: #444;
     width: 30%;
-    height: 800px;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab .tablinks {
     display: block;
     background-color: inherit;
-    color: black;
+    color: white;
     padding: 22px 16px;
     width: 100%;
-    border: none;
     outline: none;
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
     text-decoration: none;
     box-sizing: border-box;
+    border-left: 4px solid #EF6C00;
 }
 
 /* Change background color of buttons on hover */
 .tab .tablinks:hover {
-    background-color: #ddd;
+    background: #333;
+    border-left: 30px solid #EF6C00;
 }
 
 /* Create an active/current "tab button" class */
 .tab .tablinks.active {
-    background-color: #ccc;
+    background: #333;
+    border-left: 45px solid #EF6C00;
 }
 
-.tabcontent {
-  display:none;
+.tabcontent{
+  width: 100%;
+  display: none;
+  flex-wrap: wrap;
 }
 
 .no-js .tabcontent, .tabcontent.active{
-  display:block;
+  display:flex;
 }
 
 .switch {
@@ -126,7 +163,7 @@ html
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #66BB6A;
 }
 
 input:focus + .slider {
@@ -146,4 +183,20 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+input[type="number"] {
+		line-height:1.5;
+		width:4em;
+		border-radius:5px;
+		border: 1px solid #dadada;
+	}
+
+.demand{
+  border-radius: 5px;
+}
+
+.faux{
+
+  display: none;
 }

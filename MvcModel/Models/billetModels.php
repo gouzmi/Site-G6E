@@ -15,7 +15,7 @@
   $capteurs = $bdd->query('SELECT DISTINCT * FROM capteur
                JOIN piece ON piece.id_piece = capteur.id_piece
                JOIN logement ON piece.id_logement = logement.id_logement
-               WHERE logement.id_utilisateur = '.$user['id_utilisateur'].' ORDER BY nom_piece DESC LIMIT 0, 30');
+               WHERE logement.id_utilisateur = '.$user['id_utilisateur'].' ORDER BY nom_piece ');
   $capteurs->execute();
   $capteurs = $capteurs->fetchall();
 
@@ -42,14 +42,14 @@
               $cemac = $passes['id_cemac'];
 
                        ?>
-                       <div class="cas">
-                         <div class="info"> <?php echo $piece; ?></div>
-                         <div class="info"> id capteur : <?php echo $idcapteur; ?></div>
-                         <div class="info"> <?php echo $variete; ?></div>
-                         <div class="info"> <?php echo $valeur; ?></div>
-                         <div class="info"> <?php echo $fonctionnement; ?></div>
-                         <div class="info"> <?php echo $cemac; ?></div>
-                         <div class="info"> <?php echo $date; ?></div>
+                       <div class="cas <?php echo $variete; ?>">
+                         <div class="info"><span class="donnee"> Pièce :</span><?php echo $piece; ?></div>
+                         <div class="info"><span class="donnee"> id capteur :</span><?php echo $idcapteur; ?></div>
+                         <div class="info"><span class="donnee"> Type de capteur :</span><?php echo $variete; ?></div>
+                         <div class="info"><span class="donnee"> Valeur :</span><?php echo $valeur; ?></div>
+                         <div class="info"><span class="donnee"> Fonctionnement :</span><?php echo $fonctionnement; ?></div>
+                         <div class="info"><span class="donnee"> Id du Cemac :</span><?php echo $cemac; ?></div>
+                         <div class="info"><span class="donnee"> Date :</span><?php echo $date; ?></div>
                        </div class="cas">
                        <?php
                      }

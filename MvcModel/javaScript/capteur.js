@@ -1,12 +1,12 @@
-function initCapteurSwitchs() {
+function initActionneurswitchs() {
   $(document).on('change', '.switch input', function(e) {
     // Requete ajax de type JSON, il faut bien utiliser : type:'post', 'dataType:'json' et data:JSON.stringify(XXX)
     $.ajax({
       type:'post',
       dataType: 'json',
-      url: '../api/updateCapteur',
+      url: '../api/updateActionneur',
       data:  JSON.stringify({
-        capteurId: $(this).attr('data-id-capteur'),
+        actionneurId: $(this).attr('data-id-actionneur'),
         fonctionnement: !!this.checked
       }),
       success: function() {
@@ -17,4 +17,4 @@ function initCapteurSwitchs() {
 }
 
 
-initCapteurSwitchs();
+initActionneurswitchs();

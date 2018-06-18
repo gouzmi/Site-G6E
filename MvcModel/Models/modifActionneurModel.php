@@ -16,26 +16,28 @@
   //formulaire supp rempli
   if(isset($_POST['supActionneur'])){
     foreach($_POST['id_rep'] as $valeur){
-       $suppactionneur = $bdd->prepare("DELETE FROM `actionneur` WHERE id_actionneur=? ");
+       $suppactionneur = $bdd->prepare("DELETE FROM `actionneur` WHERE actionneur.id_actionneur= ? ");
        $suppactionneur->execute(array($valeur));
      }
     $statut = "L'actionneur a été supprimé !";
   }
   //formulaire ajout rempli
   if(isset($_POST['ajActionneur'])){
-    if (!empty(isset($_POST['varieteAct'])) AND !empty(isset($_POST['varietePie'])) AND !empty(isset($_POST['idCemac'])) AND !empty(isset($_POST['nom'])) ) {
+    if (!empty(isset($_POST['varieteAct'])) AND !empty(isset($_POST['varietePie'])) AND !empty(isset($_POST['idCemac'])) ) {
       $filter_def = [
           'nom' => FILTER_SANITIZE_SPECIAL_CHARS,] ;
 
       $resultat = filter_input_array(INPUT_POST, $filter_def);
       $nom = $resultat['nom'];
-      if ((preg_match('#^[\p{L}-À-ÖØ-öø-ÿ\s]+$#', $nom)) == false){
-          $statut= 'Le nom ne doit contenir que des lettres' ;
-      }
-      else{
+
+
+      if(((preg_match('#^[\p{L}-À-ÖØ-öø-ÿ\s]+$#', $nom)) == true) OR  $_POST['nom'] == ""){
         $ajactionneur = $bdd->prepare("INSERT INTO actionneur(id_type_actionneur,id_piece,id_cemac,nom) VALUES(?,?,?,?)");
         $ajactionneur->execute(array($_POST['varieteAct'],$_POST['varietePie'],$_POST['idCemac'],$nom));
         $statut= "Votre actionneur a bien été ajouté !";
+      }
+      else{
+        $statut= 'Le nom ne doit contenir que des lettres' ;
       }
     }
     else{ $statut ="Veuillez remplir tous les champs du formulaire";}
@@ -53,6 +55,7 @@
        header("Location: editerMaison.php");}
     }
   }
+
   function supActionneur($bdd){
     $reqactionneur= $bdd->prepare('SELECT actionneur.id_actionneur, type_actionneur.variete_actionneur, piece.nom_piece  FROM actionneur
                               JOIN type_actionneur
@@ -85,7 +88,7 @@
     }
     echo "</table>";
     echo '<br>
-    <input type="submit" name="supactionneur" value="Supprimer"  /></td></tr>
+    <input type="submit" name="supActionneur" value="Supprimer"  /></td></tr>
     <input type ="submit" name="retour" value="Retour">
     </form>';
   }

@@ -31,7 +31,19 @@
               }
               else
                 {
-                  header("Location: profil.php");
+                  $sqlpiece ='SELECT piece.id_piece
+                                 FROM piece INNER JOIN logement
+                                 ON piece.id_logement = logement.id_logement
+                                 WHERE logement.id_utilisateur = '.$_SESSION['id'].'' ;
+
+                  $reqpiece = $bdd ->query($sqlpiece);
+                  $nbpiece = $reqpiece->rowCount();
+                  if ($nbpiece > 0){
+                    header("Location: piece.php");
+                  }
+                  else {
+                    header("Location: editerMaison.php");
+                  }
                 }
             }
           else{
