@@ -68,7 +68,10 @@ INSERT INTO `actionneur` (`id_actionneur`, `id_type_actionneur`, `fonctionnement
 (17, 1, 1, 27, '', 4, NULL),
 (18, 2, 1, 27, '', 4, NULL),
 (19, 3, 1, 27, '', 4, NULL);
+<<<<<<< HEAD
 /*(20, 7, 0, 25, '', 1, NULL);*/
+=======
+>>>>>>> cd56828385d1601ae2d5b0b66e5ac1cbbe142d2a
 
 -- --------------------------------------------------------
 
@@ -479,7 +482,10 @@ INSERT INTO `type_actionneur` (`id_type_actionneur`, `variete_actionneur`) VALUE
 (4, 'Portail'),
 (5, 'Autre Type'),
 (6, 'Alarme');
+<<<<<<< HEAD
 /*(7, 'Ventilateur');*/
+=======
+>>>>>>> cd56828385d1601ae2d5b0b66e5ac1cbbe142d2a
 
 -- --------------------------------------------------------
 
