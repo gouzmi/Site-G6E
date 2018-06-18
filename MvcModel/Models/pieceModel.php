@@ -162,6 +162,51 @@ function bouton_actionneur($actionneur)
   $donnee = $actionneur['valeur'];
   $actionneurId = $actionneur['id_actionneur'];
   $fonctionnement = $actionneur['fonctionnement'];
+<<<<<<< HEAD
+=======
+
+  if($id_type_actionneur == 3 && $fonctionnement == 1){ //Allumer le ventilo v = 1111 && t = 03, donc en C trame[10-13] = 1 && trame[14] = 0 && trame[15] = 3
+    $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21021111032018';
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $data = curl_exec($ch);
+    curl_close($ch);
+  //  echo "<br> <p> DATA DE OUF".$data." ALLUMER LE VENTILO <p/>";
+
+  } elseif($id_type_actionneur == 3 && $fonctionnement == 0){ //Eteindre le ventilo
+    $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21020000032018';
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $data = curl_exec($ch);
+    curl_close($ch);
+  //  echo "<br> <p> DATA DE OUF".$data." ETEINDRE LE VENTILO <p/>";
+
+  } elseif($id_type_actionneur == 1 && $fonctionnement == 1){ //Actionner le moteur dans un sens (faire un delay en C pour éteindre le moteur une fois que le volet est 'ouvert')
+    $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21021111012018';
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $data = curl_exec($ch);
+    curl_close($ch);
+  //  echo "<br> <p> DATA DE OUF".$data." ALLUMER LE MOTER <p/>";
+
+  } elseif($id_type_actionneur == 1 && $fonctionnement == 0){ //Actionner le moteur dans l'autre sens
+    $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21020000012018';
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $data = curl_exec($ch);
+    curl_close($ch);
+  //  echo "<br> <p> DATA DE OUF".$data." TOURNER  LE MOTEUR<p/>";
+
+  }
+>>>>>>> 19af425dcd8c18cc140c495c5e85c50cd2aa116c
   switch ($id_type_actionneur) {
     case 1:
     case 2:
