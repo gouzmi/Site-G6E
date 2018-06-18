@@ -162,11 +162,9 @@ function bouton_actionneur($actionneur)
   $donnee = $actionneur['valeur'];
   $actionneurId = $actionneur['id_actionneur'];
   $fonctionnement = $actionneur['fonctionnement'];
-<<<<<<< HEAD
-=======
 
-  if($id_type_actionneur == 3 && $fonctionnement == 1){ //Allumer le ventilo v = 1111 && t = 03, donc en C trame[10-13] = 1 && trame[14] = 0 && trame[15] = 3
-    $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21021111032018';
+  if($id_type_actionneur == 7 && $fonctionnement == 1){ //Allumer le ventilo v = 1111 && t = 03, donc en C trame[10-13] = 1 && trame[14] = 0 && trame[15] = 3
+    $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21021111072018';
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
@@ -175,8 +173,8 @@ function bouton_actionneur($actionneur)
     curl_close($ch);
   //  echo "<br> <p> DATA DE OUF".$data." ALLUMER LE VENTILO <p/>";
 
-  } elseif($id_type_actionneur == 3 && $fonctionnement == 0){ //Eteindre le ventilo
-    $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21020000032018';
+} elseif($id_type_actionneur == 7 && $fonctionnement == 0){ //Eteindre le ventilo
+    $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21020000072018';
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
@@ -206,12 +204,12 @@ function bouton_actionneur($actionneur)
   //  echo "<br> <p> DATA DE OUF".$data." TOURNER  LE MOTEUR<p/>";
 
   }
->>>>>>> 19af425dcd8c18cc140c495c5e85c50cd2aa116c
   switch ($id_type_actionneur) {
     case 1:
     case 2:
     case 4:
     case 5:
+    case 7:
     case 6:
        $bouton =  "<label class='switch'>
                     <input type='checkbox' ".($fonctionnement==1?"checked":"")." data-id-actionneur='$actionneurId'>
@@ -246,6 +244,7 @@ function titre_actionneur($id_type_actionneur){
     4 => "Portail",
     5 => "Autre actionneur",
     6 => "Alarme",
+    7 => "Ventilateur",
 
   );
 
@@ -276,6 +275,9 @@ function logo_actionneur($id_type_actionneur){
                case 6:
                   $logo= '<i class="fa " aria-hidden="true"></i>';
               break;
+              case 7:
+                 $logo= '<i class="fa fa-thermometer-half" aria-hidden="true"></i>';
+                 break;
 
 
     default:
