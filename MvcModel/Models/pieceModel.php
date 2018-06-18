@@ -110,21 +110,27 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
     $reqcapteur = $bdd -> query($sqlcapteur);
     $capteurs = $reqcapteur->fetchall();
     //$capteurs = $pieces['capteurs'];
+    $idAct = -1;
     foreach ($capteurs as $capteur) {
-      $idtypecapteur = $capteur['id_type_capteur'];
-      $valeur=$capteur['valeur_capteur'];
-      $reference= $capteur['id_capteur'];
-      $logo = logo_capteur($capteur['id_type_capteur']);
-      $titre = titre_capteur($capteur['id_type_capteur']);
-      $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
-    ?>
-      <section class="boite capteur">
-        <h3><?php echo $titre; ?> </h3>
-        <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
-        <div class="info"> <span id="capteurinfo"><?php echo $info; ?></span id="capteurinfo"></div><br />
-        <div class="historique"> <a href="" class="link">Historique </a></div>
-      </section>
-  <?php }
+
+      if ($capteur['id_capteur'] != $idAct){
+        $idAct = $capteur['id_capteur'];
+        $idtypecapteur = $capteur['id_type_capteur'];
+        $valeur=$capteur['valeur_capteur'];
+        $reference= $capteur['id_capteur'];
+        $idAct = $capteur['id_capteur'];
+        $logo = logo_capteur($capteur['id_type_capteur']);
+        $titre = titre_capteur($capteur['id_type_capteur']);
+        $info = valeur_capteur($capteur['id_type_capteur'], $capteur['valeur_capteur']);
+      ?>
+        <section class="boite capteur">
+          <h3><?php echo $titre; ?> </h3>
+          <div class="logo"> <?php echo $logo."<br>Référence:".$reference.""; ?></div>
+          <div class="info"> <span id="capteurinfo"><?php echo $info; ?></span id="capteurinfo"></div><br />
+          <div class="historique"> <a href="" class="link">Historique </a></div>
+        </section>
+  <?php    }
+   }
   }
   else {
     $sqlcapteur='SELECT *
@@ -135,7 +141,10 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
     $reqcapteur = $bdd -> query($sqlcapteur);
     $capteurs = $reqcapteur->fetchall();
     //$capteurs = $pieces['capteurs'];
+    $idAct = -1;
     foreach ($capteurs as $capteur) {
+      if ($capteur['id_capteur'] != $idAct){
+        $idAct = $capteur['id_capteur'];
       $idtypecapteur = $capteur['id_type_capteur'];
       $valeur=$capteur['valeur_capteur'];
       $reference= $capteur['id_capteur'];
@@ -150,7 +159,7 @@ function getCapteurs($type, $nompiece, $pieceId, $bdd) {
         <div class="info"> <?php echo $nompiece; ?></div><br />
         <div class="historique"> <a href="" class="link">Historique </a></div>
       </section>
-  <?php }
+  <?php }}
   }
 }
 
