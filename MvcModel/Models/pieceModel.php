@@ -162,8 +162,6 @@ function bouton_actionneur($actionneur)
   $donnee = $actionneur['valeur'];
   $actionneurId = $actionneur['id_actionneur'];
   $fonctionnement = $actionneur['fonctionnement'];
-<<<<<<< HEAD
-=======
 
   if($id_type_actionneur == 3 && $fonctionnement == 1){ //Allumer le ventilo v = 1111 && t = 03, donc en C trame[10-13] = 1 && trame[14] = 0 && trame[15] = 3
     $url ='http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=006E&TRAME=1006E21021111032018';
@@ -206,7 +204,6 @@ function bouton_actionneur($actionneur)
   //  echo "<br> <p> DATA DE OUF".$data." TOURNER  LE MOTEUR<p/>";
 
   }
->>>>>>> 19af425dcd8c18cc140c495c5e85c50cd2aa116c
   switch ($id_type_actionneur) {
     case 1:
     case 2:
