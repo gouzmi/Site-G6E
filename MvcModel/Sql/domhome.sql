@@ -482,11 +482,7 @@ INSERT INTO `type_actionneur` (`id_type_actionneur`, `variete_actionneur`) VALUE
 (4, 'Portail'),
 (5, 'Autre Type'),
 (6, 'Alarme');
-<<<<<<< HEAD
-/*(7, 'Ventilateur');*/
-=======
->>>>>>> cd56828385d1601ae2d5b0b66e5ac1cbbe142d2a
-
+(7, 'Ventilateur');
 -- --------------------------------------------------------
 
 --
