@@ -17,7 +17,7 @@
 // 2. Les mettres sous forme de tableau (1 ligne = 1 trame d'un capteur)
 	$data_tab = str_split($data,33);
   $size=count($data_tab)-1;
-	for($i=$size-50; $i<$size;$i++){
+	for($i=$size-20; $i<$size;$i++){
       $trame = $data_tab[$i];
       $timestamp = substr($trame,19,14);
 
